@@ -37,7 +37,7 @@ body {
 .header {
     height: 10rem;
 }
-.logo-icon {
+/*.logo-icon {
     -webkit-animation: bounce-in-top 1.1s both;
 	        animation: bounce-in-top 1.1s both;
 }
@@ -45,7 +45,7 @@ body {
  * ----------------------------------------
  * animation bounce-in-top
  * ----------------------------------------
- */
+
  @-webkit-keyframes bounce-in-top {
     0% {
       -webkit-transform: translateY(-500px);
@@ -150,6 +150,7 @@ body {
               animation-timing-function: ease-out;
     }
   }
+*/
   
 .header .navbar a{
     margin: 0 1rem;
@@ -159,10 +160,47 @@ body {
     font-family: var(--fuente2);
 }
 
+.navbar {
+        margin-left: 130px;
+}
+
 .header .navbar a:hover {
     border-bottom: 0.1rem solid;
     padding-bottom: 0.5rem;
     color: var(--orange);
+}
+
+.btn-order {
+        width: 130px;
+        height: 40px;
+        background-color: var(--orange);
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        transition: all 0.4s ease;
+        cursor: pointer;
+}
+
+.btn-order:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 2px 24px 8px rgba(255, 141, 59, 0.2);
+
+}
+
+.btn-order a {
+        text-decoration: none;
+        color: #fff;
+        font-family: var(--fuente2);
+        font-weight: 700;
+        letter-spacing: 1.3px;
+}
+
+.btn-order a:hover {
+        color: #000;
+      
 }
 
 .iconos{
@@ -170,6 +208,7 @@ body {
     justify-content: space-between;
     gap: 30px;
     margin-right: 20px;
+    align-items: center;
 }
 
 .header .icons div {
