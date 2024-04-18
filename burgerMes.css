@@ -70,6 +70,50 @@ body {
 .header .icons div:hover{
     color: black;
 }
+/*----------- main ------------*/
+.burger-month {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 100px;
+}
+
+.burger-month h1 {
+    color: var(--orange);
+    font-family: var(--fuente1);
+    padding-bottom: 30px;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.burger-month h2 {
+    color: #fff;
+    font-family: var(--fuente2);
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+.sakura-burger {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 100px;
+    padding-bottom: 50px;
+}
+.sakura-burger p {
+    color: #fff;
+    font-family: var(--fuente2);
+}
+.text-burger-month {
+    font-family: var(--fuente2);
+    color: #fff;
+    text-align: center;
+    width: 50%;
+    padding-bottom: 30px;
+}
 
 /*------------------ footer -------------------*/
 
@@ -125,28 +169,3 @@ body {
 }
 
 
-/*----------- main ------------*/
-.burger-month {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 100px;
-}
-
-.burger-month h1 {
-    color: var(--orange);
-    font-family: var(--fuente2);
-    padding-bottom: 50px;
-    text-decoration: underline;
-    font-weight: 700;
-    font-size: 35px;
-}
-
-.text-burger-month {
-    font-family: var(--fuente2);
-    color: #fff;
-    text-align: center;
-    width: 60%;
-    padding-bottom: 30px;
-}
