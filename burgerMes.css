@@ -96,17 +96,32 @@ body {
 
 .sakura-burger {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
     justify-content: center;
-    gap: 100px;
+    align-items: center;
     padding-bottom: 50px;
 }
 .sakura-burger p {
+    width: 30%;
+    text-align: center;
     color: #fff;
     font-family: var(--fuente2);
+    line-height: 25px;
+    font-size: 20px;
 }
+
+.sakura-burger p b {
+    color: var(--orange);
+}
+.sakura-burger img {
+    opacity: 0.7;
+    filter: drop-shadow(0 2px 15px rgba(255, 158, 47, 0.3));
+    transition: 0.5s ease;
+}
+
+.sakura-burger img:hover {
+    transform: scale(1.05);
+}
+
 .text-burger-month {
     font-family: var(--fuente2);
     color: #fff;
