@@ -26,6 +26,8 @@ body {
     background: rgba(39, 39, 39, 0.7);
 }
 
+/*---------------Nav var---------------*/
+
 .nav {
     position: fixed;
     top: 20px; 
@@ -101,6 +103,9 @@ body {
 .nav-menu-btn {
     display: none;
 }
+ 
+/*---------------Recuadros---------------*/
+
 
 .form-box {
     position: relative;
@@ -226,6 +231,54 @@ header {
 .two label a:hover {
     text-decoration: underline;
 }
+
+/*---------------Footer---------------*/
+
+footer {
+    position: fixed;    
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(39, 39, 39, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+  
+.footer p {
+    margin: 0;
+}
+
+.footer .info-footer {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fuente2);
+    font-weight: 700;
+    gap: 15px;
+    word-spacing: 5px;
+}
+
+.footer .social-media a, .footer .info-footer a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition: ease 0.3s;
+}
+
+.footer .info-footer a {
+    font-size: 25px;
+}
+.footer .info-footer a:hover {
+    color: #C9C9C9;
+}
+
+.footer .credit {
+    font-family: var(--fuente1);
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
 
 @media (max-width: 768px) {
 
