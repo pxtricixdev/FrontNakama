@@ -1,0 +1,152 @@
+:root {
+    --grey: #C9C9C9;
+    --orange: #EE7722;
+    --black: #000;
+    --fuente1: "Darumadrop One", sans-serif;
+    --fuente2: "Unbounded", sans-serif;
+    --fuente3: "Yuji Boku", serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; 
+}
+
+body {
+    background-blend-mode: multiply;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)), #0a0a0a;
+}
+/*------------ header --------------*/
+.header{
+    outline: none; 
+    border: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    height: 120px;
+}
+
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--fuente2);
+}
+.header .navbar a:hover {
+    border-bottom: 0.1rem solid;
+    padding-bottom: 0.5rem;
+    color: var(--orange);
+}
+
+.iconos{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.header .icons div {
+    color: black;
+    cursor: pointer;
+    font-size: 4rem;
+    margin-left: 2rem;
+    transition: ease 0.2s;
+}
+.header img {
+    margin-left: 30px;
+    margin-top: 15px;
+}
+.header .icons div:hover{
+    color: black;
+}
+
+/*------------------ footer -------------------*/
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    background-color: var(--orange);
+    padding-top: 30px;
+} 
+.footer .logo-footer {
+    padding-bottom: 30px;
+}
+.footer .info-footer {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fuente2);
+    font-weight: 700;
+    gap: 15px;
+    word-spacing: 5px;
+}
+.footer .social-media {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.footer .social-media a, .footer .info-footer a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition: ease 0.3s;
+}
+.footer .social-media a:hover {
+    transform: scale(1.2);
+}
+
+.footer .info-footer a {
+    font-size: 25px;
+}
+.footer .info-footer a:hover {
+    color: #C9C9C9;
+}
+
+.footer .credit {
+    font-family: var(--fuente1);
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+
+/*----------- main ------------*/
+.burger-month {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 100px;
+}
+
+.burger-month h1 {
+    color: var(--orange);
+    font-family: var(--fuente2);
+    padding-bottom: 50px;
+    text-decoration: underline;
+    font-weight: 700;
+    font-size: 35px;
+}
+
+.text-burger-month {
+    font-family: var(--fuente2);
+    color: #fff;
+    text-align: center;
+    width: 60%;
+    padding-bottom: 30px;
+}
