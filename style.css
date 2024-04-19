@@ -217,6 +217,7 @@ textarea.input{
     resize: none;
     height: 150px;
     overflow: auto;
+    padding-top: 5px;
 }
 
 .btn{
@@ -235,12 +236,6 @@ textarea.input{
     font-family: "Unbounded", sans-serif;
 
 }
-
-
-
-
-
-
 
 
 /*------------------ footer -------------------*/
@@ -285,6 +280,7 @@ textarea.input{
 .footer .info-footer a {
     font-size: 25px;
 }
+
 .footer .info-footer a:hover {
     color: #C9C9C9;
 }
