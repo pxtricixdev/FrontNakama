@@ -57,20 +57,30 @@
             <a href="#Order">Order now</a>
         </div>
     </main>
-
-    <section class="central-section animate__animated animate__fadeInUp" >
+ 
+    <section class="central-section animate__animated animate__fadeInUp">
         <div class="carta">
-            <a href="#carta" id="mostrarCarta">Menu</a>
+            <button data-modal-target="#modal-menu" class="btn-menu" id="showMenu">Menu</button>
         </div>
         <div class="burger-mes">
             <a href="#burger-mes">Burger of the month</a>
         </div>
     </section>
-
+    
+    <div class="modal-menu" id="modal-menu">
+        <div class="modal-content">
+            <button data-close-button class="close-button-modal">&times;</button>
+        </div>
+    </div>
+    
+    
+    
     <div class="texto-presentacion texto-menu">
         <p>Discover our delicious monthly selection of <b>Burgers, Starters, Milkshakes and Desserts</b> carefully crafted with the finest ingredients and unique flavors.</p><br>
         <p>Don't miss out on our <b class="color">Burger of the Month</b> and let your palate be the judge!</p>
     </div>
+    
+    <div id="overlay"></div>
 
     <div class="slider">
         <ul>
