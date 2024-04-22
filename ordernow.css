@@ -105,19 +105,40 @@ body {
 }
 
 /*-------- burgers -----------*/
+.grid-container {
+    max-width: 1500px; 
+    margin: 0 auto; /
+}
+.grid-container h2 {
+    color: var(--orange);
+    font-family: var(--fuente1);
+    font-size: 50px;
+    text-transform: uppercase;
+}
+.burgers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+}
 .burger1 {
-    max-width: 500px;
-    max-height: 250px;
+    max-width: 400px;
+    max-height: 220px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     border-radius: 10px;
     margin: 0 auto;
     font-family: var(--fuente2);
-    background-color: #1a1a1a;
+    background-color: #1f1f1f;
     margin-top: 20px;
     margin-bottom: 20px;
     overflow: hidden;
+    border: 2px solid var(--orange);
+}
+
+.burger1:hover {
+    background-color: #2d2d2d;
 }
 
 .burger1 p {
@@ -127,7 +148,7 @@ body {
 
 
 .burger1 img {
-    width: 200px;
+    width: 150px;
 }
 
 
@@ -140,23 +161,37 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
 }
+.burger-left .cantidad .cantidad-numero {
+    color: var(--grey);
+}
+
 .burger-left .cantidad button {
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
+.burger-left .cantidad .add-cart {
+    margin-left: 10px;
+}
 
 .burger-left .burger-desription {
-    font-size: 12px;
-    padding: 10px 0;
+    font-size: 14px;
+    padding: 12px 0;
     overflow: hidden; /* Oculta cualquier texto que se desborde del contenedor */
     text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el texto se desborda */
-    
+}
+
+.burger-left .price {
+    color: var(--grey);
 }
 
 .burger-left h2 {
-    color: var(--orange);
+    font-size: 20px;
+    color: #fff;
 }
 
 /*------------------ footer -------------------*/
