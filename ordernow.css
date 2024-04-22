@@ -107,7 +107,7 @@ body {
 /*-------- burgers -----------*/
 .grid-container {
     max-width: 1500px; 
-    margin: 0 auto; /
+    margin: 0 auto; 
 }
 .grid-container h2 {
     color: var(--orange);
@@ -146,11 +146,24 @@ body {
     max-width: 100%;
 }
 
-
 .burger1 img {
     width: 150px;
+    mask-image: radial-gradient(circle, #2d2d2d 65%, transparent);
+}
+.burger1 .img-fuji, .burger1 .img-sakura {
+    width: 135px;
 }
 
+.burger1 .img-katsu, .burger1 .img-nakama {
+    width: 145px;
+}
+
+.burger1 .img-emmy {
+    width: 125px;
+}
+.burger1 .img-tokyo {
+    width: 150px;
+}
 
 .burger-left {
     margin: 15px;
@@ -181,8 +194,8 @@ body {
 .burger-left .burger-desription {
     font-size: 14px;
     padding: 12px 0;
-    overflow: hidden; /* Oculta cualquier texto que se desborde del contenedor */
-    text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el texto se desborda */
+    overflow: hidden; 
+    text-overflow: ellipsis; 
 }
 
 .burger-left .price {
@@ -194,6 +207,23 @@ body {
     color: #fff;
 }
 
+.burger-right {
+    margin-right: 10px;
+}
+
+/*---- starters and milkshakes ----- */
+.starters-grid, .milkshakes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+/*------ desserts ------*/
+.desserts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+}
 /*------------------ footer -------------------*/
 
 .footer {
