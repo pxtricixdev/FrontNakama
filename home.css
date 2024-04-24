@@ -24,7 +24,25 @@ body {
     background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)), #0a0a0a;
 }
 /*------------ header --------------*/
-.header{
+@media only screen and (max-width: 575px) {
+    .header .navbar {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .header .logo-img {
+        display: none;
+    }
+}
+@media only screen and (min-width: 576px) {
+    .header .navbar-movil {
+        display: none;
+    }
+}
+
+.header {
     outline: none; 
     border: none;
     text-decoration: none;
@@ -160,16 +178,35 @@ body {
   
 
 /*------------ central section -----------*/
+@media only screen and (max-width: 768px) {
+    .central-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .burger-mes, .carta {
+        width: 400px
+    }
+}
+@media only screen and (min-width: 769px) {
+    .central-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .burger-mes, .carta {
+        width: 450px;
+    }
+}
 .central-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     gap: 60px;
     margin-top: 70px;
     width: 100%;
 }
+
 .carta, .burger-mes {
-    width: 450px;
     height: 300px;
     border: 2px solid var(--orange);
     border-radius: 15px;
@@ -345,8 +382,7 @@ body {
         flex-direction: column;
     }
     .footer .social-media {
-        padding-top: 50px;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
