@@ -28,12 +28,19 @@ body {
     .header .navbar {
         display: none;
     }
+    .header .navbar-movil {
+        
+    }
 }
 
 
 @media only screen and (max-width: 768px) {
     .header .logo-img {
         display: none;
+    }
+    .header {
+        display: flex;
+        flex-direction: column;
     }
 }
 @media only screen and (min-width: 576px) {
