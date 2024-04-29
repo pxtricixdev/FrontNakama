@@ -321,7 +321,19 @@ body {
     transform: translateX(-200px); 
 }
 
-
+.carrito .list-group {
+    font-weight: 300;
+    font-size: 15px;
+    margin: 0 15px;
+}
+.carrito .list-group li{
+    margin: 10px 0;
+}
+.carrito .text-total {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #fff;
+}
 
 /*------------------ footer -------------------*/
 
