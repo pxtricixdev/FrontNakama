@@ -181,6 +181,7 @@ body {
     align-items: center;
 }
 
+
 .item{
     width: 100%;
     height: 550px;
@@ -192,7 +193,20 @@ body {
     grid-template-columns: repeat(2, 1fr);
     display: grid;
     z-index: 1000;
-    margin-bottom: 75px;
+    margin-bottom: 60px;
+}
+
+.item::before {
+    content: "If you have any problem, do not hesitate to tell us.";
+    position: absolute;
+    top: 10%; 
+    left: 50%; 
+    transform: translate(-48%, -50%);
+    font-size: 23px; 
+    color: white; 
+    z-index: 10; 
+    text-align: center; 
+    font-family: var(--fuente2);
 }
 
 /*Relleno izq*/
@@ -438,4 +452,10 @@ textarea.input{
 
 .footer .social-credit a:hover {
     color: #C9C9C9;
+}
+
+.politicas{
+    text-decoration: none;
+    color: #fff;
+    text-decoration: underline;
 }

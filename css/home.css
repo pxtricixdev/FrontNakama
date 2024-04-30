@@ -548,3 +548,9 @@ body {
 .footer .social-credit a:hover {
     color: #C9C9C9;
 }
+
+.politicas{
+    text-decoration: none;
+    color: #fff;
+    text-decoration: underline;
+}

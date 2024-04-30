@@ -279,6 +279,11 @@ footer {
     padding-bottom: 10px;
 }
 
+.politicas{
+    text-decoration: none;
+    color: #fff;
+    text-decoration: underline;
+}
 
 @media (max-width: 768px) {
 
