@@ -1,0 +1,293 @@
+:root {
+    --grey: #C9C9C9;
+    --orange: #EE7722;
+    --black: #000;
+    --fuente1: "Darumadrop One", sans-serif;
+    --fuente2: "Unbounded", sans-serif;
+    --fuente3: "Yuji Boku", serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; 
+}
+
+body {
+    background-blend-mode: multiply;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)), #0a0a0a;
+}
+/*------------ header --------------*/
+.header{
+    outline: none; 
+    border: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    height: 120px;
+}
+
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--fuente2);
+}
+.header .navbar a:hover {
+    border-bottom: 0.1rem solid;
+    padding-bottom: 0.5rem;
+    color: var(--orange);
+}
+
+.iconos{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.header .icons div {
+    color: black;
+    cursor: pointer;
+    font-size: 4rem;
+    margin-left: 2rem;
+    transition: ease 0.2s;
+}
+.header img {
+    margin-left: 30px;
+    margin-top: 15px;
+}
+.header .icons div:hover{
+    color: black;
+}
+
+
+/*------------------ container -------------------*/
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item{
+    width: 100%;
+    height: 550px;
+    max-width: 820px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 10px rgba(255, 103, 1, 0.4);
+    overflow: hidden;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    z-index: 1000;
+}
+
+/*Relleno izq*/
+.contact{
+    background: white;
+}
+
+.texto{
+    color: black;
+    padding-left: 20px;
+    padding-top: 15px;
+    font-size: 35px;
+    font-family: "Darumadrop One", sans-serif;
+}
+
+.img{
+    width: 320px;
+    height: 320px;
+    margin-left: 50px;
+}
+
+.redes{
+    margin-top: 20px;
+}
+
+.social-media{
+    display: flex;
+    list-style: none;
+    padding: 5px;
+    padding-left: 17px;
+    border-radius: 5px;
+    transition: 0.3s;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.texto-dos{
+    font-weight: 500;
+    color: black;
+    padding-left: 20px;
+    font-family: "Darumadrop One", sans-serif;
+}
+
+
+/*Parte derecha*/
+
+.submit-form{
+    background-color: #ee7722;
+}
+
+
+.cabecera{
+    font-size: 25px;
+    position: relative;
+    top: 15px;
+    left: 20px;
+    padding-top: 10px;
+    color: #fff;
+    font-family: "Darumadrop One", sans-serif;
+}
+
+form{
+    padding: 0 50px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.celdas{
+ width: 100%;
+ height: 100%;   
+}
+
+.input-box{
+    height: 40px;
+    width: 70%;
+    margin: 30px 0;
+    position: relative;
+}
+
+.input{
+    width: 145%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    outline: none;
+    padding-left: 10px;
+    color: #fff;
+    font-size: 16px;
+    
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    padding-left: 10px;
+    transform: translateY(-50%);
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    transition: 0.3s;
+    font-family: "Unbounded", sans-serif;
+
+}
+
+.input-box .input:focus ~ label,
+.input-box .input:valid ~ label{
+    top: -1px;
+    left: 10px;
+    background: #ee7722; /*Cambia cundo clicas*/
+    font-weight: 500;
+    font-size: 12px;
+    padding: 5px;
+}
+
+textarea.input{
+    resize: none;
+    height: 150px;
+    overflow: auto;
+    padding-top: 5px;
+}
+
+.btn{
+    position: relative;
+    top: 100px;
+    background: #fff;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    height: 45px;
+    width: 30%;
+    font-size: 16px;
+    color: #ee7722;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: "Unbounded", sans-serif;
+
+}
+
+
+/*------------------ footer -------------------*/
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    background-color: var(--orange);
+    padding-top: 30px;
+} 
+.footer .logo-footer {
+    padding-bottom: 30px;
+}
+.footer .info-footer {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fuente2);
+    font-weight: 700;
+    gap: 15px;
+    word-spacing: 5px;
+}
+.footer .social-media {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.footer .social-media a, .footer .info-footer a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition: ease 0.3s;
+}
+.footer .social-media a:hover {
+    transform: scale(1.2);
+}
+
+.footer .info-footer a {
+    font-size: 25px;
+}
+
+.footer .info-footer a:hover {
+    color: #C9C9C9;
+}
+
+.footer .credit {
+    font-family: var(--fuente1);
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
