@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
+
+:root {
+    --grey: #C9C9C9;
+    --orange: #EE7722;
+    --black: #000;
+    --fuente1: "Darumadrop One", sans-serif;
+    --fuente2: "Unbounded", sans-serif;
+    --fuente3: "Yuji Boku", serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; 
+}
+
+body {
+    background-blend-mode: multiply;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)), #0a0a0a;
+}
+
+.header{
+    outline: none; 
+    border: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--fuente2);
+}
+
+.header .navbar a:hover {
+    border-bottom: 0.1rem solid;
+    padding-bottom: 0.5rem;
+    color: var(--orange);
+}
+
+.iconos{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-right: 20px;
+}
+
+.header .icons div {
+    color: black;
+    cursor: pointer;
+    font-size: 4rem;
+    margin-left: 2rem;
+}
+.header img {
+    margin-left: 30px;
+    margin-top: 15px;
+}
+.header .icons div:hover{
+    color: black;
+}
+
+.dragon{
+    align-items: center;
+}
+
+h2{
+    text-align: center;
+    font-family: "Darumadrop One", sans-serif;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+/* INFO Hisotria*/
+.container1, .container2, .container3 {
+    position: absolute;
+    top: 39%;
+    left: 77%;
+    width: 40%;
+    height: 47%;
+    transform: translate(-50%, -50%);
+    background-color: #ee7722;
+    opacity: 0.9;
+    z-index: 1; 
+    font-size: 17px;
+}
+
+.historia, .caracterizacion, .planes{
+    text-align: justify;
+    margin-left: 40px; margin-right: 40px;
+    font-family: "Unbounded", sans-serif;
+}
+
+/*INFO Hablando de la comdia*/
+.container2 {
+    top: 107%;
+    left: 25%;
+    width: 40%;
+    height: 50%;
+}
+
+/*INFO Hablamso de planes a futuro*/
+.container3 {
+    top: 175%;
+    left: 77%;
+    width: 40%;
+    height: 45%;
+}
+
+
+/*Llama*/
+.llama {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 40%;
+    height: 50%;
+    z-index: 1;  
+}
+
+.llama img {
+    width: 15%;
+    height: 25%;
+    object-fit: cover; 
+}
+
+/*Tokyo*/
+.tokyo {
+    position: absolute;
+    top: 58%;
+    left: 35%;
+    width: 40%;
+    height: 50%;
+    z-index: 1;  
+}
+
+.tokyo img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover; 
+}
+
+/*Imagen banner*/
+.marca {
+    position: absolute;
+    top: 129%;
+    left: 27%;
+    width: 40%;
+    height: 50%;
+    z-index: 1;  
+}
+
+.marca img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover; 
+}
+
+/*Footer*/
+
+.footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        background-color: var(--orange);
+        padding-top: 30px;
+} 
+.footer .logo-footer {
+        padding-bottom: 30px;
+}
+.footer .info-footer {
+        display: flex;
+        flex-direction: column;
+        font-family: var(--fuente2);
+        font-weight: 700;
+        gap: 15px;
+        word-spacing: 5px;
+}
+.footer .social-media {
+        padding-top: 50px;
+        padding-bottom: 20px;
+        display: flex;
+        align-items: center;
+}
+.footer .social-media a, .footer .info-footer a {
+        text-decoration: none;
+        color: #000;
+        font-weight: 900;
+        text-transform: uppercase;
+        transition: ease 0.3s;
+}
+.footer .social-media a:hover {
+        transform: scale(1.2);
+}
+
+.footer .info-footer a {
+        font-size: 25px;
+}
+.footer .info-footer a:hover {
+        color: #C9C9C9;
+}
+
+.footer .credit {
+        font-family: var(--fuente1);
+        font-weight: 700;
+        padding-top: 20px;
+        padding-bottom: 30px;
+}
