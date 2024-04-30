@@ -1,0 +1,440 @@
+:root {
+    --grey: #C9C9C9;
+    --orange: #EE7722;
+    --black: #000;
+    --fuente1: "Darumadrop One", sans-serif;
+    --fuente2: "Unbounded", sans-serif;
+    --fuente3: "Yuji Boku", serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%; 
+}
+
+body {
+    background-blend-mode: multiply;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)), #0a0a0a;
+}
+/*------------ header --------------*/
+.header{
+    outline: none; 
+    border: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    height: 120px;
+}
+
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--fuente2);
+}
+.header .navbar a:hover {
+    border-bottom: 0.1rem solid;
+    padding-bottom: 0.5rem;
+    color: var(--orange);
+}
+
+.iconos{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-right: 20px;
+    align-items: center;
+}
+.btn-carrito {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.header .icons div {
+    color: black;
+    cursor: pointer;
+    font-size: 4rem;
+    margin-left: 2rem;
+    transition: ease 0.2s;
+}
+.header img {
+    margin-left: 30px;
+    margin-top: 15px;
+}
+.header .icons div:hover{
+    color: black;
+}
+
+.burgers-section {
+    max-width: 100%;
+    height: 270px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.burgers-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(img/pexels-edwardeyer-1247755.jpg);
+    background-size: cover;
+    background-position: center 70%; 
+    opacity: 0.7; 
+    z-index: -1; 
+}
+
+.burgers-section h1 {
+    font-family: var(--fuente2);
+    color: #fff;
+    font-size: 40px;
+    text-transform: uppercase;
+    position: relative; 
+    z-index: 1; 
+}
+
+/*------------ navbar menu ---------*/
+.navbar-menu {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-family: var(--fuente2);
+    font-size: 18px;
+    border: 2px solid var(--grey);
+    padding: 10px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.navbar-menu a:hover {
+    border: 2px solid var(--orange);
+    color: var(--black);
+    background-color: var(--orange);
+}
+
+
+
+/*---------------- main --------------------*/
+/*-------- burgers -----------*/
+.grid-container {
+    max-width: 1500px; 
+    margin: 0 auto; 
+}
+.grid-container h2 {
+    color: var(--orange);
+    font-family: var(--fuente1);
+    font-size: 50px;
+    text-transform: uppercase;
+}
+.burgers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: -10px;
+}
+.burger1 {
+    max-width: 400px;
+    max-height: 220px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    font-family: var(--fuente2);
+    background-color: #1f1f1f;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 2px solid var(--orange);
+}
+
+.burger1:hover {
+    background-color: #2d2d2d;
+}
+
+.burger1 p {
+    color: var(--orange);
+    max-width: 100%;
+}
+
+.burger1 img {
+    width: 150px;
+    mask-image: radial-gradient(circle, #2d2d2d 65%, transparent);
+}
+.burger1 .img-fuji, .burger1 .img-sakura {
+    width: 135px;
+}
+
+.burger1 .img-katsu, .burger1 .img-nakama {
+    width: 145px;
+}
+
+.burger1 .img-emmy {
+    width: 125px;
+}
+.burger1 .img-tokyo {
+    width: 150px;
+}
+
+.burger-left {
+    margin: 15px;
+    overflow: hidden;
+}
+
+.burger-left .cantidad {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.burger-left .cantidad .cantidad-numero {
+    color: var(--grey);
+}
+
+.burger-left .cantidad button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.burger-left .cantidad .add-cart {
+    margin-left: 10px;
+}
+
+.burger-left .burger-desription {
+    font-size: 14px;
+    padding: 12px 0;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+.burger-left .price {
+    color: var(--grey);
+}
+
+.burger-left h2 {
+    font-size: 20px;
+    color: #fff;
+}
+
+.burger-right {
+    margin-right: 10px;
+}
+
+/*---- starters and milkshakes ----- */
+.starters-grid, .milkshakes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+/*------ desserts ------*/
+.desserts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    margin-bottom: 50px;
+}
+
+.go-top {
+    max-width: 1800px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 100px;
+}
+.go-top svg {
+    transition: ease .3s;
+}
+.go-top svg:hover {
+    transform: scale(1.1);
+    color: #fff;
+}
+
+/*----- carrito --------*/
+.carrito {
+    position: fixed;
+    top: 140px;
+    right: -425px; 
+    width: 425px;
+    height: 40%;
+    background-color: var(--orange);
+    transition: right 0.3s ease;
+    border: 3px solid var(--orange);
+    border-radius: 20px;
+    z-index: 2;
+    font-family: var(--fuente2);
+    color: var(--black);
+    padding: 10px 20px;
+}
+.carrito h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--black);
+}
+.carrito .btn-vaciar {
+    background-color: var(--black);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: var(--fuente2);
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    transition: .2s ease;
+}
+
+.carrito .btn-vaciar:hover {
+    color: var(--orange);
+}
+.mostrar-carrito {
+    right: 20px;
+}
+
+.mover-productos {
+    transform: translateX(-200px); 
+}
+
+.carrito .list-group {
+    font-weight: 300;
+    font-size: 15px;
+    margin: 0 15px;
+}
+.carrito .list-group li{
+    margin: 10px 0;
+}
+.carrito .text-total {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+/*------------------ footer -------------------*/
+
+@media only screen and (max-width: 768px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    } 
+    .footer .logo-footer {
+        padding-bottom: 30px;
+    }
+    .footer .info-footer {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer .social-media {
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media only screen and (min-width: 769px) {
+    .footer {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        text-align: center;
+        gap: 100px;
+    } 
+    .footer .credit {
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
+
+    .footer .social-media {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .footer .footer-central .info-footer {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.footer .info-footer {
+    font-family: var(--fuente2);
+    font-weight: 700;
+    gap: 8px;
+    word-spacing: 5px;
+}
+    
+.footer {
+    width: 100%;
+    background-color: var(--orange);
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+.footer .social-media a, .footer .info-footer a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition: ease 0.3s;
+}
+
+.footer .social-media a:hover {
+    transform: scale(1.2);
+}
+
+.footer .info-footer a {
+    font-size: 25px;
+}
+.footer .info-footer a:hover {
+    color: #C9C9C9;
+}
+
+.footer .credit { 
+    font-family: var(--fuente1);
+    font-weight: 700;
+}
+
+.footer .social-credit a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition: ease 0.3s;
+    font-family: var(--fuente2);
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.footer .social-credit a:hover {
+    color: #C9C9C9;
+}

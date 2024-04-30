@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nakama</title>
+    <link rel="stylesheet" href="ordernow.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/icons/logo-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img class="logo-icon" src="icons/logo-icon.png" alt="" width="100px">
+        </a>
+            
+         <nav class="navbar">
+            <a href="#Home">Home</a>
+            <a href="#AboutUs">About Us</a>
+            <a href="#JoinUs">Join Us</a>
+            <a href="#Contacto">Contact</a>
+        </nav>
+        
+        <div class="iconos">
+            <div class = "iconos-derecha" id="user-login">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="#EE7722" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                  </svg>
+            </div>
+            <button class="btn-carrito" onclick="toggleCarrito()" id="carrito">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="#EE7722" class="bi bi-basket-fill" viewBox="0 0 16 16">
+                    <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="burgers-section">
+        <h1 id="Menu">Menu</h1>
+    </div>
+
+    <nav class="navbar-menu"> 
+        <a href="#Burgers">Burgers
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
+                <path d="M14.8541 4H9.14593C6.6503 4 4.52873 5.68344 3.75294 8.02892C3.49753 8.80111 3.36982 9.18721 3.69065 9.59361C4.01149 10 4.53377 10 5.57833 10H18.4217C19.4662 10 19.9885 10 20.3093 9.59361C20.6302 9.18721 20.5025 8.80111 20.2471 8.02892C19.4713 5.68344 17.3497 4 14.8541 4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4 16H3.5C2.67157 16 2 15.3284 2 14.5C2 13.6716 2.67157 13 3.5 13H11.3944C11.7893 13 12.1753 13.1169 12.5038 13.3359L14.4453 14.6302C14.7812 14.8541 15.2188 14.8541 15.5547 14.6302L17.4962 13.3359C17.8247 13.1169 18.2107 13 18.6056 13H20.5C21.3284 13 22 13.6716 22 14.5C22 15.3284 21.3284 16 20.5 16H20M4 16L4.4319 17.7276C4.76578 19.0631 5.96573 20 7.34233 20H16.6577C18.0343 20 19.2342 19.0631 19.5681 17.7276L20 16M4 16H11M20 16H18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M15.0078 7L14.9988 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10.5 6.5L9.5 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </a>
+        <a href="#Starters">Starters
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
+                <path d="M5.56556 10.0231C5.28753 7.82233 5.99024 7.74649 6.33776 8.01772C12.2021 11.484 15.35 11.3103 16.6916 11.7044C17.7649 12.0196 17.4775 12.9477 17.1284 13.3089L11.6585 19.7892C10.7522 20.8629 9.5582 22.585 8.38078 21.8182C7.877 21.4901 7.593 20.7867 7.49814 20.2428C6.94469 17.7501 5.84358 12.2239 5.56556 10.0231Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16.0212 11.5698L18.4374 7.69071C18.7091 7.02399 18.1051 5.96333 16.0212 6.59973L13.4844 10.5697M15.7919 6.71573V5.32478C15.7919 4.96567 15.7211 4.59487 15.4965 4.31525C15.1464 3.87925 14.5557 3.61522 13.2588 4.77619M13.0887 10.3209V3.22134C12.7556 2.67317 11.8895 1.68111 11.0901 2.09825C10.2906 2.5154 10.3706 3.22134 10.3706 3.54222V4.80162M10.3706 4.80162V6.9917M10.3706 4.80162C9.95363 4.35051 8.74766 3.54222 8.02678 4.17162C7.41581 4.70506 7.678 6.9917 7.678 8.32499" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7.46674 18.0297C8.85981 18.0297 9.98912 16.8965 9.98912 15.4986C9.98912 14.1007 8.85981 12.9675 7.46674 12.9675C7.03348 12.9675 6.62573 13.0771 6.26953 13.2702" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+        </a>
+        <a href="#Milkshakes">Milkshakes
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
+                <path d="M12 7V4.34832C12 2.1606 12.3737 1.6318 14.4968 2.22769L18 3.21095" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M6 7L7.1398 18.1606C7.31099 19.8368 7.39658 20.6749 7.96796 21.1813C9.1458 22.225 14.7472 22.3198 16.032 21.1813C16.6034 20.6749 16.689 19.8368 16.8602 18.1606L18 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M5 7H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M7 12H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M7 16H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+        </a>
+        <a href="#Desserts">Desserts
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
+                <path d="M3.53809 17H11.0501" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M18.5625 17H21.0665" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12.5349 5C13.9155 5 15.0347 6.11929 15.0347 7.5C15.0347 8.88071 13.9155 10 12.5349 10C11.1543 10 10.0352 8.88071 10.0352 7.5C10.0352 6.11929 11.1543 5 12.5349 5ZM12.5349 5C12.7016 4.5 13.4348 3.4 15.0347 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10.0206 8.01509C4.07131 10.2637 1.67194 11.3016 2.03569 12.0463C4.01481 12.9814 7.65062 12.7408 11.3708 12.6012C12.3945 12.5628 13.4052 13.0702 13.6374 14.0776C13.8013 14.7892 13.8446 15.4095 14.168 15.8036C14.3534 16.0296 14.6687 16.1064 14.9501 16.0328C15.7105 15.8338 16.0248 14.9841 16.4001 13.4933C16.4734 13.2022 16.5774 12.8897 16.8586 12.7921C18.1189 12.3547 21.998 13.3194 21.998 11.5424C21.9354 9.69217 21.2618 8.53954 19.0991 6.82526C18.4033 6.27374 17.5245 6.00001 16.6426 6.0708C15.7174 6.14507 15.2864 6.26551 15.0112 6.50339" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M2.0127 11.9929L2.98803 16.2984C3.48754 18.5524 3.73729 19.6793 4.56 20.3397C5.38272 21.0001 6.53691 21.0001 8.8453 21.0001H17.4227C19.1452 21.0001 20.0064 21.0001 20.5779 20.4821C21.1495 19.9641 21.234 19.107 21.403 17.3927L21.9935 11.6338" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+        </a>
+    </nav>
+
+    <main>
+        <!-- burgers -->
+        <section class="brg-sect">
+            <div class="grid-container">
+                <h2 id="Burgers">Burgers</h2>
+                <div class="burgers">
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img class="img-teriyaki" src="img/burgers/teriyaki-pine-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2 class="nombre">Teriyaki</h2>
+                        
+                            <p class="burger-desription">Grilled chicken breast glazed in teriyaki sauce, topped with grilled pineapple, caramelized onions, and ginger mayo.</p>
+                            <p class="price" marcador="1">10.7$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img class="img-katsu" src="img/burgers/katsudon-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Chicken Katsu</h2>
+                        
+                            <p class="burger-desription">Breaded chicken breast with shredded cabbage, tonkatsu sauce, and sesame mayo, served on a sesame seed bun.</p>
+                            <p class="price" marcador="2">9.5$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img class="img-emmy" src="img/burgers/emmy-soul-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Emmy</h2>
+                        
+                            <p class="burger-desription">Featuring Korean-spiced sauce, caramelized onions, pickles, bacon, and cheddar on a 180g Wagyu patty.</p>
+                            <p class="price" marcador="3">15$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img class="img-fuji" src="img/burgers/fuji-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Fuji</h2>
+                        
+                            <p class="burger-desription">180g of Wagyu beef, double cheddar cheese, bacon, onion, tomato, lettuce, pickles, and fried egg.</p>
+                            <p class="price" marcador="4">14.2$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img class="img-samurai" src="img/burgers/smash-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Samurai</h2>
+                        
+                            <p class="burger-desription"> 
+                                Two 100% beef smashed patties, double cheddar cheese, crispy bacon, and wasabi mayo.</p>
+                            <p class="price" marcador="5">13$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img class="img-tokyo" src="img/burgers/tokyo-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Tokyo</h2>
+                        
+                            <p class="burger-desription">180g of Wagyu beef paired with creamy goat cheese, caramelized onions, and a delectable cheese sauce.</p>
+                            <p class="price" marcador="6">13.7$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img class="img-kyoto" src="img/burgers/kyoto-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Kyoto</h2>
+                        
+                            <p class="burger-desription">Portobello Patty Burger featuring double smoked tofu cheese, smoked tempeh strips and sriracha mayo.</p>
+                            <p class="price" marcador="7">10$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-7">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img class="img-nakama" src="img/burgers/nakama-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Nakama</h2>
+                        
+                            <p class="burger-desription">Indulge in our House Special, 180g of Wagyu beef, double cheddar cheese, bacon and pickled cucumber slices.</p>
+                            <p class="price" marcador="8">12.7$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-8">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img class="img-sakura" src="img/burgers/sakura-menu-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Sakura</h2>
+                        
+                            <p class="burger-desription">Experience the fusion of premium wagyu beef with savory cheese and crisp red onion, sampling Japan's culinary heritage.</p>
+                            <p class="price" marcador="9">13.2$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-9">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+<!-- starters -->
+        <section class="starters-sect">
+            <div class="grid-container">
+                <h2 id="Starters">Starters</h2>
+                <div class="starters-grid">
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img src="img/starters/teriyaki-chicken-wings-1-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Teriyaki Wings</h2>
+                        
+                            <p class="burger-desription">Succulent chicken wings glazed in a tantalizing teriyaki sauce for a sweet and savory sensation.</p>
+                            <p class="price" marcador="10">8.5$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img src="img/starters/nachos-mexicanos-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>"House" Nachos</h2>
+                        
+                            <p class="burger-desription">Loaded with cheesy goodness, zesty salsa, creamy guacamole, and a spicy kick.</p>
+                            <p class="price" marcador="11">8$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-11">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img src="img/starters/ries_carta_menu_pamplona-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Cheddar & Bacon Fries</h2>
+                        
+                            <p class="burger-desription">Golden fries topped with melted cheddar cheese and crispy bacon bits.</p>
+                            <p class="price" marcador="12">4.5$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-12">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img src="img/starters/takoyakis-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Takoyakis</h2>
+                        
+                            <p class="burger-desription">Deliciously savory octopus-filled balls topped with tangy sauce and savory bonito flakes.</p>
+                            <p class="price" marcador="13">8$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-13">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img src="img/starters/gyoza1-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Gyozas</h2>
+                        
+                            <p class="burger-desription"> 
+                                Perfectly crafted dumplings filled with savory pork or flavorful vegetables, served with a dipping sauce</p>
+                            <p class="price" marcador="14">7.5$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-14">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        </div>
+        <!-- milkshakes -->
+        <section class="milkshakes-sect">
+            <div class="grid-container">
+                <h2 id="Milkshakes">Milkshakes</h2>
+                <div class="milkshakes-grid">
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img src="img/milkshakes/Group 9.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Lotus</h2>
+                        
+                            <p class="burger-desription">Creamy soft-serve ice cream blended with Lotus Biscoff cookies and caramelized crunch.</p>
+                            <p class="price" marcador="15">6.5$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-15">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img src="img/milkshakes/Group 9.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Filipinos</h2>
+                        
+                            <p class="burger-desription">Creamy soft-serve ice cream blended with crunchy chocolate-covered biscuit rings.</p>
+                            <p class="price" marcador="16">6.5$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img src="img/milkshakes/Group 9.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Oreo</h2>
+                        
+                            <p class="burger-desription">Creamy blend of soft-serve ice cream and chunks of everyone's favorite cookie.</p>
+                            <p class="price" marcador="17">6.5$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-17">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img src="img/milkshakes/Group 9.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Nutella</h2>
+                        
+                            <p class="burger-desription">Delight in creamy Nutella blended with soft-serve ice cream for a heavenly chocolatey treat</p>
+                            <p class="price" marcador="18">6.5$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-18">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- desserts -->
+        <section class="desserts-sect">
+            <div class="grid-container">
+                <h2 id="Desserts">Desserts</h2>
+                <div class="desserts-grid">
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img src="img/desserts/lotuscakegood-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Lotus Cake</h2>
+                        
+                            <p class="burger-desription">A decadent fusion of creamy cheesecake topped with irresistible Lotus Biscoff crumbles.</p>
+                            <p class="price" marcador="19">4.7$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-19">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img src="img/desserts/cheesecakegood-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Cheesecake</h2>
+                        
+                            <p class="burger-desription">A rich and creamy delight with a caramelized crust that melts in your mouth.</p>
+                            <p class="price" marcador="20">4.5$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-20">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="burger1">
+                        <div class="burger-right">
+                            <img src="img/desserts/mochisgood-removebg-preview.png" alt="">
+                        </div>
+                        <div class="burger-left">
+                            <h2>Mochis</h2>
+                        
+                            <p class="burger-desription">Discover our delightful mochi treats, including enticing flavors like matcha, mango, and black sesame.</p>
+                            <p class="price" marcador="21">4.5$</p>
+        
+                            <div class="cantidad">
+                                <button class="rest">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                                <div class="cantidad-numero">1</div>
+                                <button class="add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#EE7722" fill="none">
+                                        <path d="M12 8V16M16 12L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+        
+                                <button class="add-cart" id="add-cart-21">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ee7722" fill="none">
+                                        <path d="M21.0524 11.5L21.3307 9.83981C21.5126 8.75428 21.6036 8.21152 21.3123 7.85576C21.0209 7.5 20.4854 7.5 19.4144 7.5H4.58564C3.51461 7.5 2.9791 7.5 2.68773 7.85576C2.39637 8.21152 2.48735 8.75428 2.66933 9.83981L3.87289 17.0194C4.27181 19.3991 4.47127 20.5889 5.28565 21.2945C6.10003 22 7.27396 22 9.62182 22H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M14 18H22M18 22L18 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- carrito -->
+    <aside class="carrito" id="carrito">
+        <h2>Cart</h2>
+
+        <ul id="elementos" class="list-group"></ul>
+
+        <p class="text-total">Total: <span id="total"></span>&dollar;</p>
+
+        <button id="btn-vaciar" class="btn-vaciar">Empty</button>
+    </aside>
+
+    <div class="go-top">
+        <a href="#Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" color="#ee7722" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
+                <path d="M12 8L12 16M12 8C11.2998 8 9.99153 9.9943 9.5 10.5M12 8C12.7002 8 14.0085 9.9943 14.5 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </a>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="logo-footer">
+                <a href="index.html">
+                    <img src="icons/logo-icon-name-black.png" width="200px" alt="">
+                </a>
+            </div>
+            <div class="footer-central">
+                <div class="info-footer">
+                    <span>33 Cortlandt Alley, New York, NY 10013</span>
+                    <span>Phone: +1 646 330 2459</span>
+                    <span>nakamaburgers@gmail.com</span>
+                </div>
+                <div class="social-credit">
+                    <span><a href="#Order">Order here</a></span>
+                    <div class="social-media">
+                        <a href="#" class="instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="50" viewBox="0 0 256 256"><g fill="#000000"><path d="M176 32H80a48 48 0 0 0-48 48v96a48 48 0 0 0 48 48h96a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48m-48 136a40 40 0 1 1 40-40a40 40 0 0 1-40 40" opacity=".2"/><path d="M176 24H80a56.06 56.06 0 0 0-56 56v96a56.06 56.06 0 0 0 56 56h96a56.06 56.06 0 0 0 56-56V80a56.06 56.06 0 0 0-56-56m40 152a40 40 0 0 1-40 40H80a40 40 0 0 1-40-40V80a40 40 0 0 1 40-40h96a40 40 0 0 1 40 40Zm-88-96a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48m0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32m64-84a12 12 0 1 1-12-12a12 12 0 0 1 12 12"/></g></svg>
+                        </a>
+                        <a href="#" class="twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="45" viewBox="0 0 448 512"><path fill="#000000" d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm297.1 84L257.3 234.6L379.4 396h-95.6L209 298.1L123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5l78.2-89.5zm-37.8 251.6L153.4 142.9h-28.3l171.8 224.7h26.3z"/></svg>
+                        </a>
+                        <a href="#" class="tiktok">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="50" viewBox="0 0 24 24"><path fill="#000000" d="M16 8.245V15.5a6.5 6.5 0 1 1-5-6.326v3.163a3.5 3.5 0 1 0 2 3.163V2h3a5 5 0 0 0 5 5v3a7.966 7.966 0 0 1-5-1.755"/></svg>
+                        </a>
+                        <a href="#" class="linkedin">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="50" viewBox="0 0 24 24"><path fill="#000000" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></svg>
+                        </a>
+                    </div>
+                    <div class="credit">
+                        Created by <span>Patricia Abad & Alex Iana</span> | All rights reserved
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="ordernow.js"></script>
+
+</body>
+</html>
