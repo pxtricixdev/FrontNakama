@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nakama</title>
-    <link rel="stylesheet" href="join.css">
+    <link rel="stylesheet" href="../css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-    <script src="script.js"></script>
+    
 
 </head>
 <body>
@@ -28,18 +28,23 @@
         </a>
             
         <nav class="navbar">
-            <a href="#Home">Home</a>
-            <a href="#AboutUs">About Us</a>
-            <a href="#JoinUs">Join Us</a>
-            <a href="#Contacto">Contact</a>
+            <a href="./home.html">Home</a>
+            <a href="./nosotros.html">About Us</a>
+            <a href="./join.html">Join Us</a>
+            <a href="./contact.html">Contact</a>
         </nav>
 
-        <nav class="navbar-movil">
-            <a href="#Home">Home</a>
-            <a href="#AboutUs">About Us</a>
-            <a href="#JoinUs">Join Us</a>
-            <a href="#Contacto">Contact</a>
-        </nav>
+        <ul class="menu-responsive">
+            <li><a class="menu-item" href="#Home">Home</a></li>
+            <li><a class="menu-item" href="#AboutUs">About Us</a></li>
+            <li><a class="menu-item" href="#JoinUs">Join Us</a></li>
+            <li><a class="menu-item" href="#Contacto">Contact</a></li>
+            <img src="icons/logo-icon.png" alt="">
+        </ul>
+        <button class="btn-hamburger">
+            <i class="menu-icon"><svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 12C9 12.5523 8.55228 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11C8.55228 11 9 11.4477 9 12Z" fill="#ee7722"></path> <path d="M13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12Z" fill="#ee7722"></path> <path d="M17 12C17 12.5523 16.5523 13 16 13C15.4477 13 15 12.5523 15 12C15 11.4477 15.4477 11 16 11C16.5523 11 17 11.4477 17 12Z" fill="#ee7722"></path> <path d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8" stroke="#ee7722" stroke-width="1.5" stroke-linecap="round"></path> </g></svg></i>
+            <i class="close-icon"><svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22ZM8.96965 8.96967C9.26254 8.67678 9.73742 8.67678 10.0303 8.96967L12 10.9394L13.9696 8.96969C14.2625 8.6768 14.7374 8.6768 15.0303 8.96969C15.3232 9.26258 15.3232 9.73746 15.0303 10.0303L13.0606 12L15.0303 13.9697C15.3232 14.2625 15.3232 14.7374 15.0303 15.0303C14.7374 15.3232 14.2625 15.3232 13.9696 15.0303L12 13.0607L10.0303 15.0303C9.73744 15.3232 9.26256 15.3232 8.96967 15.0303C8.67678 14.7374 8.67678 14.2626 8.96967 13.9697L10.9393 12L8.96965 10.0303C8.67676 9.73744 8.67676 9.26256 8.96965 8.96967Z" fill="#ee7722"></path> </g></svg></i>
+        </button>
         
         <div class="iconos">
             <div class = "iconos-derecha" id="user-login">
@@ -56,65 +61,55 @@
         </div>
     </header>
 
-    <div class="container">
-        <h1>WORK WITH US</h1>
-        <div class="oferta">
-            <p class="candidatura">
-                Discover Nakama! <br><br>
-                Have you heard of Nakama? <br><br>
-                We are a unique burger joint that brings the flavors of Asia directly to the heart of our city. Focused on quality and community, Nakama is not just a place to eat; it’s a place where cultures and culinary stories come together.<br>
-                
-                As part of our small but passionate team, we are looking to expand our digital capabilities. And that includes growing our team with a talented Web Application Developer!
-                <br><br>
-                    <p>
-                    🔎 What are we looking for?<br>
-                    <p class="puntos">  We are seeking a Web Application Developer with at least 1 year of experience who wants to join our team. We are looking for someone enthusiastic, eager to contribute, and evolve with us, but above all, we are looking for good people! 
-                    </p>
-                 <br><br>
-                    📋 Skills and minimum requirements:
-                    <ul class="puntos">
-                        <li>Experience in HTML, CSS, JavaScript, and modern frameworks like React or Angular.</li>
-                        <li>Familiarity with database management systems.</li>
-                        <li>Experience in designing and maintaining responsive websites.</li>
-                        <li>Basic knowledge of SEO and load speed optimization.</li>
-                        <li>Ability to work in a team and adapt to a dynamic and changing environment.</li>
-                    </ul>
-                    <br>
-                    😉 It would be positively valued:
-                    <ul class="puntos">
-                        <li>Experience in e-commerce projects or in the restaurant industry.</li>
-                        <li>Graphic design skills and use of tools such as Adobe Photoshop.</li>
-                        <li>Experience with APIs and web security practices.</li>
-                    </ul>
-                    <br>
-                    🌟 Extras we would love:
-                    <ul class="puntos">
-                        <li>Interest in gastronomy and culinary culture, especially Asian cuisine.</li>
-                        <li>Experience or interest in contributing to the tech community through blogs, talks, or tutorials.</li>
-                        <li>Additional languages, especially Japanese or Korean, given our focus on Asian culture.</li>
-                    </ul>
-                    <br>
-                    💼 What do we offer?
-                    <ul class="puntos">
-                        <li>Permanent contract in a welcoming and motivating work environment.</li>
-                        <li>Opportunities to influence the growth of our digital presence.</li>
-                        <li>Competitive salary and working conditions that value work-life balance.</li>
-                        <li>A flexible and collaborative work environment, where passion for food and technology unite.</li>
-                        <li>Continuous training opportunities to ensure your personal and professional development.</li>
-                    </ul>
-                    <br>
-                    At Nakama, we are committed to creating an environment that fosters companionship and innovation. <br> If you're ready to take on new challenges and want to be part of an exciting adventure in the world of gastronomy and technology, we are looking for you!
-                    <br><br>
-                    Join us at Nakama and help take our burger join to the next level digitally!
-                </div>
-            </p>
-            <div class="btn-order">
-                <a href="#Order">Inscribe</a>
-            </div>
+    <main class="main">
+        <div class="name-logo"></div>
+        <p class="texto-presentacion">Welcome to <b>Nakama</b>, where Western tradition meets the exotic flavors of the East!</p><br>
+        <p class="texto-presentacion">In our cozy establishment, we invite you to enjoy a unique gastronomic experience that blends the best of two worlds: the juiciness of a classic burger with the intense and diverse aromas of Asian cuisine.</p>
+        <div class="btn-order">
+            <a href="#Order">Order now</a>
+        </div>
+    </main>
+ 
+    <section class="central-section animate__animated animate__fadeInUp">
+        <div class="carta">
+            <button data-modal-target="#modal-menu" class="btn-menu" id="showMenu">Menu</button>
+        </div>
+        <div class="burger-mes">
+            <a href="#burger-mes">Burger of the month</a>
+        </div>
+    </section>
+    
+    <div class="modal-menu" id="modal-menu">
+        <div class="modal-content">
+            <button data-close-button class="close-button-modal">&times;</button>
         </div>
     </div>
+    
+    
+    
+    <div class="texto-presentacion texto-menu">
+        <p>Discover our delicious monthly selection of <b>Burgers, Starters, Milkshakes and Desserts</b> carefully crafted with the finest ingredients and unique flavors.</p><br>
+        <p>Don't miss out on our <b class="color">Burger of the Month</b> and let your palate be the judge!</p>
+    </div>
+    
+    <div id="overlay"></div>
 
-
+    <div class="slider">
+        <ul>
+            <li>
+                <img src="img/neon-burger.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/carousel1.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/carousel8.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/carousel7.jpg" alt="">
+            </li>
+        </ul>
+    </div>
     
     <footer>
         <div class="footer">
@@ -152,6 +147,7 @@
             </div>
         </div>
     </footer>
-    
+
+    <script src="script.js"></script>
 </body>
 </html>
