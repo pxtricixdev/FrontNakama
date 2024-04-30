@@ -21,16 +21,28 @@
 </head>
 <body>
     <header class="header">
-        <a href="index.html">
-            <img class="logo-icon" src="icons/logo-icon.png" alt="" width="100px">
+        <a class="logo-img" href="index.html">
+            <img class="logo-icon" src="../icons/logo-icon.png" alt="" width="100px">
         </a>
             
-         <nav class="navbar">
-            <a href="#Home">Home</a>
-            <a href="#AboutUs">About Us</a>
-            <a href="#JoinUs">Join Us</a>
-            <a href="#Contacto">Contact</a>
+        <nav class="navbar">
+            <a href="./home.html">Home</a>
+            <a href="./nosotros.html">About Us</a>
+            <a href="./join.html">Join Us</a>
+            <a href="./contact.html">Contact</a>
         </nav>
+
+        <ul class="menu-responsive">
+            <li><a class="menu-item" href="#Home">Home</a></li>
+            <li><a class="menu-item" href="#AboutUs">About Us</a></li>
+            <li><a class="menu-item" href="#JoinUs">Join Us</a></li>
+            <li><a class="menu-item" href="#Contacto">Contact</a></li>
+            <img src="../icons/logo-icon.png" alt="">
+        </ul>
+        <button class="btn-hamburger">
+            <i class="menu-icon"><svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 12C9 12.5523 8.55228 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11C8.55228 11 9 11.4477 9 12Z" fill="#ee7722"></path> <path d="M13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12Z" fill="#ee7722"></path> <path d="M17 12C17 12.5523 16.5523 13 16 13C15.4477 13 15 12.5523 15 12C15 11.4477 15.4477 11 16 11C16.5523 11 17 11.4477 17 12Z" fill="#ee7722"></path> <path d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8" stroke="#ee7722" stroke-width="1.5" stroke-linecap="round"></path> </g></svg></i>
+            <i class="close-icon"><svg width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22ZM8.96965 8.96967C9.26254 8.67678 9.73742 8.67678 10.0303 8.96967L12 10.9394L13.9696 8.96969C14.2625 8.6768 14.7374 8.6768 15.0303 8.96969C15.3232 9.26258 15.3232 9.73746 15.0303 10.0303L13.0606 12L15.0303 13.9697C15.3232 14.2625 15.3232 14.7374 15.0303 15.0303C14.7374 15.3232 14.2625 15.3232 13.9696 15.0303L12 13.0607L10.0303 15.0303C9.73744 15.3232 9.26256 15.3232 8.96967 15.0303C8.67678 14.7374 8.67678 14.2626 8.96967 13.9697L10.9393 12L8.96965 10.0303C8.67676 9.73744 8.67676 9.26256 8.96965 8.96967Z" fill="#ee7722"></path> </g></svg></i>
+        </button>
         
         <div class="iconos">
             <div class = "iconos-derecha" id="user-login">
@@ -39,13 +51,14 @@
                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                   </svg>
             </div>
-            <button class="btn-carrito" onclick="toggleCarrito()" id="carrito">
+            <div class = "iconos-derecha" id="carrito">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="#EE7722" class="bi bi-basket-fill" viewBox="0 0 16 16">
                     <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0z"/>
                 </svg>
-            </button>
+            </div> 
         </div>
     </header>
+
 
     <div class="burgers-section">
         <h1 id="Menu">Menu</h1>
@@ -95,7 +108,7 @@
                 <div class="burgers">
                     <div class="burger1">
                         <div class="burger-right">
-                            <img class="img-teriyaki" src="img/burgers/teriyaki-pine-removebg-preview.png" alt="">
+                            <img class="img-teriyaki" src="../imgOrderNow/burgers/teriyaki-pine-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2 class="nombre">Teriyaki</h2>
@@ -130,7 +143,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img class="img-katsu" src="img/burgers/katsudon-removebg-preview.png" alt="">
+                            <img class="img-katsu" src="../imgOrderNow/burgers/katsudon-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Chicken Katsu</h2>
@@ -165,7 +178,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img class="img-emmy" src="img/burgers/emmy-soul-removebg-preview.png" alt="">
+                            <img class="img-emmy" src="../imgOrderNow/burgers/emmy-soul-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Emmy</h2>
@@ -200,7 +213,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img class="img-fuji" src="img/burgers/fuji-removebg-preview.png" alt="">
+                            <img class="img-fuji" src="../imgOrderNow/burgers/fuji-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Fuji</h2>
@@ -235,7 +248,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img class="img-samurai" src="img/burgers/smash-removebg-preview.png" alt="">
+                            <img class="img-samurai" src="../imgOrderNow/burgers/smash-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Samurai</h2>
@@ -271,7 +284,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img class="img-tokyo" src="img/burgers/tokyo-removebg-preview.png" alt="">
+                            <img class="img-tokyo" src="../imgOrderNow/burgers/tokyo-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Tokyo</h2>
@@ -306,7 +319,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img class="img-kyoto" src="img/burgers/kyoto-removebg-preview.png" alt="">
+                            <img class="img-kyoto" src="../imgOrderNow/burgers/kyoto-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Kyoto</h2>
@@ -341,7 +354,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img class="img-nakama" src="img/burgers/nakama-removebg-preview.png" alt="">
+                            <img class="img-nakama" src="../imgOrderNow/burgers/nakama-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Nakama</h2>
@@ -376,7 +389,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img class="img-sakura" src="img/burgers/sakura-menu-removebg-preview.png" alt="">
+                            <img class="img-sakura" src="../imgOrderNow/burgers/sakura-menu-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Sakura</h2>
@@ -420,7 +433,7 @@
                 <div class="starters-grid">
                     <div class="burger1">
                         <div class="burger-right">
-                            <img src="img/starters/teriyaki-chicken-wings-1-removebg-preview.png" alt="">
+                            <img src="../imgOrderNow/starters/teriyaki-chicken-wings-1-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Teriyaki Wings</h2>
@@ -455,7 +468,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img src="img/starters/nachos-mexicanos-removebg-preview.png" alt="">
+                            <img src="../imgOrderNow/starters/nachos-mexicanos-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>"House" Nachos</h2>
@@ -490,7 +503,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img src="img/starters/ries_carta_menu_pamplona-removebg-preview.png" alt="">
+                            <img src="../imgOrderNow/starters/ries_carta_menu_pamplona-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Cheddar & Bacon Fries</h2>
@@ -525,7 +538,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img src="img/starters/takoyakis-removebg-preview.png" alt="">
+                            <img src="../imgOrderNow/starters/takoyakis-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Takoyakis</h2>
@@ -560,7 +573,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img src="img/starters/gyoza1-removebg-preview.png" alt="">
+                            <img src="../imgOrderNow/starters/gyoza1-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Gyozas</h2>
@@ -607,7 +620,7 @@
                 <div class="milkshakes-grid">
                     <div class="burger1">
                         <div class="burger-right">
-                            <img src="img/milkshakes/Group 9.png" alt="">
+                            <img src="../imgOrderNow/milkshakes/Group 9.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Lotus</h2>
@@ -642,7 +655,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img src="img/milkshakes/Group 9.png" alt="">
+                            <img src="../imgOrderNow/milkshakes/Group 9.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Filipinos</h2>
@@ -677,7 +690,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img src="img/milkshakes/Group 9.png" alt="">
+                            <img src="../imgOrderNow/milkshakes/Group 9.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Oreo</h2>
@@ -712,7 +725,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img src="img/milkshakes/Group 9.png" alt="">
+                            <img src="../imgOrderNow/milkshakes/Group 9.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Nutella</h2>
@@ -755,7 +768,7 @@
                 <div class="desserts-grid">
                     <div class="burger1">
                         <div class="burger-right">
-                            <img src="img/desserts/lotuscakegood-removebg-preview.png" alt="">
+                            <img src="../imgOrderNow/desserts/lotuscakegood-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Lotus Cake</h2>
@@ -790,7 +803,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img src="img/desserts/cheesecakegood-removebg-preview.png" alt="">
+                            <img src="../imgOrderNow/desserts/cheesecakegood-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Cheesecake</h2>
@@ -825,7 +838,7 @@
                     </div>
                     <div class="burger1">
                         <div class="burger-right">
-                            <img src="img/desserts/mochisgood-removebg-preview.png" alt="">
+                            <img src="../imgOrderNow/desserts/mochisgood-removebg-preview.png" alt="">
                         </div>
                         <div class="burger-left">
                             <h2>Mochis</h2>
@@ -887,7 +900,7 @@
         <div class="footer">
             <div class="logo-footer">
                 <a href="index.html">
-                    <img src="icons/logo-icon-name-black.png" width="200px" alt="">
+                    <img src="../icons/logo-icon-name-black.png" width="200px" alt="">
                 </a>
             </div>
             <div class="footer-central">
@@ -920,7 +933,8 @@
         </div>
     </footer>
 
-    <script src="ordernow.js"></script>
+    <script src="../js/ordernow.js"></script>
+    <script src="../js/home.js"></script>
 
 </body>
 </html>
