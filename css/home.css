@@ -357,7 +357,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
-    background: url(img/english-menu.png);
+    background: url(../imgHome/english-menu.png);
     background-repeat: no-repeat;
     background-size: cover;
     border: 2px solid var(--orange);
