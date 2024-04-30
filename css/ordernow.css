@@ -171,36 +171,9 @@ body {
     color: black;
 }
 
-.burgers-section {
-    max-width: 100%;
-    height: 270px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.burgers-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: url(../imgOrderNow/pexels-edwardeyer-1247755.jpg);
-    background-size: cover;
-    background-position: center 70%; 
-    opacity: 0.7; 
-    z-index: -1; 
-}
-
-.burgers-section h1 {
-    font-family: var(--fuente2);
-    color: #fff;
-    font-size: 40px;
-    text-transform: uppercase;
-    position: relative; 
-    z-index: 1; 
+.btn-carrito {
+    background: none;
+    border: none;
 }
 
 /*------------ navbar menu ---------*/
