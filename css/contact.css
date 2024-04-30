@@ -192,6 +192,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     display: grid;
     z-index: 1000;
+    margin-bottom: 75px;
 }
 
 /*Relleno izq*/

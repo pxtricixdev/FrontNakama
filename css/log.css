@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: url("./img/fondo.webp");
+    background-image: url("../img/fondo.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -43,7 +43,7 @@ body {
     color: #ee7722;
     cursor: pointer;
     text-decoration: none;
-    width: 200px;
+    width: 150px;
     margin-top: 10px;
 }
 
