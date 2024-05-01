@@ -271,7 +271,7 @@ body {
     padding: 30px;
     font-family: var(--fuente2);
     border-radius: 10px;
-    max-height: 850px;
+    max-height: 830px;
 }
 .formulario h3 {
     text-align: center;
@@ -360,10 +360,11 @@ body {
     border-radius: 10px;
     transition: 0.2s ease;
     border: #000 2px solid;
+    margin-top: 10px;
 }
 
 .formulario input[type=submit]:hover {
-    background-color: #ffb476;
+    background-color: #C9C9C9;
     color: var(--black);
     font-family: var(--fuente2);
     border: #000 2px solid;
@@ -387,6 +388,9 @@ body {
 .formulario .application {
     display: flex;
     flex-direction: column;
+}
+.formulario .agree a {
+    color: #000;
 }
 /*------------------ footer -------------------*/
 
