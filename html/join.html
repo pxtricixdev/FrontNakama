@@ -60,21 +60,23 @@
     </header>
 
     <div class="container">
-        <h1>WORK WITH US</h1>
+        <div class="oferta-banner">
+            <h1>WORK WITH US</h1>
+        </div>
         <div class="oferta">
-            <p class="candidatura">
-                Discover Nakama! <br><br>
-                Have you heard of Nakama? <br><br>
+                <h2>Discover Nakama! 🍔</h2> <br>
+           
+                <h3 class="texto-candidatura"><b>Have you heard of us?</b></h3><br>
                 We are a unique burger joint that brings the flavors of Asia directly to the heart of our city. Focused on quality and community, Nakama is not just a place to eat; it’s a place where cultures and culinary stories come together.<br>
                 
                 As part of our small but passionate team, we are looking to expand our digital capabilities. And that includes growing our team with a talented Web Application Developer!
                 <br><br>
                     <p>
-                    🔎 What are we looking for?<br>
-                    <p class="puntos">  We are seeking a Web Application Developer with at least 1 year of experience who wants to join our team. We are looking for someone enthusiastic, eager to contribute, and evolve with us, but above all, we are looking for good people! 
-                    </p>
-                 <br><br>
-                    📋 Skills and minimum requirements:
+                    <b>🔎 What are we looking for?<br></b>
+                    <p class="puntos webdev">  We are seeking a Web Application Developer with at least 1 year of experience who wants to join our team. We are looking for someone enthusiastic, eager to contribute, and evolve with us, but above all, we are looking for good people! 
+                    </p>  
+                 <br>
+                    <b>📋 Skills and minimum requirements:</b>
                     <ul class="puntos">
                         <li>Experience in HTML, CSS, JavaScript, and modern frameworks like React or Angular.</li>
                         <li>Familiarity with database management systems.</li>
@@ -83,21 +85,21 @@
                         <li>Ability to work in a team and adapt to a dynamic and changing environment.</li>
                     </ul>
                     <br>
-                    😉 It would be positively valued:
+                    <b>😉 It would be positively valued:</b>
                     <ul class="puntos">
                         <li>Experience in e-commerce projects or in the restaurant industry.</li>
                         <li>Graphic design skills and use of tools such as Adobe Photoshop.</li>
                         <li>Experience with APIs and web security practices.</li>
                     </ul>
                     <br>
-                    🌟 Extras we would love:
+                    <b>🌟 Extras we would love:</b>
                     <ul class="puntos">
                         <li>Interest in gastronomy and culinary culture, especially Asian cuisine.</li>
                         <li>Experience or interest in contributing to the tech community through blogs, talks, or tutorials.</li>
                         <li>Additional languages, especially Japanese or Korean, given our focus on Asian culture.</li>
                     </ul>
                     <br>
-                    💼 What do we offer?
+                    <b>💼 What do we offer?</b>
                     <ul class="puntos">
                         <li>Permanent contract in a welcoming and motivating work environment.</li>
                         <li>Opportunities to influence the growth of our digital presence.</li>
@@ -109,10 +111,91 @@
                     At Nakama, we are committed to creating an environment that fosters companionship and innovation. <br> If you're ready to take on new challenges and want to be part of an exciting adventure in the world of gastronomy and technology, we are looking for you!
                     <br><br>
                     Join us at Nakama and help take our burger join to the next level digitally!
-                </div>
-            </p>
-            <div class="btn-order">
-                <a href="#Order">Inscribe</a>
+            </div>
+            <div class="formulario">
+                <form action="#" method="post">
+                    <fieldset>
+                        <h3>Job Application Form</h3>
+                        <label>
+                          <p>Application for *</p>
+                          <select name="application-for" required>
+                            <option>Web Developer</option>
+                          </select>
+                        </label>
+                      </fieldset>
+                      <fieldset>
+                        <legend>Personal data</legend>
+                            <div class="input-group">
+                                <label>
+                                    First Name *
+                                    <input type="text" name="first-name" required>
+                                </label>
+                                <label>
+                                    Last Name *
+                                    <input type="text" name="last-name" required>
+                                </label>
+                            </div>
+                            <div class="input-group">
+                                <label>
+                                    Phone *
+                                    <input type="tel" name="phone" required>
+                                </label>
+                                <label>
+                                    Email *
+                                    <input type="email" name="email" required>
+                                </label>
+                            </div>
+                            <div class="languajes">
+                                <p>What languages do you speak?</p>
+                                <label>
+                                    <input type="checkbox" name="language[]" value="English">
+                                    English
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="language[]" value="Spanish">
+                                    Spanish
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="language[]" value="Spanish">
+                                    Japanese
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="language[]" value="Spanish">
+                                    Korean
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="language[]" value="Spanish">
+                                    Others
+                                </label>
+                            </div>
+                      </fieldset>
+                      <fieldset>
+                        <legend>Application documents</legend>
+                        <div class="application">
+                            <label>
+                                <p>Application letter</p>
+                                <textarea name="application-letter" id="" cols="30" rows="10"></textarea>
+                            </label>
+                          
+                          <br>
+                          <label>
+                            CV
+                            <input type="file" name="CV" accept=".pdf">
+                          </label>
+                        </div>
+                      </fieldset>
+                      <fieldset>
+                        <div class="agree">
+                          <label>
+                            <input type="checkbox" name="data processing" value="yes" required>
+                            <span>I agree to the processing of my data for the handling of my request by <a href="#" target="_blank">Nakama</a>. *</span>
+                          </label>
+                        </div>
+                      </fieldset>
+                      <div class="btn-submit">
+                        <input type="submit" value="Submit">
+                      </div>
+                </form>
             </div>
         </div>
     </div>
