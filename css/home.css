@@ -131,17 +131,32 @@ body {
     padding: 10px;
     height: 120px;
 }
-
-.header .navbar a{
-    margin: 0 1rem;
-    font-size: 1rem;
+.header .navbar a {
+    margin: 0 16px;
+    font-size: 16px;
     color: #fff;
     text-decoration: none;
     font-family: var(--fuente2);
+    position: relative;
+    padding-bottom: 5px;
 }
+
+.header .navbar a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; 
+    height: 1.5px; 
+    background-color: var(--orange); 
+    transition: width 0.3s ease; 
+}
+
+.header .navbar a:hover::before {
+    width: 100%; 
+}
+
 .header .navbar a:hover {
-    border-bottom: 0.1rem solid;
-    padding-bottom: 0.5rem;
     color: var(--orange);
 }
 
@@ -531,7 +546,7 @@ body {
     font-weight: 700;
 }
 
-.footer .social-credit a {
+.footer .social-credit .enlace {
     text-decoration: none;
     color: #000;
     font-weight: 900;
@@ -545,12 +560,12 @@ body {
     padding: 5px 0;
 }
 
-.footer .social-credit a:hover {
+.footer .social-credit .enlace:hover {
     color: #C9C9C9;
 }
 
 .politicas{
     text-decoration: none;
     color: #fff;
-    text-decoration: underline;
+    font-weight: 300;
 }

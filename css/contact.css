@@ -531,7 +531,7 @@ textarea.input{
     font-weight: 700;
 }
 
-.footer .social-credit a {
+.footer .social-credit .enlace {
     text-decoration: none;
     color: #000;
     font-weight: 900;
@@ -545,12 +545,12 @@ textarea.input{
     padding: 5px 0;
 }
 
-.footer .social-credit a:hover {
+.footer .social-credit .enlace:hover {
     color: #C9C9C9;
 }
 
 .politicas{
     text-decoration: none;
     color: #fff;
-    text-decoration: underline;
+    font-weight: 300;
 }
