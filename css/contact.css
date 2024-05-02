@@ -445,6 +445,121 @@ textarea.input{
     align-items: end;
 }
 
+
+@media only screen and (max-width: 768px) {
+    .texto-contact .visit-texto-foto {
+        display: flex;
+        flex-direction: row-reverse;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 50px;
+        font-size: 18px;
+        flex-direction: column-reverse  ;
+        
+    }
+
+    .texto-contact {
+        color: #fff;
+        font-family: var(--fuente2);
+        text-align: center;
+        padding-top: 50px;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    .texto-contact h3 {
+        margin-bottom: 40px;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 70px;
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+
+    iframe{
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width: 425px){
+
+    .texto-contact .visit-texto-foto {
+        display: flex;
+        flex-direction: row-reverse;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 50px;
+        font-size: 18px;
+        flex-direction: column-reverse  ;
+        
+    }
+
+    .item{
+        background-color: #EE7722;
+    }
+
+    .texto-contact {
+        color: #fff;
+        font-family: var(--fuente2);
+        text-align: center;
+        padding-top: 50px;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    form {
+        padding: 0 50px;
+        height: 100%;
+        width: 140%;
+        overflow: hidden;
+    }
+
+    .texto-contact h3 {
+        margin-bottom: 40px;
+    }
+
+    .texto-contact video {
+        max-width: 470px;
+        max-height: 200px;
+        border-radius: 30px;
+        border: 3px solid #EE7722;
+        opacity: 0.9;
+    }
+    .contact{
+        display: none;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 70px;
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+
+    .location p{
+        font-size: 30px;
+    }
+
+    .chincheta svg{
+        display: none;
+    }
+
+    iframe{ 
+        width: 300px;
+    }
+    
+}
+
 /*------------------ footer -------------------*/
 
 @media only screen and (max-width: 768px) {

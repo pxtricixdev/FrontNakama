@@ -284,6 +284,137 @@ body {
 }
 
 
+@media only screen and (max-width: 1024px){
+
+    .sakura-burger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }   
+    
+    .sakura-burger p {
+        width: 80%;
+        text-align: center;
+        color: #fff;
+        font-family: var(--fuente2);
+        line-height: 25px;
+        font-size: 20px;
+    }
+
+    .sakura-burger img {
+        opacity: 0.8;
+        filter: drop-shadow(0px 2px 30px rgba(255, 155, 42, 0.2));
+        transition: 0.3s ease-in-out;
+        width: 410px;
+        padding-right: 50px;
+    }
+
+    .btn-try {
+        background-color: #EE7722;
+        padding: 15px 25px;
+        border-radius: 10px;
+        transition: ease .3s;
+        margin-top: 70px;
+        margin-bottom: 100px;
+        border: 3px solid var(--orange);
+    }   
+
+    .text-burger-month {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--fuente2);
+        color: #fff;
+        text-align: center;
+        gap: 100px;
+        flex-direction: column;
+    }
+
+    .text-burger-month-parrafo {
+        width: 65%;
+    }   
+}   
+
+@media only screen and (max-width: 768px) {
+    .sakura-burger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }   
+    
+    .sakura-burger p {
+        width: 80%;
+        text-align: center;
+        color: #fff;
+        font-family: var(--fuente2);
+        line-height: 25px;
+        font-size: 20px;
+    }
+
+    .sakura-burger img {
+        opacity: 0.8;
+        filter: drop-shadow(0px 2px 30px rgba(255, 155, 42, 0.2));
+        transition: 0.3s ease-in-out;
+        width: 410px;
+        padding-right: 50px;
+    }
+
+    .btn-try {
+        background-color: #EE7722;
+        padding: 15px 25px;
+        border-radius: 10px;
+        transition: ease .3s;
+        margin-top: 70px;
+        margin-bottom: 100px;
+        border: 3px solid var(--orange);
+    }   
+
+    .text-burger-month {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--fuente2);
+        color: #fff;
+        text-align: center;
+        gap: 100px;
+        flex-direction: column;
+    }
+
+    .text-burger-month-parrafo {
+        width: 65%;
+    }   
+}
+
+@media only screen and (max-width: 425px){
+
+    .burger-month h1 {
+        color: var(--orange);
+        font-family: var(--fuente1);
+        padding-bottom: 30px;
+        font-weight: 700;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .text-burger-month video {
+        /*mask-image: radial-gradient(#0a0a0a 30%, transparent);*/
+        max-width: 650px;
+        max-height: 200px;
+        border-radius: 30px;
+        border: 3px solid #EE7722;
+    }
+
+    
+    .text-burger-month-parrafo {
+        width: 95%;
+    }   
+
+}
+
+
+
 /*------------------ footer -------------------*/
 
 @media only screen and (max-width: 768px) {

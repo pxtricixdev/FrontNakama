@@ -208,6 +208,12 @@ body {
     height: 45%;
 }
 
+h2{
+    text-align: center;
+    font-family: "Darumadrop One", sans-serif;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}   
 
 /*Llama*/
 .llama {
