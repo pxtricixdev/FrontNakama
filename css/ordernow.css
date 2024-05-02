@@ -256,22 +256,42 @@ body {
 
 /*---------------- main --------------------*/
 /*-------- burgers -----------*/
+.burgers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: -10px;
+}
+.starters-grid, .milkshakes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.desserts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    margin-bottom: 10px;
+}
+
 @media only screen and (max-width: 1024px) {
     .burgers {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        grid-column-gap: -10px;
+        gap: 10px;
     }
     .starters-grid, .milkshakes-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
     }
     .desserts-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(1, 1fr);
+        gap: 10px;
         margin-bottom: 10px;
     }
 }
@@ -298,36 +318,36 @@ body {
         gap: 10px;
         margin: 0 10px;
     }
-
 }
 @media only screen and (max-width: 425px) {
-    .navbar-menu {
+    .burgers {
         display: flex;
         flex-direction: column;
     }
-}
-
-
-@media only screen and (min-width:769px) {
-    .burgers {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-    }
 
     .starters-grid, .milkshakes-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        display: flex;
+        flex-direction: column;
     }
     .desserts-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        display: flex;
+        flex-direction: column;
     }
-
+    .navbar-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    .navbar-menu a {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+    }
+    .burger-desription {
+        font-size: 13px;
+    }
 }
-
 
 .grid-container {
     max-width: 1500px; 
@@ -411,10 +431,10 @@ body {
 }
 
 .burger-left .burger-desription {
-    font-size: 14px;
     padding: 12px 0;
     overflow: hidden; 
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
+    font-size: 14px;
 }
 
 .burger-left .price {
