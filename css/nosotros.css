@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
-
 :root {
     --grey: #C9C9C9;
     --orange: #EE7722;
@@ -27,7 +24,7 @@ body {
     background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)), #0a0a0a;
 }
 
-/*----- header -----*/
+/*------------ header --------------*/
 
 @media only screen and (max-width: 575px) {
     .header {
@@ -135,17 +132,32 @@ body {
     padding: 10px;
     height: 120px;
 }
-
-.header .navbar a{
-    margin: 0 1rem;
-    font-size: 1rem;
+.header .navbar a {
+    margin: 0 16px;
+    font-size: 16px;
     color: #fff;
     text-decoration: none;
     font-family: var(--fuente2);
+    position: relative;
+    padding-bottom: 5px;
 }
+
+.header .navbar a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; 
+    height: 1.5px; 
+    background-color: var(--orange); 
+    transition: width 0.3s ease; 
+}
+
+.header .navbar a:hover::before {
+    width: 100%; 
+}
+
 .header .navbar a:hover {
-    border-bottom: 0.1rem solid;
-    padding-bottom: 0.5rem;
     color: var(--orange);
 }
 
@@ -172,42 +184,7 @@ body {
     color: black;
 }
 
-/* INFO Hisotria*/
-.container1, .container2, .container3 {
-    position: absolute;
-    top: 39%;
-    left: 77%;
-    width: 40%;
-    height: 47%;
-    transform: translate(-50%, -50%);
-    background-color: #ee7722;
-    opacity: 0.9;
-    z-index: 1; 
-    font-size: 17px;
-}
-
-.historia, .caracterizacion, .planes{
-    text-align: justify;
-    margin-left: 40px; margin-right: 40px;
-    font-family: "Unbounded", sans-serif;
-}
-
-/*INFO Hablando de la comdia*/
-.container2 {
-    top: 107%;
-    left: 25%;
-    width: 40%;
-    height: 50%;
-}
-
-/*INFO Hablamso de planes a futuro*/
-.container3 {
-    top: 175%;
-    left: 77%;
-    width: 40%;
-    height: 45%;
-}
-
+/*------------------ main -------------------*/
 h2{
     text-align: center;
     font-family: "Darumadrop One", sans-serif;
@@ -215,55 +192,107 @@ h2{
     margin-top: 10px;
 }   
 
-/*Llama*/
-.llama {
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    width: 40%;
-    height: 50%;
-    z-index: 1;  
+.texto{
+    text-align: justify;
+    margin-left: 40px; margin-right: 40px; margin-bottom: 25px;
+    font-family: "Unbounded", sans-serif;
 }
 
-.llama img {
-    width: 15%;
-    height: 25%;
-    object-fit: cover; 
+.our{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+/*primer div*/
+
+.container1{
+    margin-top: 100px;
+    max-width: 1400px;
+    background-color: #ee7722;
+    opacity: 0.9;
+    z-index: 1; 
+    font-size: 17px;
 }
 
 /*Tokyo*/
 .tokyo {
-    position: absolute;
-    top: 58%;
-    left: 35%;
-    width: 40%;
-    height: 50%;
-    z-index: 1;  
+    display: flex;
+    align-items: center;
+    background: url(../imgNosotros/Urban.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 75%;
+    height: 75%;
+    margin-left: 75px;
+    margin-top: 25px;
+   
 }
 
-.tokyo img {
-    width: 100%;
-    height: 50%;
-    object-fit: cover; 
+/*segundo div*/
+
+.container2{
+    margin-left: auto;
+    max-width: 1400px;
+    background-color: #ee7722;
+    opacity: 0.9;
+    z-index: 1; 
+    font-size: 17px;
+    margin-top: 100px;
 }
 
-/*Imagen banner*/
-.marca {
-    position: absolute;
-    top: 129%;
-    left: 27%;
-    width: 40%;
-    height: 50%;
-    z-index: 1;  
+
+.parrilla {
+    display: flex;
+    align-items: center;
+    background: url(../imgNosotros/parrilla.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 75%;
+    height: 75%;
+    margin-left: 75px;
+    margin-top: 25px;
 }
 
-.marca img {
-    width: 100%;
-    height: 50%;
-    object-fit: cover; 
+/*tercer div*/
+
+.container3{
+    max-width: 1400px;
+    background-color: #ee7722;
+    opacity: 0.9;
+    z-index: 1; 
+    font-size: 17px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
-/*Footer*/
+.plan{
+    display: flex;
+    align-items: center;
+    background: url(../imgNosotros/plan.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 75%;
+    height: 75%;
+    margin-left: 75px;
+    margin-top: 25px;
+}
+
+
+@media only screen and (max-width: 425px){
+
+    .tokyo, .plan, .parrilla{
+        display: none;
+    }
+
+    .our{
+        display: flex;
+    }
+}
+
+
+
+
+/*------------------ footer -------------------*/
 
 @media only screen and (max-width: 768px) {
     .footer {
@@ -311,6 +340,8 @@ h2{
     }
 }
 
+
+
 .footer .info-footer {
     font-family: var(--fuente2);
     font-weight: 700;
@@ -349,7 +380,7 @@ h2{
     font-weight: 700;
 }
 
-.footer .social-credit a {
+.footer .social-credit .enlace {
     text-decoration: none;
     color: #000;
     font-weight: 900;
@@ -363,12 +394,12 @@ h2{
     padding: 5px 0;
 }
 
-.footer .social-credit a:hover {
+.footer .social-credit .enlace:hover {
     color: #C9C9C9;
 }
 
 .politicas{
     text-decoration: none;
     color: #fff;
-    text-decoration: underline;
+    font-weight: 300;
 }
