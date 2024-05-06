@@ -1,5 +1,5 @@
 
-// Funcion para abrir el carrito y que se muevan los productos a la izquierda
+/* Funcion para abrir el carrito y que se muevan los productos a la izquierda
 function toggleCarrito() {
     let carrito = document.querySelector('.carrito')
     carrito.classList.toggle('mostrar-carrito')
@@ -22,7 +22,7 @@ function toggleCarrito() {
             carrito.classList.add('mostrar-carrito');
         }
     }
-}
+}*/
 
 // Variables
 const addProducts = document.querySelectorAll('.add-cart');
