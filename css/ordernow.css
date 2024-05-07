@@ -252,7 +252,41 @@ body {
     background-color: var(--orange);
 }
 
+/*-------- tabla carrito -------*/
+.tabla-carrito {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-family: var(--fuente2);
+    margin-top: 40px;
+}
 
+.tabla {
+    width:45%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    color: white;
+    margin-bottom: 8px;
+    empty-cells: hide;
+    border-radius: 10px;
+    background: #ee7722;
+}
+
+.titulo-tabla {
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.tabla-carrito th, td, tr {
+    border: 2px solid var(--black);
+    padding: 14px;
+    font-size: 14px;
+}
+
+.tabla-carrito td {
+    text-align: center;
+}
 
 /*---------------- main --------------------*/
 /*-------- burgers -----------*/
@@ -362,7 +396,7 @@ body {
 
 .burger1 {
     max-width: 400px;
-    max-height: 220px;
+    max-height: 235px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -410,11 +444,9 @@ body {
 }
 
 .burger-left .cantidad {
+    margin-top: 8px;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 10px;
-    text-align: center;
+    justify-content: start;
     align-items: center;
 }
 .burger-left .cantidad .cantidad-numero {
@@ -433,7 +465,12 @@ body {
 .add-cart {
     background: none;
     outline: none;
+    border-radius: 17px;
+    border: 0;
+    padding: 3px;
+    cursor: pointer;
 }
+
 
 .burger-left .burger-desription {
     padding: 12px 0;
@@ -444,6 +481,9 @@ body {
 
 .burger-left .price {
     color: var(--grey);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .burger-left h2 {
