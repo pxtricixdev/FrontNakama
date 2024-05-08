@@ -18,3 +18,4 @@ function showTable(table) {
         document.getElementById('titlePedidos').style.display = 'flex'
     }
 }
+        
