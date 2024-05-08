@@ -1,12 +1,20 @@
 function showTable(table) {
-    var allTables = document.querySelectorAll('.tabla');
-    allTables.forEach(t => t.style.display = 'none'); // Ocultamos todas las tablas primero
+    let allTables = document.querySelectorAll('.tabla');
+    let allTitles = document.querySelectorAll('.titulo')
+    allTitles.forEach(t => t.style.display = 'none');
+    allTables.forEach(t => t.style.display = 'none'); 
 
-    if (table === 'usuarios') {
-        document.getElementById('tablaUsuarios').style.display = 'table';
-    } else if (table === 'hamburguesas') {
-        document.getElementById('tablaHamburguesas').style.display = 'table';
+    if (table === 'staff') {
+        document.getElementById('tablaStaff').style.display = 'table';
+        document.getElementById('titleStaff').style.display = 'flex';
+    } else if (table === 'productos') {
+        document.getElementById('tablaProductos').style.display = 'table';
+        document.getElementById('titleProductos').style.display = 'flex'
     } else if (table === 'empleados') {
         document.getElementById('tablaEmpleados').style.display = 'table';
+        document.getElementById('titleEmpleados').style.display = 'flex'
+    } else if (table === 'pedidos') {
+        document.getElementById('tablaPedidos').style.display = 'table';
+        document.getElementById('titlePedidos').style.display = 'flex'
     }
 }
