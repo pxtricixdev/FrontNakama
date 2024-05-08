@@ -252,44 +252,7 @@ body {
     background-color: var(--orange);
 }
 
-/*-------- tabla carrito -------*/
-.tabla-carrito {
-    display: flex;
-    justify-content: center;
-    color: #fff;
-    font-family: var(--fuente2);
-    margin-top: 40px;
-}
-
-.tabla {
-    width:45%;
-    table-layout: fixed;
-    border-collapse: collapse;
-    color: white;
-    margin-bottom: 8px;
-    empty-cells: hide;
-    border-radius: 10px;
-    background: #ee7722;
-}
-
-.titulo-tabla {
-    font-size: 25px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.tabla-carrito th, td, tr {
-    border: 2px solid var(--black);
-    padding: 14px;
-    font-size: 14px;
-}
-
-.tabla-carrito td {
-    text-align: center;
-}
-
 /* -----carrito------ */
-
 .modal-carrito {
     height: 100vh;
     width: 350px;
@@ -369,6 +332,10 @@ body {
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 1px solid #bcbcbc6d;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }
 
 .list-group p {
@@ -426,6 +393,18 @@ body {
 .carrito-footer:hover {
     color: var(--orange);
 }
+
+.modal-carrito .list-group button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.modal-carrito .list-group img {
+    width: 20px;
+    height: 20px;
+}
+
+
 
 /*---------------- main --------------------*/
 /*-------- burgers -----------*/
@@ -606,10 +585,14 @@ body {
     outline: none;
     border-radius: 17px;
     border: 0;
-    padding: 3px;
+    padding: 4px 6px;
     cursor: pointer;
 }
 
+.add-cart img {
+    width: 30px;
+    height: 30px;
+}
 
 .burger-left .burger-desription {
     padding: 12px 0;

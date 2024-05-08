@@ -30,6 +30,7 @@ function closeModal(modal) {
     overlay.classList.remove('active');
 }
 
+/*----- funcion carrito -----*/
 // Variables
 const addProducts = document.querySelectorAll('.add-cart');
 const cartList = document.getElementById('elementos');
@@ -43,8 +44,11 @@ addProducts.forEach(product => {
 // Añadir al carrito
 function addToCart(event) {
     const button = event.target;
+    console.log(button)
     const item = button.parentElement.parentElement.parentElement;
+    console.log(item)
     const itemName = item.querySelector('h2').innerText;
+    console.log(itemName)
     const itemPrice = parseFloat(item.querySelector('.price').innerText.replace('$', ''));
 
     const cartItem = document.createElement('p');
@@ -66,3 +70,4 @@ function clearCart() {
     total = 0;
     totalDisplay.innerText = `$${total.toFixed(2)}`;
 }
+
