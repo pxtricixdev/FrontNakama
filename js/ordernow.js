@@ -35,6 +35,9 @@ function closeModal(modal) {
 const addProducts = document.querySelectorAll('.add-cart');
 const cartList = document.getElementById('elementos');
 const totalDisplay = document.getElementById('total');
+const restProduct = document.getElementById('less')
+const addProduct = document.getElementById('plus')
+let numberProduct = document.getElementById('cant')
 let total = 0;
 
 addProducts.forEach(product => {
@@ -44,16 +47,14 @@ addProducts.forEach(product => {
 // Añadir al carrito
 function addToCart(event) {
     const button = event.target;
-    console.log(button)
     const item = button.parentElement.parentElement.parentElement;
-    console.log(item)
     const itemName = item.querySelector('h2').innerText;
-    console.log(itemName)
     const itemPrice = parseFloat(item.querySelector('.price').innerText.replace('$', ''));
 
     const cartItem = document.createElement('p');
     cartItem.innerText = `${itemName} - ${itemPrice.toFixed(2)}$`;
     cartList.appendChild(cartItem);
+    
 
     total += itemPrice;
     totalDisplay.innerText = `${total.toFixed(2)}`;

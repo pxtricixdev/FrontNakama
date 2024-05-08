@@ -334,6 +334,13 @@ body {
     border-bottom: 1px solid #bcbcbc6d;
 }
 
+.list-group .cantidad {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+}
+
 .list-group p {
     margin-bottom: 10px;
     font-size: 15px;
@@ -395,10 +402,13 @@ body {
     background: none;
     cursor: pointer;
 }
-.modal-carrito .list-group img {
+.modal-carrito .list-group .less-btn img {
     width: 20px;
-    height: 20px;
 }
+.modal-carrito .list-group .add-btn img {
+    width: 24px;
+ }
+
 
 
 
@@ -715,7 +725,7 @@ body {
     font-weight: 700;
 }
 
-.footer .social-credit a {
+.footer .social-credit .enlace {
     text-decoration: none;
     color: #000;
     font-weight: 900;
@@ -729,12 +739,12 @@ body {
     padding: 5px 0;
 }
 
-.footer .social-credit a:hover {
+.footer .social-credit .enlace:hover {
     color: #C9C9C9;
 }
 
 .politicas{
     text-decoration: none;
     color: #fff;
-    text-decoration: underline;
+    font-weight: 300;
 }
