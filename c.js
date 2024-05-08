@@ -16,6 +16,13 @@ function showTable(table) {
     } else if (table === 'pedidos') {
         document.getElementById('tablaPedidos').style.display = 'table';
         document.getElementById('titlePedidos').style.display = 'flex'
+    } else if (table === 'convenio') {
+        document.getElementById('tablaConvenio').style.display = 'table';
+        document.getElementById('titleConvenio').style.display = 'flex'
+    } else if (table === 'ora') {
+        document.getElementById('tablaOra').style.display = 'table';
+        document.getElementById('titleOra').style.display = 'flex'
     }
+    
 }
-        
+
