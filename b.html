@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tablas Dinámicas</title>
+    <link rel="stylesheet" href="a.css">
+</head>
+<body>
+    <div id="menu">
+        <button onclick="showTable('usuarios')">Usuarios</button>
+        <button onclick="showTable('hamburguesas')">Hamburguesas</button>
+        <button onclick="showTable('empleados')">Empleados</button>
+    </div>
+    <div id="tablas">
+        <table id="tablaUsuarios" class="tabla">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Alice</td>
+                <td>alice@example.com</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Bob</td>
+                <td>bob@example.com</td>
+            </tr>
+        </table>
+        <table id="tablaHamburguesas" class="tabla" style="display: none;">
+            <tr>
+                <th>ID</th>
+                <th>Hamburguesa</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Clásica</td>
+                <td>$5</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Especial</td>
+                <td>$7</td>
+            </tr>
+        </table>
+
+        <table id="tablaEmpleados" class="tabla" style="display: none;">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Alex</td>
+                <td>Iana</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Patri</td>
+                <td>Abad</td>
+            </tr>
+        </table>
+    </div>
+    <script src="c.js"></script>
+</body>
+</html>

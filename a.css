@@ -1,0 +1,29 @@
+#menu {
+    float: left;
+    width: 150px;
+    height: 100vh;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+#tablas {
+    margin-left: 170px;
+}
+
+.tabla {
+    width: 70%;
+    border-collapse: collapse;
+}
+
+.tabla, .tabla th, .tabla td {
+    border: 1px solid black;
+}
+
+.tabla th, .tabla td {
+    padding: 8px;
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
