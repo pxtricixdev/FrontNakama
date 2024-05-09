@@ -122,6 +122,7 @@ body {
     .menu-responsive, .btn-hamburger {
         display: none;
     }
+    
 }
 
 .header {
@@ -289,6 +290,7 @@ body {
 }
 .modal-carrito.active {
     right: 0;
+    overflow-y: scroll;
 }
 .modal-carrito .close-button-modal {
     position: absolute; 
@@ -339,6 +341,7 @@ body {
     align-items: center;
     gap: 10px;
     color: #fff;
+    margin-top: 6px;
 }
 
 .list-group p {
@@ -375,6 +378,7 @@ body {
 }
 .carrito-next {
     display: flex;
+    padding-bottom: 30px;
 }
 
 .carrito-footer {
@@ -402,16 +406,6 @@ body {
     background: none;
     cursor: pointer;
 }
-.modal-carrito .list-group .less-btn img {
-    width: 20px;
-}
-.modal-carrito .list-group .add-btn img {
-    width: 24px;
- }
-
-
-
-
 /*---------------- main --------------------*/
 /*-------- burgers -----------*/
 .burgers {
