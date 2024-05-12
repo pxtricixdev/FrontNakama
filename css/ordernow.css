@@ -256,10 +256,10 @@ body {
 /* -----carrito------ */
 .modal-carrito {
     height: 100vh;
-    width: 350px;
+    width: 426px;
     position: fixed;
     top: 0; 
-    right: -350px;
+    right: -426px;
     transition: 100ms ease-in-out;
     background-color: var(--orange);
     z-index: 999;
@@ -269,7 +269,7 @@ body {
 .modal-content-carrito {
     display: flex;
     justify-content: space-between;
-    font-size: 20px;
+    font-size: 30px;
     align-items: center;
     margin: 20px;
     font-weight: 700;
@@ -291,6 +291,7 @@ body {
 .modal-carrito.active {
     right: 0;
     overflow-y: scroll;
+    max-width: 100%;
 }
 .modal-carrito .close-button-modal {
     position: absolute; 

@@ -67,8 +67,8 @@ function addToCart(event) {
         const cartItem = document.createElement('p');
         cartItem.classList.add('cart-item');
         cartItem.innerHTML = `
-        <span class="cart-item-name">${itemName}</span> - 
-            <span class="cart-item-price">$${itemPrice.toFixed(2)}</span>  
+        <span class="cart-item-name" style="font-size:18px">${itemName}</span> - 
+            <span class="cart-item-price" style="font-size:18px">$${itemPrice.toFixed(2)}</span>  
             <div class="cantidad">
                 <button class="less-btn" style="background-color: #000; border-radius: 15px; padding: 5px 10px; color: #fff">-</button>
                 <span class="quantity" style="color:#fff">1</span>
