@@ -337,7 +337,7 @@ body {
     border-bottom: 1px solid #bcbcbc6d;
 }
 
-.list-group .cantidad {
+.list-group .alergenos {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -514,8 +514,8 @@ body {
 }
 
 .burger1 {
-    max-width: 400px;
-    max-height: 235px;
+    max-width: 425px;
+    max-height: 260px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -562,22 +562,22 @@ body {
     overflow: hidden;
 }
 
-.burger-left .cantidad {
+.burger-left .alergenos {
     margin-top: 8px;
     display: flex;
     justify-content: start;
     align-items: center;
 }
-.burger-left .cantidad .cantidad-numero {
+.burger-left .alergenos .alergenos-numero {
     color: var(--grey);
 }
 
-.burger-left .cantidad button {
+.burger-left .alergenos button {
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
-.burger-left .cantidad .add-cart {
+.burger-left .alergenos .add-cart {
     margin-left: 10px;
 }
 
@@ -589,6 +589,7 @@ body {
     padding: 4px 6px;
     cursor: pointer;
 }
+
 
 .add-cart img {
     width: 30px;
