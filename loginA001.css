@@ -25,12 +25,8 @@ body {
     background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)), #0a0a0a;
 }
 
-/*/letra satff*/
-h1{
-    text-align: center;
-    color: #fff;
-    font-size: 35px;
-    margin-bottom: 50px;
+/*letras*/
+.titulo{
     font-family: var(--fuente1);
 }
 
@@ -49,15 +45,11 @@ a{
     text-decoration: none;
     font-family: var(--fuente2);
     line-height: 25px;
-
 }
-
 
 .color {
     color: #EE7722;
 }
-
-
 
 
 /*/*/
@@ -66,7 +58,6 @@ a{
     min-width: 300px;
     height: 85vh;
     background: #ee7722;
-    padding-left: 20px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -78,32 +69,30 @@ a{
 
 .separaciones{
     padding-left: 290px;
-
 }
-
 
 
 #tablas {
     margin-left: 170px;
-    color: white;
+    
 }
 
-
-.tabla {
-    width: 70%;
+.tabla {    
+    width: 90%;
     border-collapse: collapse;
-    color: white;
+   
 }
-
 .tabla, .tabla th, .tabla td {
    /* border: 1px solid #EE7722;*/  
     color: white;
+    font-family: var(--fuente2);
 }
 
 .tabla th, .tabla td {
-    padding: 8px;
+    padding: 1px;
     text-align: left;
     color: white;
+    font-family: var(--fuente2);
 }
 
 .hidden {
@@ -140,7 +129,7 @@ a{
     display: flex;
     gap: 50px;
     flex-direction: column;
-    margin: 80px 0;
+    margin: 100px 0;
 }
 
 
@@ -152,7 +141,6 @@ a{
     margin-left: 10px;  
 }
 
-
 .titulo {
   display: block; 
   width: 100%; 
@@ -163,65 +151,19 @@ a{
   
 }
 
-.contenido {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 1.5rem 0; 
-    border-bottom: 0.5px solid rgba(197, 197, 197, 0.623);
-}
 
 
 @media (max-width: 768px) {
-    
-    /*la parte de los botones no puuedo hacer el resposive porque estrucutre mal el div header*/
-    .main {
-        flex-direction: column;
-        margin: 1rem; 
-    }
-
-    /* Ajusta la barra lateral de navegación */
     .categorias {
-        flex-direction: row; 
-        flex-wrap: wrap; 
+        min-width: 300px;
+        height: 85vh;
+        background: #ee7722;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
         padding: 1rem;
-        display: none;
+        margin-top: 60px;
+        position: fixed;
     }
-
-    .categorias a {
-        flex: 1 1 100%; /* Hace que los enlaces ocupen el ancho completo */
-        margin-top: 0.5rem; /* Ajusta el margen superior */
-    }
-
-    /* Ajusta el panel principal */
-    .panel {
-        padding: 0.5rem; 
-    }
-
-    /* Ajusta el header del panel principal */
-    .header {
-        flex-direction: column; 
-        align-items: flex-start;
-        
-    }
-
-    .crearBoton, .header a {
-        margin-bottom: 0.5rem; 
-    }
-
-    /* Ajusta las separaciones y contenido */
-    .separaciones, .contenido {
-        flex-direction: column; 
-    }
-
-    .separaciones{
-        margin: 0 auto  ;
-    }
-    .subtitulo, .fecha {
-        margin: 0.5rem 0; 
-    }
-
-    #bajar {
-        display: none; 
-    }
+    
 }

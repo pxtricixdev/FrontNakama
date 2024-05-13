@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Nakama</title>
-        <link rel="stylesheet" href="a.css">
+        <link rel="stylesheet" href="loginA002.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
@@ -26,8 +26,6 @@
             <div class="categorias">
                 <div class="botones">
                     <button class="btn" onclick="showTable('staff')">COMMITTEE INFO </button>
-                    <button class="btn" onclick="showTable('productos')">PRODUCTS</button>
-                    <button class="btn" onclick="showTable('empleados')">EMPLOYEES</button>
                     <button class="btn" onclick="showTable('pedidos')">ORDERS</button>
                     <button class="btn" onclick="showTable('convenio')">C.AGREEMENT</button>
                     <button class="btn" onclick="showTable('ora')">ORA</button>
@@ -82,62 +80,20 @@
                             </div>
                         </div>
                     </div>
-
-                    <table id="tablaProductos" class="tabla" style="display: none;">
-                        <a style="display: none;" id="titleProductos" class="titulo">Productos</a>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Apellido</th>
-                            <th>Apellido</th>
-                            <th>Apellido</th>
-                            <th>Apellido</th>
-                            <th>Apellido</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>A</td>
-                            <td>Iana</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Patri</td>
-                            <td>Abad</td>
-                        </tr>
-                    </table>
-            
-
-                    <table id="tablaEmpleados" class="tabla" style="display: none;">
-                        <a style="display: none;" id="titleEmpleados" class="titulo">Empleados</a>
-                        
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Aleasdasdasdasdx</td>
-                            <td>Iana</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Patri</td>
-                            <td>Abad</td>
-                        </tr>
-                    </table>
                  
                     <table id="tablaPedidos" class="tabla" style="display: none;">
                         <a style="display: none;" id="titlePedidos" class="titulo">Pedidos</a>
                         <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
+                            <th>IdPedido</th>
+                            <th>Hora</th>
+                            <th>Fecha</th>
+                            <th>Precio</th>
+                            <th>Cliente</th>
+
                         </tr>
                         <tr>
                             <td>1</td>
-                            <td>Alryuoltlitiulex</td>
+                            <td>Alry</td>
                             <td>Iana</td>
                         </tr>
                         <tr>
@@ -314,5 +270,5 @@
             </div>
         </div>
     </body>
-    <script src="c.js"></script>
+    <script src="loginA002.js"></script>
 </html>
