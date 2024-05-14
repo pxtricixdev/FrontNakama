@@ -17,7 +17,12 @@ function login() {
   b.className = "btn";
   x.style.opacity = 1;
   y.style.opacity = 0;
+
+  var email =  document.getElementById("userEmail");
+
+  sendUserData();
 }
+
 function register() {
   x.style.left = "-510px";
   y.style.right = "5px";
@@ -25,4 +30,16 @@ function register() {
   b.className += " white-btn";
   x.style.opacity = 0;
   y.style.opacity = 1;
+}
+
+
+async function sendUserData() {
+  const response = await fetch("http://localhost:8080/Nakama/Controller?ACTION=EMPLEADOS.FIND_ALL", {  headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",          
+  }});
+
+  const movies = await response.json();
+  console.log(movies);
+  alert(movies);
 }
