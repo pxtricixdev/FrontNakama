@@ -69,13 +69,14 @@ function addToCart(event) {
         cartItem.innerHTML = `
         <span class="cart-item-name" style="font-size:18px">${itemName}</span> - 
             <span class="cart-item-price" style="font-size:18px">$${itemPrice.toFixed(2)}</span>  
-            <div class="cantidad">
+            <div class="cantidad" style="display: flex; align-items: center; gap: 5px; margin-top: 5px">
                 <button class="less-btn" style="background-color: #000; border-radius: 15px; padding: 5px 10px; color: #fff">-</button>
                 <span class="quantity" style="color:#fff">1</span>
                 <button class="add-btn" style="background-color: #000; border-radius: 15px; padding: 5px 8px; color: #fff">+</button>
                 <img class="remove-btn" src="../imgOrderNow/icons8-trash-white-256.png" style="width: 20px;margin-left:10px; cursor:pointer" alt="Delete">
             </div>`;
         cartList.appendChild(cartItem);
+        alert('Producto ' + itemName + ' añadido')
 
         // Funcion para eliminar un producto del carrito
         const removeButton = cartItem.querySelector('.remove-btn');

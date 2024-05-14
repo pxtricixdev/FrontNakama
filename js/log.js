@@ -1,15 +1,15 @@
 function myMenuFunction() {
-  var i = document.getElementById("navMenu");
+  const i = document.getElementById("navMenu");
   if (i.className === "nav-menu") {
     i.className += " responsive";
   } else {
     i.className = "nav-menu";
   }
 }
-var a = document.getElementById("loginBtn");
-var b = document.getElementById("registerBtn");
-var x = document.getElementById("login");
-var y = document.getElementById("register");
+const a = document.getElementById("loginBtn");
+const b = document.getElementById("registerBtn");
+const x = document.getElementById("login");
+const y = document.getElementById("register");
 function login() {
   x.style.left = "4px";
   y.style.right = "-520px";
