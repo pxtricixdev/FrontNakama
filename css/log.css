@@ -29,6 +29,7 @@ body {
 /*---------------Nav var---------------*/
 
 .nav {
+    
     position: fixed;
     top: 20px; 
     display: flex;
