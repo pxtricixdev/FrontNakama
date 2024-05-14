@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nakama</title>
+        <link rel="stylesheet" href="loginA002.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="/icons/logo-icon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+        
+    
+    </head>
+    <body>
+        <div class="main">
+            <div class="categorias">
+                <div class="botones">
+                    <button class="btn" onclick="showTable('staff')">COMMITTEE INFO </button>
+                    <button class="btn" onclick="showTable('pedidos')">ORDERS</button>
+                    <button class="btn" onclick="showTable('convenio')">C.AGREEMENT</button>
+                    <button class="btn" onclick="showTable('ora')">ORA</button>
+                </div>
+            </div>
+            <select id="bajar"> 
+                <option id="select id">Todos los temas</option>
+                <option id="select id">Todos los temas</option>
+                <option id="select id">Todos los temas</option>-
+            </select>
+            <div class="panel"> 
+                <div class="separaciones">
+                    <div id="tablaStaff" class="tabla" style="display: none;">
+                        <a style="display: none;" id= "titleStaff" class="titulo">Staff</a>
+                        <div class="comite">
+                            <div class="prl">
+                                <section class="title">
+                                    <h2><span class="color">MAIN FUNCTIONS OF THE COMPANY COMMITTEE</span></h2>
+                                </section>
+                                <p>&nbsp;</p> 
+                                <section class="identification">
+                                    <div class="texto">
+                                        <p>
+                                            <ol>
+                                                <li>
+                                                    <strong>Worker Representation:</strong> The Company Committee serves as the voice of the employees to management, communicating concerns, suggestions, and needs to improve the work environment. This includes issues ranging from wages and schedules to professional development and organizational climate.
+                                                </li>
+                                                <li>
+                                                    <strong>Collective Bargaining:</strong> Participates in the negotiation of collective agreements that establish working conditions, including wages, working hours, leaves, and other benefits. The goal is to ensure fair and competitive conditions that benefit both the company and its employees.
+                                                </li>
+                                                <li>
+                                                    <strong>Information and Consultation:</strong> Receives and analyzes information about the financial situation and future strategies of the company. This allows the Committee to participate in strategic planning and ensure that proposed changes do not harm the interests of the workers.
+                                                </li>
+                                                <li>
+                                                    <strong>Conflict Resolution:</strong> Acts as a mediator in labor disputes, seeking fair and equitable solutions that maintain harmony and mutual respect within the team.
+                                                </li>
+                                                <li>
+                                                    <strong>Monitoring Compliance with Labor Laws:</strong> Ensures that the company complies with current labor legislation, supervising hiring practices, working conditions, safety and health, and equality of treatment among all employees.
+                                                </li>
+                                                <li>
+                                                    <strong>Health and Safety at Work:</strong> Promotes a safe work environment through the constant evaluation of risks and the organization of training on safe work practices, equipment handling, and emergencies.
+                                                </li>
+                                            </ol>
+                                        </p>
+                                    </div>
+                                </section>
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p> 
+                                <section>
+                                  <h2><span class="color">MEMBERS</span></h2>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                 
+                    <table id="tablaPedidos" class="tabla" style="display: none;">
+                        <a style="display: none;" id="titlePedidos" class="titulo">Pedidos</a>
+                        <tr>
+                            <th>IdPedido</th>
+                            <th>Hora</th>
+                            <th>Fecha</th>
+                            <th>Precio</th>
+                            <th>Cliente</th>
+
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Alry</td>
+                            <td>Iana</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Patri</td>
+                            <td>Abad</td>
+                        </tr>
+                    </table>
+                   
+                    <div id="tablaConvenio" class="tabla" style="display: none;">
+                        <a style="display: none;" id= "titleConvenio" class="titulo">Collective agreement</a>
+                        <div class="comite">
+                            <div class="prl">
+                                <section class="title">
+                                    <h2><span class="color">COLLECTIVE AGREEMENT </span></h2>
+                                </section>
+                                <p>&nbsp;</p> 
+                                <section class="identification">
+                                    <div class="texto">
+                                        <p>In the case of our restaurant located in Madrid, the applicable collective agreement is for HOSPITALITY AND TOURISM ACTIVITIES (28002085011981) of Madrid.</p> <br>
+                                        <p>A collective agreement is a formal agreement between the management of a company and its employees, represented by their delegates, which establishes labor standards and workers' rights. Below are some important points that apply in our case:</p>
+                                    </div>
+                                </section>
+                                <p>&nbsp;</p> 
+                                <section> 
+                                  <h2><span class="color">KEY POINTS OF THE AGREEMENT</span></h2>
+                                </section>
+                                <p>&nbsp;</p> 
+                                <section class="identification">
+                                    <div class="texto">
+                                        <ul>
+                                            <li><strong>Wage Review:</strong> From 2024, all salary and extra-salary concepts established in the 2023 Collective Agreement will increase by 5%.</li>
+                                            <li><strong>Working Hours:</strong> Labor provisions state that workers must know their schedules and breaks at least 7 days in advance, subject to modifications for justified labor needs. Overtime will be compensated with a 100% cash surcharge or equivalent rest time. In companies with more than 50 employees, the credit hour pool is extended to 100 hours with a maximum weekly working time of 44 hours.</li>
+                                            <li><strong>Training Plans:</strong> Companies must comply with the obligation to develop training plans as established on the business platform, and if they refuse, they must pay compensation to workers of €20 per month.</li>
+                                            <li><strong>Contract Updates:</strong> Various types of employment contracts have been updated according to new legislation. The contract for production circumstances will maintain its maximum duration as established in the current agreement. The part-time contract will follow existing regulations, allowing for a rotating hourly distribution communicated in advance. For the part-time fixed discontinuous contract, calling criteria based on suitability for the position are established, with defined minimum notice and calling periods. Additionally, a minimum annual calling period is specified, differentiated by the type of service, and rights are granted to the worker to reject certain calls with timely communication.</li>
+                                            <li><strong>Permanent Disability and Death:</strong> Reduction from 10 to 4 years of the minimum seniority in the company to qualify for insurance for total or absolute permanent disability, severe disability, and death. Additionally, the amount has been increased from €14,000 to €18,000.</li>
+                                            <li><strong>Promotions:</strong> Significant reduction in the time required for salary promotion of assistants and aides, from 10 years to just 4 years. Furthermore, a clear procedure is established for these workers to move up to a higher category in case of vacancies within the company. They must demonstrate completion of training courses and obtain the corresponding qualification, which must meet the training standards required by legislation to obtain a certificate of professionalism in the desired higher category.</li>
+                                            <li><strong>Licenses and Permits:</strong> Employees may be absent from work with pay for various reasons, including marriage or civil partnership (15 days), illness or accident of close relatives (5 days), death of close relatives (2 days), relocation of residence (1 day), and more.</li>
+                                            <li><strong>Legal and Union Representation:</strong> Establishes the hourly credit for legal representatives of the workers, which varies according to the size of the workplace. It also defines the functions of these representatives, such as receiving information from the company and ensuring compliance with labor regulations. Additionally, it guarantees job stability and non-discrimination of the representatives, as well as their right to freedom of expression.</li>
+                                            <li><strong>Prevention and Occupational Health:</strong> The agreement details special rules in prevention and occupational health, including the prohibition of certain jobs for minors under 18 years old in the kitchen, the obligation to have visible fire extinguishers in risk areas, clear signage of accesses and exits for emergencies, and more.</li>
+                                            <li><strong>Economic Conditions:</strong> Article 25 of the agreement establishes the salary structure, which includes base salary, service and seniority supplements, extraordinary gratuities, night shift allowance, meal allowance, collective agreement bonus, permanence supplement, and training compensation bonus.</li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                      
+                    <div id="tablaOra" class="tabla" style="display: none;">
+                        <a style="display: none;" id= "titleOra" class="titulo">Ora</a>
+                        <div class="comite">
+                            <div class="prl">
+                                <section class="title">
+                                    <h2><span class="color">OCCUPATIONAL RISK ASSESSMENT</span></h2>
+                                </section>
+                                <p>&nbsp;</p>
+                                <section class="identification">
+                                    <h2><span class="color">1.</span>Occupational Risks for a Waiter</h2>
+                                    <div class="texto">
+                                        <p>
+                                            <ul>
+                                                <li><strong>Overexertion:</strong> Proper posture is required when handling loads to prevent musculoskeletal injuries. Assess the weight before lifting and ask for help if necessary.</li>
+                                                <li><strong>Impacts:</strong> Common in areas with furniture or kitchen objects that can cause frequent impacts to arms or legs.</li>
+                                                <li><strong>Falls:</strong> Pay attention to slippery floors and clean spills quickly. Signal any risk situations immediately to prevent slips and trips.</li>
+                                                <li><strong>Injuries from Sharp or Pointed Objects:</strong> Tools like scissors, razors, and sharpeners must be properly handled, stored, and maintained.</li>
+                                                <li><strong>Burns:</strong> A major risk in kitchens, occurring from fires, splashes, and hot utensils.</li>
+                                                <li><strong>Sudden Changes in Temperature:</strong> Be aware of heat in the environment and poor ventilation which can affect thermal comfort.</li>
+                                                <li><strong>Contamination:</strong> Disinfection and cleaning are essential to prevent biological contamination such as fungi, bacteria, and viruses.</li>
+                                                <li><strong>Stress:</strong> Caused by excessive workload, long workdays without breaks, and lack of motivation from superiors.</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </section>
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p>
+                                <section class="identification">
+                                    <h2>Preventive Measures for Waiters</h2>
+                                    <div class="texto">
+                                        <p>
+                                            <ul>
+                                                <li><strong>Overexertion:</strong> Proper posture is required when handling loads to prevent musculoskeletal injuries. Assess the weight before lifting and ask for help if necessary.</li>
+                                                <li><strong>Impacts:</strong> Common in areas with furniture or kitchen objects that can cause frequent impacts to arms or legs.</li>
+                                                <li><strong>Falls:</strong> Pay attention to slippery floors and clean spills quickly. Signal any risk situations immediately to prevent slips and trips.</li>
+                                                <li><strong>Injuries from Sharp or Pointed Objects:</strong> Tools like scissors, razors, and sharpeners must be properly handled, stored, and maintained.</li>
+                                                <li><strong>Burns:</strong> A major risk in kitchens, occurring from fires, splashes, and hot utensils.</li>
+                                                <li><strong>Sudden Changes in Temperature:</strong> Be aware of heat in the environment and poor ventilation which can affect thermal comfort.</li>
+                                                <li><strong>Contamination:</strong> Disinfection and cleaning are essential to prevent biological contamination such as fungi, bacteria, and viruses.</li>
+                                                <li><strong>Stress:</strong> Caused by excessive workload, long workdays without breaks, and lack of motivation from superiors.</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </section>  
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p>  
+                                <section class="identification">
+                                    <h2><span class="color">2.</span>Risks for a Cook</h2>
+                                    <div class="texto">
+                                        <p>
+                                            <ul>
+                                                <li><strong>Cuts and Punctures:</strong> Main risks come from handling manual utensils and auxiliary machines.</li>
+                                                <li><strong>Falls or Slips:</strong> Occur due to poor floor conditions, being dirty, greasy, or wet.</li>
+                                                <li><strong>Impacts and Falling Objects:</strong> Lack of order and organization in the kitchen increases risk.</li>
+                                                <li><strong>Thermal Contact and Burns:</strong> Hot surfaces, container contents, and heat sources like stoves can cause severe burns.</li>
+                                                <li><strong>Acoustic Contamination:</strong> Common due to simultaneous operation of devices and general kitchen noise.</li>
+                                                <li><strong>Thermal Stress:</strong> Wear appropriate clothing for high or low temperatures to manage body heat.</li>
+                                                <li><strong>Electrical Installations:</strong> Risk of accidents from using electrical appliances with wet hands or clothing.</li>
+                                                <li><strong>Ergonomic Risks:</strong> Important to maintain correct postures and handle loads properly to avoid injuries.</li>
+                                                <li><strong>Biological Risks:</strong> Continuous food handling can expose workers to harmful biological agents.</li>
+                                                <li><strong>Kitchen Cleaning:</strong> Use of chemical products requires precautions to avoid health risks like burns or inhalation of vapors.</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </section>
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p>     
+                                <section class="identification">
+                                    <h2>Preventive Measures for Cooks</h2>
+                                    <div class="texto">
+                                        <p>
+                                            <ul>
+                                                <li><strong>Equipment and Tool Maintenance:</strong> Keep all tools and machines well-maintained and sharp. Disconnect them during cleaning or repairs.</li>
+                                                <li><strong>Safety Measures in Machinery Use:</strong> Always use pushers and protections when operating machines.</li>
+                                                <li><strong>Personal Protection:</strong> Wear appropriate personal protective equipment to prevent accidents.</li>
+                                                <li><strong>Accident and Injury Prevention:</strong> Maintain good workspace organization and signal wet floors during and after cleaning.</li>
+                                                <li><strong>Hygiene and Health:</strong> Enhance cleaning routines to manage exposure to harmful vapors and biological agents.</li>
+                                                <li><strong>Chemical and Biological Risk Management:</strong> Use protective gear like gloves and masks when handling chemicals.</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </section>
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p>  
+                                <section class="identification">
+                                    <h2><span class="color">3.</span>Occupational Risks for a Web Developer</h2>
+                                    <div class="texto">
+                                        <p>
+                                            <ul>
+                                                <li><strong>Ergonomic Risks:</strong> Web developers often spend long hours in front of the computer, which can cause posture problems, visual fatigue, and musculoskeletal injuries. Proper ergonomics in the workplace, using ergonomic furniture and equipment, as well as taking breaks and performing stretching exercises are important to prevent injuries.</li>
+                                                <li><strong>Visual Risks:</strong> Constant work in front of screens can cause visual fatigue, dry eyes, blurred vision, and other eye problems. It is advisable to take regular breaks, blink frequently, and adjust the lighting of the work environment to reduce visual strain.</li>
+                                                <li><strong>Psychosocial Risks:</strong> Web development can be a stressful job, especially when facing tight deadlines, constant pressure, and client demands. Establishing a work-life balance and having a healthy work environment and emotional support are crucial.</li>
+                                                <li><strong>Electrical Risks:</strong> Web developers work with electronic equipment and cables, which involves the risk of electric shocks. Ensuring that the equipment is properly grounded, using plugs and cables in good condition, and avoiding contact with liquids near electrical devices are essential safety practices.</li>
+                                                <li><strong>Information Security Risks:</strong> Web developers are exposed to information security risks such as hacker attacks, data theft, and computer viruses. Having adequate security measures like the use of secure passwords, up-to-date antivirus software, and regular backups to protect information and systems is essential.</li>
+                                                <li><strong>Sedentary Risks:</strong> Web development work is usually sedentary, which can lead to health problems such as overweight, obesity, and cardiovascular diseases. Engaging in regular physical activity, maintaining a balanced diet, and avoiding sedentary behavior during work hours are important health measures.</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </section>
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p> 
+                                <section class="identification">
+                                    <h2>Preventive Measures for Web Developers</h2>
+                                    <div class="texto">
+                                        <p>
+                                            <ul>
+                                                <li><strong>Risk Assessments:</strong> Identify potential hazards and assess the risks associated with web developer work.</li>
+                                                <li><strong>Ergonomic Equipment:</strong> Ensure that web developers have adjustable chairs and tables, as well as ergonomic monitors and keyboards to prevent musculoskeletal injuries.</li>
+                                                <li><strong>Regular Breaks:</strong> Encourage web developers to take regular breaks to avoid visual fatigue and physical stress.</li>
+                                                <li><strong>Safety Training:</strong> Train web developers in safe work practices, such as the proper use of equipment and correct posture.</li>
+                                                <li><strong>Information Security Measures:</strong> Protect company systems and data using firewalls, antivirus, and other information security measures.</li>
+                                                <li><strong>Regular Backups:</strong> Ensure that data and web developer projects are regularly backed up to prevent the loss of important information.</li>
+                                                <li><strong>Stress Awareness:</strong> Provide support and resources to help web developers manage work-related stress, such as wellness programs and access to mental health services.</li>
+                                                <li><strong>Flexible Work Policies:</strong> Allow flexible work schedules and remote work options to reduce fatigue and stress associated with long work hours.</li>
+                                                <li><strong>Open Communication:</strong> Establish open communication channels and encourage web developers to report any work-related problems or risks they encounter.</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </section>
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="loginA002.js"></script>
+</html>
