@@ -131,10 +131,12 @@ a{
 /* Barra lateral de navegación */
 
 .botones {
+    align-items: stretch;
+    align-content: center;
     display: flex;
-    gap: 50px;
     flex-direction: column;
-    margin: 100px 0;
+    justify-content: space-evenly;
+    height: 850px;
 }
 
 
