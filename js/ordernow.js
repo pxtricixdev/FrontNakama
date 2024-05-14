@@ -76,7 +76,7 @@ function addToCart(event) {
                 <img class="remove-btn" src="../imgOrderNow/icons8-trash-white-256.png" style="width: 20px;margin-left:10px; cursor:pointer" alt="Delete">
             </div>`;
         cartList.appendChild(cartItem);
-        alert('Producto ' + itemName + ' añadido')
+        alert(itemName + ' added to cart.')
 
         // Funcion para eliminar un producto del carrito
         const removeButton = cartItem.querySelector('.remove-btn');

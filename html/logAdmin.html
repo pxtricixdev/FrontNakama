@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="../css/logAdmin.css">
-  <title>Nakama | Login & Registration</title>
+  <title>Nakama | Login Staff & Admin</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
@@ -26,39 +26,33 @@
   <div class="wrapper">
     <nav class="nav">
       <div class="nav-logo">
-        <!-- Poner enlace aqui de home href=""-->
-        <a href="./home.html"><img src="../icons/logo-name.png" alt=""></a>
-      </div>
-      <div class="nav-button">
-        <button class="btn white-btn" id="loginBtn" onclick="login()">Login 🔒</button>
-      </div>
-      <div class="nav-menu-btn">
-        <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+        <a href="./home.html">
+          <img src="../icons/logo-name.png" alt="">
+        </a>
       </div>
     </nav>
 
-
-
-    <!----------------------------- Form box ----------------------------------->
-    <div class="form-box">
-      <!------------------- login form -------------------------->
-      <div class="login-container" id="login">
-        <div class="top">
-          <header>Start Session 🔒</header>
-        </div>
-        <div class="input-box">
-          <input type="text" class="input-field" placeholder="Gmail">
-          <i class="bx bx-user"></i>
-        </div>
-        <div class="input-box">
-          <input type="password" class="input-field" placeholder="Password">
-          <i class="bx bx-lock-alt"></i>
-        </div>
-        <div class="input-box">
-          <input type="submit" class="submit" value="Login">
-        </div>
+<!----------------------------- Form box ----------------------------------->
+  <div class="form-box">
+    <!------------------- login form -------------------------->
+    <form action="#" class="login-container" id="login">
+      <div class="top">
+        <header>Start Session 🔒</header>
       </div>
-    </div>
+      <div class="input-box">
+        <input type="text" class="input-field" placeholder="User" id="username">
+        <i class="bx bx-user"></i>
+      </div>
+      <div class="input-box">
+        <input type="password" class="input-field" placeholder="Password" id="password">
+        <i class="bx bx-lock-alt"></i>
+      </div>
+      <div class="input-box">
+        <button type="button" class="submit">Login</button>
+      </div>
+    </form>
+  </div>
+  <p id="error-msg" class="error-msg"></p>
 
     <footer class="footer">
         
@@ -70,7 +64,7 @@
 
   </div>
 
-  <script src="../js/log.js"></script>
+  <script src="../js/logAdmin.js"></script>
 </body>
 
 </html>
