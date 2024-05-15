@@ -31,15 +31,3 @@ function register() {
   x.style.opacity = 0;
   y.style.opacity = 1;
 }
-
-
-async function sendUserData() {
-  const response = await fetch("http://localhost:8080/Nakama/Controller?ACTION=EMPLEADOS.FIND_ALL", {  headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",          
-  }});
-
-  const movies = await response.json();
-  console.log(movies);
-  alert(movies);
-}
