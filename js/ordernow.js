@@ -138,37 +138,56 @@ function clearCart() {
 // Fetch para coger los productos de la BBDD
 const url = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.FIND_ALL'
 
-const fetchData = async () => {
-    const result = await fetch(url)
-    const data = await result.json()
-    console.log('datos de la api -----', data)
-    printData(data) 
-}
+const fetchProducts = async () => {
+    try {
+      const result = await fetch(url);
+      const data = await result.json();
+      console.log('datos de la api ----->', data);
+      printProducts(data);
+    } catch (error) {
+      console.error('Error al obtener datos de la API:', error);
+    }
+};
 
-const printData = (dataProducts) => {
+const printProducts = (products) => {
+    products.forEach(product => {
+      const {
+        _idProducto,
+        _nombre,
+        _descripcion,
+        _precioVenta,
+        _imagenRuta,
+        _estado,
+        _idCategoria,
+      } = product;
+
+
+    const card = document.createElement('div')
     const listProducts = document.getElementById('products');
-    console.log(listProducts)
-    const burger1Element = document.createElement('div')
-    burger1Element.classList.add('burger1');
     
-    burger1Element.innerHTML = `
+    card.classList.add('card');
+    card.innerHTML = `
     <div class="burger1">
-    <div class="burger-right">
-    <img class="img-teriyaki" src="../imgOrderNow/burgers/teriyaki.png" alt="">
-</div>
-<div class="burger-left">
-    <h2 class="nombre">${dataProducts._nombre}</h2>
+        <div class="burger-right">
+            <img class="img-teriyaki" src="${_imagenRuta}" alt="">
+        </div>
+        <div class="burger-left">
+            <h2 class="nombre">${_nombre}</h2>
 
-    <p class="burger-desription">Grilled chicken breast glazed in teriyaki sauce, topped with grilled pineapple, caramelized onions, and ginger mayo.</p>
-    <p class="price" marcador="1">10.7$
-        <button class="add-cart" id="add-cart-1">
-            <img src="../imgOrderNow/add-circle-svgrepo-com.png" alt="">
-        </button>
-    </p>
-</div>
+            <p class="burger-desription">${_descripcion}</p>
+            <p class="price" marcador="1">$${_precioVenta}
+                <button class="add-cart" id="add-cart-1">
+                    <img src="../imgOrderNow/add-circle-svgrepo-com.png" alt="">
+                </button>
+            </p>
+        </div>
     </div>
     `
-    listProducts.appendChild(burger1Element);
+    listProducts.appendChild(card);
+
+    const addButton = card.querySelector('.add-cart');
+    addButton.addEventListener('click', addToCart);
+  });
 }
-//Llamamos a la funcion que hace el fetch
-fetchData()
+fetchProducts();
+
