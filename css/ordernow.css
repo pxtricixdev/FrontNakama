@@ -253,6 +253,20 @@ body {
     background-color: var(--orange);
 }
 
+@media only screen and (max-width: 800px) { 
+    .navbar-menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        gap: 5px;
+    }
+    .navbar-menu a {
+        width: 85%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
 /* -----carrito------ */
 .modal-carrito {
     height: 100vh;
@@ -409,79 +423,22 @@ body {
 }
 /*---------------- main --------------------*/
 /*-------- burgers -----------*/
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
 
 @media only screen and (max-width: 1214px) {
-    .burgers {
+    .products-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        gap: 10px;
-    }
-    .starters-grid, .milkshakes-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 10px;
-    }
-    .desserts-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(1, 1fr);
-        gap: 10px;
-        margin-bottom: 10px;
     }
 }
 @media only screen and (max-width: 768px) {
-    .burgers {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        gap: 10px;
-        margin: 0 10px;
-    }
-
-    .starters-grid, .milkshakes-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 10px;
-        margin: 0 10px;
-    }
-    .desserts-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 10px;
-        margin: 0 10px;
-    }
-}
-@media only screen and (max-width: 800px) {
-    .burgers {
+    .products-grid {
         display: flex;
         flex-direction: column;
-    }
-
-    .starters-grid, .milkshakes-grid {
-        display: flex;
-        flex-direction: column;
-    }
-    .desserts-grid {
-        display: flex;
-        flex-direction: column;
-    }
-    .navbar-menu {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
-        gap: 5px;
-    }
-    .navbar-menu a {
-        width: 85%;
-        display: flex;
-        justify-content: center;
-    }
-    .burger-desription {
-        font-size: 13px;
     }
 }
 
@@ -492,11 +449,6 @@ body {
     font-size: 40px;
 }
 
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
 
 .grid-container {
     max-width: 1500px; 
