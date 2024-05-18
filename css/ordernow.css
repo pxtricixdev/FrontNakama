@@ -409,23 +409,6 @@ body {
 }
 /*---------------- main --------------------*/
 /*-------- burgers -----------*/
-.burgers {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: -10px;
-}
-.starters-grid, .milkshakes-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-}
-.desserts-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    margin-bottom: 10px;
-}
 
 @media only screen and (max-width: 1214px) {
     .burgers {
@@ -502,15 +485,22 @@ body {
     }
 }
 
+.category-container h2 {
+    color: var(--orange);
+    font-family: var(--fuente1);
+    text-transform: uppercase;
+    font-size: 40px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
 .grid-container {
     max-width: 1500px; 
     margin: 0 auto; 
-}
-.list-product {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: -10px;
 }
 
 .burger1 {
@@ -527,6 +517,11 @@ body {
     margin-bottom: 20px;
     overflow: hidden;
     border: 2px solid var(--orange);
+}
+
+.burger1 .nombre {
+    margin-bottom: 5px;
+    font-size: 25px;
 }
 
 .burger1:hover {

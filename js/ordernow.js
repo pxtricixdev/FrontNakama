@@ -92,6 +92,7 @@ function addToCart(event) {
     totalDisplay.innerText = `${total.toFixed(2)}`;
 }
 
+
 // Funcion de agregar y restar dentro del carrito
 cartList.addEventListener('click', function(event) {
     const button = event.target;
@@ -135,59 +136,109 @@ function clearCart() {
     totalDisplay.innerText = `$${total.toFixed(2)}`;
 }
 
-// Fetch para coger los productos de la BBDD
-const url = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.FIND_ALL'
+// Fetch para coger los productos y las categorias de la BBDD
+const urlProducts = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.FIND_ALL';
+const urlCategory = 'http://localhost:8080/Nakama/Controller?ACTION=CATEGORIA.FIND_ALL';
 
-const fetchProducts = async () => {
+const fetchCategories = async () => {
     try {
-      const result = await fetch(url);
-      const data = await result.json();
-      console.log('datos de la api ----->', data);
-      printProducts(data);
+        const result = await fetch(urlCategory);
+        const data = await result.json();
+        console.log('Categorías obtenidas de la API:', data);
+        printCategories(data);
+        await fetchProducts(); // Hace fetch de los productos despues de que se hayan impreso las categorias
     } catch (error) {
-      console.error('Error al obtener datos de la API:', error);
+        console.error('Error al obtener datos de la API:', error);
     }
 };
 
+const fetchProducts = async () => {
+    try {
+        const result = await fetch(urlProducts);
+        const data = await result.json();
+        console.log('Productos obtenidos de la API:', data);
+        printProducts(data);
+    } catch (error) {
+        console.error('Error al obtener datos de la API:', error);
+    }
+};
+
+//Funcion imprimir categorias
+const printCategories = (categories) => {
+    const listCategories = document.getElementById('categories');
+    //Array de categorias
+    categories.forEach(category => {
+        const { _idCategoria, 
+            _nombre } = category;
+
+        //crea un div para cada categoria con la clase category-container y el id category- +idCategoria
+        const categoryContainer = document.createElement('div');
+        categoryContainer.classList.add('category-container');
+        categoryContainer.id = `category-${_idCategoria}`;
+
+        //agrega un titulo h2 con el nombre de la categoria
+        const categoryTitle = document.createElement('h2');
+        categoryTitle.textContent = _nombre;
+
+        categoryContainer.appendChild(categoryTitle);
+
+        //crea un div que contiene los productos de cada categoria
+        const productsGrid = document.createElement('div');
+        productsGrid.classList.add('products-grid');
+        categoryContainer.appendChild(productsGrid);
+
+        listCategories.appendChild(categoryContainer);
+    });
+};
+
+//Funcion imprimir productos
 const printProducts = (products) => {
+    //Array de los productos
     products.forEach(product => {
-      const {
-        _idProducto,
-        _nombre,
-        _descripcion,
-        _precioVenta,
-        _imagenRuta,
-        _estado,
-        _idCategoria,
-      } = product;
+        const {
+            _idProducto,
+            _nombre,
+            _descripcion,
+            _precioVenta,
+            _imagenRuta,
+            _idCategoria,
+        } = product;
 
+        // Busca el elemento que tiene esa categoria
+        const categoryContainer = document.getElementById(`category-${_idCategoria}`);
 
-    const card = document.createElement('div')
-    const listProducts = document.getElementById('products');
-    
-    card.classList.add('card');
-    card.innerHTML = `
-    <div class="burger1">
-        <div class="burger-right">
-            <img class="img-teriyaki" src="${_imagenRuta}" alt="">
-        </div>
-        <div class="burger-left">
-            <h2 class="nombre">${_nombre}</h2>
+        if (categoryContainer) {
+            //Si coincide se añaden las cards de los productos
+            const productsGrid = categoryContainer.querySelector('.products-grid');
+            const card = document.createElement('div');
+            card.classList.add('card');
 
-            <p class="burger-desription">${_descripcion}</p>
-            <p class="price" marcador="1">$${_precioVenta}
-                <button class="add-cart" id="add-cart-1">
-                    <img src="../imgOrderNow/add-circle-svgrepo-com.png" alt="">
-                </button>
-            </p>
-        </div>
-    </div>
-    `
-    listProducts.appendChild(card);
+            card.innerHTML = `
+                <div class="burger1">
+                    <div class="burger-right">
+                        <img class="img-teriyaki" src="${_imagenRuta}" alt="">
+                    </div>
+                    <div class="burger-left">
+                        <h2 class="nombre">${_nombre}</h2>
+                        <p class="burger-description">${_descripcion}</p>
+                        <p class="price" marcador="1">$${_precioVenta}
+                            <button class="add-cart" id="add-cart-${_idProducto}">
+                                <img src="../imgOrderNow/add-circle-svgrepo-com.png" alt="">
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            `;
 
-    const addButton = card.querySelector('.add-cart');
-    addButton.addEventListener('click', addToCart);
-  });
-}
-fetchProducts();
+            productsGrid.appendChild(card);
+
+            //Busca el boton de agregar al carrito dentro del card y llama a la funcion addToCart
+            const addButton = card.querySelector('.add-cart');
+            addButton.addEventListener('click', addToCart);
+        } 
+    });
+};
+
+fetchCategories();
+
 
