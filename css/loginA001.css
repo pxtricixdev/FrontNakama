@@ -26,9 +26,7 @@ body {
 }
 
 /*letras*/
-.titulo{
-    font-family: var(--fuente1);
-}
+
 
 h2{
     margin-bottom: 15px;
@@ -50,9 +48,6 @@ a{
 .color {
     color: #EE7722;
 }
-
-
-/*/*/
 
 .categorias {
     min-width: 300px;
@@ -78,21 +73,26 @@ a{
 }
 
 .tabla {    
-    width: 90%;
+    width: 95%;
     border-collapse: collapse;
    
 }
-.tabla, .tabla th, .tabla td {
-   /* border: 1px solid #EE7722;*/  
+
+.tabla th {
+    padding-right: 5px;
+    font-size: 20px;
+    text-align: left;
+    color: var(--orange);
+}
+.tabla td {
+    text-align: left;
     color: white;
-    font-family: var(--fuente2);
+    gap: 10px;
+    padding-bottom: 10px;
 }
 
 .tabla th, .tabla td {
-    padding: 1px;
-    text-align: left;
-    color: white;
-    font-family: var(--fuente2);
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .hidden {
@@ -150,14 +150,14 @@ a{
 
 .titulo {
   display: block; 
-  width: 100%; 
+  width: 95%; 
   font-size: 1.5rem;
   color: #fff;
   margin-bottom: 0.5rem;
   border-bottom: 2px solid #ee7722;
+  font-family: var(--fuente1);
   
 }
-
 
 
 @media (max-width: 768px) {
