@@ -7,7 +7,7 @@ document.querySelector('.submit').addEventListener('click', function(event) {
     if (username === 'A001' && password === 'admin1234') {
         localStorage.setItem('username', username);
         localStorage.setItem('password', password);
-        localStorage.setItem('isAuthenticated', 'true'); // Indicador de inicio de sesion
+        localStorage.setItem('isAuthenticated', 'true'); 
         localStorage.setItem('role', 'admin');
         window.location.href = '../html/loginA001.html';
     } 
@@ -15,7 +15,7 @@ document.querySelector('.submit').addEventListener('click', function(event) {
     else if (username === 'A002' && password === 'staff1234') {
         localStorage.setItem('username', username);
         localStorage.setItem('password', password);
-        localStorage.setItem('isAuthenticated', 'true'); // Indicador de inicio de sesion
+        localStorage.setItem('isAuthenticated', 'true'); 
         localStorage.setItem('role', 'staff');
         window.location.href = '../html/loginA002.html';
     }

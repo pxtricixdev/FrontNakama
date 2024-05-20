@@ -18,8 +18,8 @@ function showTable(table) {
     
 }
 
-// Verifica si el usuario esta autenticado
-if (localStorage.getItem('isAuthenticated') !== 'true') {
+// Verifica si el usuario esta autenticado o si no tiene el rol de admin
+if (localStorage.getItem('isAuthenticated') !== 'true' || localStorage.getItem('role') !== 'admin') {
     window.location.href = 'logAdmin.html'; // Redirige a login
 }
 
