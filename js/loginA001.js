@@ -12,8 +12,8 @@ function showTable(table) {
         document.getElementById('tablaEmpleados').style.display = 'table';
         document.getElementById('titleEmpleados').style.display = 'flex'
     } else if (table === 'pedidos') {
-        document.getElementById('tablaPedidos').style.display = 'table';
-        document.getElementById('titlePedidos').style.display = 'flex'
+        document.getElementById('tablaOrders').style.display = 'table';
+        document.getElementById('titleOrders').style.display = 'flex'
     } 
     
 }
@@ -35,7 +35,7 @@ document.getElementById('btn-logout').addEventListener('click', function() {
 });
 
 
-//Fetch de los productos
+//Fetch de los productos de la BBDD
 const urlProducts = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.FIND_ALL';
 
 const fetchProducts = async () => {
@@ -81,7 +81,60 @@ const printProducts = (products) => {
 
 fetchProducts();
 
-//Fetch de empleados
+//Fetch de pedidos
+const urlOrders = 'http://localhost:8080/Nakama/Controller?ACTION=PEDIDOS.FIND_ALL';
+
+const fetchOrders = async () => {
+    try {
+        const result = await fetch(urlOrders);
+        const data = await result.json();
+        console.log('Pedidos obtenidos de la API:', data);
+        printOrders(data);
+    } catch (error) {
+        console.error('Error al obtener datos de la API:', error);
+    }
+};
+
+const printOrders = (orders) => {
+    const table = document.getElementById('tablaOrders');
+    const tbody = table.querySelector('tbody');
+    table.style.display = 'table';  
+
+    orders.forEach(order => {
+        const {
+            _idPedido,
+            _hora,
+            _fecha,
+            _tlf,
+            _direccion,
+            _estado,
+            _precio,
+            _idCliente,
+            _idEmpleado,
+        } = order;
+
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+            <td>${_idPedido}</td>
+            <td>${_hora}</td>
+            <td>${_fecha}</td>
+            <td>${_tlf}</td>
+            <td>${_direccion}</td>
+            <td>${_estado}</td>
+            <td>${_precio}</td>
+            <td>${_idCliente}</td>
+            <td>${_idEmpleado}</td>
+        `;
+
+        tbody.appendChild(row);
+    });
+};
+
+fetchOrders();
+
+
+//Fetch de empleados de la BBDD
 const urlEmployees = 'http://localhost:8080/Nakama/Controller?ACTION=EMPLEADOS.FIND_ALL';
 
 const fetchEmployees = async () => {
