@@ -177,7 +177,7 @@ const printClients = (clients) => {
     });
 };
 
-
+fetchClients();
 
 //Fetch de empleados de la BBDD
 const urlEmployees = 'http://localhost:8080/Nakama/Controller?ACTION=EMPLEADOS.FIND_ALL';
@@ -230,3 +230,5 @@ const printEmployees = (employees) => {
         tbody.appendChild(row);
     });
 };
+
+fetchEmployees();

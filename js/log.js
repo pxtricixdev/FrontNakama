@@ -33,50 +33,52 @@ function register() {
   y.style.opacity = 1;
 }
 
-//Funcion para validar los datos del formulario de registro
+//Funcion de registro
 document.querySelector('.submit').addEventListener('click', function(event) {
+  event.preventDefault();
+
   let username = document.getElementById('firstname').value;
   let lastname = document.getElementById('lastname').value;
   let mail = document.getElementById('mail').value;
   let password = document.getElementById('password').value;
 
+  //Si no se ha rellenado algun campo salta una alerta
+  if (!username || !lastname || !mail || !password) {
+    alert('You must complete each field');
+    return;
+  }
+
+  //Guardamos los datos de registro
   localStorage.setItem('firstname', username);
-  localStorage.setItem('lastname',lastname);
+  localStorage.setItem('lastname', lastname);
   localStorage.setItem('mail', mail);
   localStorage.setItem('password', password);
 
-  if (username === undefined && lastname === undefined && mail === undefined && password === undefined) {
-    console.log("Es undefined")
-    alert('You must compete each field');
-  } else {
-    //window.location.href = '../html/ordernow.html';
-    console.log("No es undefined")
-  }
-  
-
-  //Funcion para validar si el usuario esta registrado y puede logearse
-  document.querySelector('.submitlogin').addEventListener('click', function(event) { 
-    let usernameIsRegister = document.getElementById('userEmail').value;
-    let passwordIsRegister = document.getElementById('userPassword').value
-
-    if (username === usernameIsRegister && password === passwordIsRegister) {
-      localStorage.setItem('userEmail', usernameIsRegister);
-      localStorage.setItem('userPassword', passwordIsRegister);
-
-      window.location.href = '../html/ordernow.html';
-
-    } else {
-      alert('Incorrect username or password');
-    }
-    
-  });
-
+  //Redirige a la pagina de realizar pedido
+  window.location.href = '../html/ordernow.html';
 });
 
+//Funcion para comprobar si el usuario ya esta registrado y puede loguearse
+document.querySelector('.submitlogin').addEventListener('click', function(event) {
+  event.preventDefault();
 
- if (username !== undefined && lastname !== undefined && mail !== undefined && password !== undefined) {
+  let usernameIsRegister = document.getElementById('userEmail').value;
+  let passwordIsRegister = document.getElementById('userPassword').value;
+
+  let storedUsername = localStorage.getItem('mail');
+  let storedPassword = localStorage.getItem('password');
+
+  //Verifica si el usuario ya esta registrado
+  if (usernameIsRegister === storedUsername && passwordIsRegister === storedPassword) {
+    localStorage.setItem('userEmail', usernameIsRegister);
+    localStorage.setItem('userPassword', passwordIsRegister);
+    localStorage.setItem('isLoggedIn', 'true');
+
+    //Redirige a la pagina de realizar pedido
     window.location.href = '../html/ordernow.html';
   } else {
-    alert('You must compete each field');
+    //Si el usuario o la contraseña es incorrecto o el usuario no esta registrado
+    alert('Incorrect username or password');
   }
+});
 
