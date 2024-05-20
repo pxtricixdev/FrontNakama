@@ -192,6 +192,25 @@ header {
     color: #fff;
 }
 
+.submitlogin {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    background: rgba(238, 119, 34, 0.8);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.submitlogin:hover {
+    background: rgba(238, 119, 34, 0.8);
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
 .submit {
     font-size: 15px;
     font-weight: 500;

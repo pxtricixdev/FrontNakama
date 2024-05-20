@@ -146,7 +146,7 @@ const fetchCategories = async () => {
         const data = await result.json();
         console.log('Categorías obtenidas de la API:', data);
         printCategories(data);
-        await fetchProducts(); // Hace fetch de los productos despues de que se hayan impreso las categorias
+        //await fetchProducts(); // Hace fetch de los productos despues de que se hayan impreso las categorias
     } catch (error) {
         console.error('Error al obtener datos de la API:', error);
     }
@@ -239,6 +239,20 @@ const printProducts = (products) => {
     });
 };
 
-fetchCategories();
+//fetchCategories();
 
+async function fetchCategoriesAndProducts() {
+    const [productsResponse, categoriesResponse] = await Promise.all([
+      fetch(urlProducts),
+      fetch(urlCategory)
+    ]);
+  
+    const products = await productsResponse.json();
+    const categories = await categoriesResponse.json();
+  
+    printCategories(categories);
+    printProducts(products);
+    
+  }
 
+  fetchCategoriesAndProducts();

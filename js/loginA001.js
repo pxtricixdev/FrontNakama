@@ -121,7 +121,6 @@ const printOrders = (orders) => {
         row.innerHTML = `
             <td>${_idPedido}</td>
             <td>${_hora}</td>
-            <td>${_fecha}</td>
             <td>${_tlf}</td>
             <td>${_direccion}</td>
             <td>${_estado}</td>
@@ -178,7 +177,6 @@ const printClients = (clients) => {
     });
 };
 
-fetchClients();
 
 
 //Fetch de empleados de la BBDD
@@ -232,5 +230,3 @@ const printEmployees = (employees) => {
         tbody.appendChild(row);
     });
 };
-
-fetchEmployees();
