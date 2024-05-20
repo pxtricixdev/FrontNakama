@@ -11,6 +11,9 @@ function showTable(table) {
     } else if (table === 'empleados') {
         document.getElementById('tablaEmpleados').style.display = 'table';
         document.getElementById('titleEmpleados').style.display = 'flex'
+    } else if (table === 'clientes') {
+        document.getElementById('tablaClients').style.display = 'table';
+        document.getElementById('titleClients').style.display = 'flex'
     } else if (table === 'pedidos') {
         document.getElementById('tablaOrders').style.display = 'table';
         document.getElementById('titleOrders').style.display = 'flex'
@@ -132,6 +135,50 @@ const printOrders = (orders) => {
 };
 
 fetchOrders();
+
+//Fetch de clientes de la BBDD
+const urlClients = 'http://localhost:8080/Nakama/Controller?ACTION=CLIENTES.FIND';
+
+const fetchClients = async () => {
+    try {
+        const result = await fetch(urlClients);
+        const data = await result.json();
+        console.log('Clientes obtenidos de la API:', data);
+        printClients(data);
+    } catch (error) {
+        console.error('Error al obtener datos de la API:', error);
+    }
+};
+
+const printClients = (clients) => {
+    const table = document.getElementById('tablaClients');
+    const tbody = table.querySelector('tbody');
+    table.style.display = 'table';  
+
+    clients.forEach(client => {
+        const {
+            _idCliente,
+            _nombre,
+            _apellido,
+            _email,
+            _password,
+        } = client;
+
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+            <td>${_idCliente}</td>
+            <td>${_nombre}</td>
+            <td>${_apellido}</td>
+            <td>${_email}</td>
+            <td>${_password}</td>
+        `;
+
+        tbody.appendChild(row);
+    });
+};
+
+fetchClients();
 
 
 //Fetch de empleados de la BBDD

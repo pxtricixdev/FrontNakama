@@ -31,6 +31,7 @@
                 <div class="botones">
                     <button class="btn" onclick="showTable('productos')">PRODUCTS</button>
                     <button class="btn" onclick="showTable('pedidos')">ORDERS</button>
+                    <button class="btn" onclick="showTable('clientes')">CLIENTS</button>
                     <button class="btn" onclick="showTable('empleados')">EMPLOYEES</button>
                     <button class="btn-logout" id="btn-logout">Log out <img src="../imgLoginAdmin/cerrar-sesion.png" width="30px" alt=""></button>
                 </div>
@@ -74,6 +75,23 @@
                         </thead>
                         <tbody>
                             <!-- Las filas de pedidos se insertan aqui -->
+                        </tbody>
+                    </table>
+
+                    <table id="tablaClients" class="tabla" style="display: none;">
+                        <p class="titulo" id="titleClients" style="display: flex;">Clients</p>
+                        
+                        <thead>
+                            <tr>
+                                <th>ClientId</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Password</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Las filas de clientes se insertan aqui -->
                         </tbody>
                     </table>
 
