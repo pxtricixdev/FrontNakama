@@ -24,11 +24,16 @@
     <body>
         <div class="main">
             <div class="categorias">
+                <div class="img-panel">
+                    <img src="../imgLoginAdmin/staff.png" width="50px" alt="">
+                </div>
+                <h3>Staff</h3>
                 <div class="botones">
-                    <button class="btn" onclick="showTable('staff')">COMMITTEE INFO </button>
                     <button class="btn" onclick="showTable('pedidos')">ORDERS</button>
+                    <button class="btn" onclick="showTable('staff')">COMMITTEE INFO </button>
                     <button class="btn" onclick="showTable('convenio')">C.AGREEMENT</button>
                     <button class="btn" onclick="showTable('ora')">ORA</button>
+                    <button class="btn-logout" id="btn-logout">Log out <img src="../imgLoginAdmin/cerrar-sesion.png" width="30px" alt=""></button>
                 </div>
             </div>
             <select id="bajar"> 
@@ -39,7 +44,7 @@
             <div class="panel"> 
                 <div class="separaciones">
                     <div id="tablaStaff" class="tabla" style="display: none;">
-                        <a style="display: none;" id= "titleStaff" class="titulo">Staff</a>
+                        <a style="display: none;" id= "titleStaff" class="titulo">Comitee</a>
                         <div class="comite">
                             <div class="prl">
                                 <section class="title">
@@ -80,41 +85,17 @@
                             </div>
                         </div>
                     </div>
-                 
-                    <table id="tablaPedidos" class="tabla" style="display: none;">
-                        <a style="display: none;" id="titlePedidos" class="titulo">Pedidos</a>
-                        <tr>
-                            <th>IdPedido</th>
-                            <th>Hora</th>
-                            <th>Fecha</th>
-                            <th>Precio</th>
-                            <th>Cliente</th>
-
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Alry</td>
-                            <td>Iana</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Patri</td>
-                            <td>Abad</td>
-                        </tr>
-                    </table>
                    
                     <div id="tablaConvenio" class="tabla" style="display: none;">
-                        <a style="display: none;" id= "titleConvenio" class="titulo">Collective agreement</a>
+                        <a style="display: none;" id= "titleConvenio" class="titulo">Collective Agreement</a>
                         <div class="comite">
                             <div class="prl">
                                 <section class="title">
-                                    <h2><span class="color">COLLECTIVE AGREEMENT </span></h2>
                                 </section>
                                 <p>&nbsp;</p> 
                                 <section class="identification">
                                     <div class="texto">
-                                        <p>In the case of our restaurant located in Madrid, the applicable collective agreement is for HOSPITALITY AND TOURISM ACTIVITIES (28002085011981) of Madrid.</p> <br>
-                                        <p>A collective agreement is a formal agreement between the management of a company and its employees, represented by their delegates, which establishes labor standards and workers' rights. Below are some important points that apply in our case:</p>
+                                        <p>HOSPITALITY AND TOURISM ACTIVITIES (28002085011981) of Madrid.</p> <br>
                                     </div>
                                 </section>
                                 <p>&nbsp;</p> 
@@ -143,11 +124,10 @@
 
                       
                     <div id="tablaOra" class="tabla" style="display: none;">
-                        <a style="display: none;" id= "titleOra" class="titulo">Ora</a>
+                        <a style="display: none;" id= "titleOra" class="titulo">Occupational Risk Assessment</a>
                         <div class="comite">
                             <div class="prl">
                                 <section class="title">
-                                    <h2><span class="color">OCCUPATIONAL RISK ASSESSMENT</span></h2>
                                 </section>
                                 <p>&nbsp;</p>
                                 <section class="identification">
@@ -269,6 +249,6 @@
                 </div>
             </div>
         </div>
+        <script src="../js/loginA002.js"></script>
     </body>
-    <script src="../js/loginA001.js"></script>
 </html>

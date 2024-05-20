@@ -49,28 +49,114 @@ a{
     color: #EE7722;
 }
 
+.main {
+    display: flex;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Barra lateral de navegación */
+
 .categorias {
     min-width: 300px;
-    height: 85vh;
+    height: 100%;
     background: #ee7722;
-    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
-    margin-top: 60px;
     position: fixed;
+    align-items: center;
+}
+
+.categorias h3 {
+    font-family: var(--fuente2);
+    font-size: 15px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.img-panel {
+    background-color: #dadada;
+    padding: 10px 12px;
+    border-radius: 40px;
+    margin-top: 40px;
 }
 
 
+.botones {
+    align-items: stretch;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.btn {
+    width: auto; 
+    height: 50px; 
+    background-color:  #000000; 
+    color: #fcf8f8;
+    cursor: pointer;
+    text-align: center; 
+    line-height: 20px; 
+    font-family: var(--fuente2);
+    font-size: 15px;
+    border: none;
+}
+
+.btn:hover {
+    background-color:  #3d3d3d; 
+}
+
+.btn-logout {
+    outline: none;
+    border: none;
+    background-color: #C9C9C9;
+    cursor: pointer;
+    align-items: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: var(--fuente2);
+    font-weight: 700;
+    border-radius: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 5px;
+}
+.btn-logout:hover {
+    color: var(--orange);
+}
+
+
+#bajar{
+    display: none;
+}
+
+/* Estilos para el panel principal */
+.panel {
+    flex-grow: 1; 
+    padding: 1rem;
+    margin-top: 35px;
+    margin-left: 10px;  
+}
 .separaciones{
     padding-left: 290px;
 }
 
-
-#tablas {
-    margin-left: 170px;
-    
+.titulo {
+  display: block; 
+  width: 95%; 
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ee7722;
+  font-family: var(--fuente2);
+  
 }
+
+/* Estilos tablas*/
 
 .tabla {    
     width: 95%;
@@ -100,77 +186,3 @@ a{
     color: white;
 }
 
-.btn {
-    width: auto; 
-    height: 60px; 
-    background-color:  #2c2c2c; 
-    color: #fcf8f8;
-    cursor: pointer;
-    text-align: center; 
-    line-height: 20px; /* Centra el icono verticalmente */
-    border-radius: 20px;
-    font-family: var(--fuente1);
-    font-size: 24px;
-    border: none;
-}
-
-.btn:hover {
-    background-color:  #3d3d3d; 
-}
-
-#bajar{
-    display: none;
-}
-
-.main {
-    display: flex;
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-/* Barra lateral de navegación */
-
-.botones {
-    align-items: stretch;
-    align-content: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 850px;
-}
-
-
-/* Estilos para el panel principal */
-.panel {
-    flex-grow: 1; 
-    padding: 1rem;
-    margin-top: 35px;
-    margin-left: 10px;  
-}
-
-.titulo {
-  display: block; 
-  width: 95%; 
-  font-size: 1.5rem;
-  color: #fff;
-  margin-bottom: 0.5rem;
-  border-bottom: 2px solid #ee7722;
-  font-family: var(--fuente1);
-  
-}
-
-
-@media (max-width: 768px) {
-    .categorias {
-        min-width: 300px;
-        height: 85vh;
-        background: #ee7722;
-        border-radius: 20px;
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-        margin-top: 60px;
-        position: fixed;
-    }
-    
-}

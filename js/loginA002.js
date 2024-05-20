@@ -1,3 +1,4 @@
+//Funcion para mostrar los paneles
 function showTable(table) {
     let allTables = document.querySelectorAll('.tabla');
     let allTitles = document.querySelectorAll('.titulo')
@@ -20,3 +21,18 @@ function showTable(table) {
     
 }
 
+// Verifica si el usuario esta autenticado
+if (localStorage.getItem('isAuthenticated') !== 'true') {
+    window.location.href = 'logAdmin.html'; // Redirige a login
+}
+
+// Cerrar sesion
+document.getElementById('btn-logout').addEventListener('click', function() {
+    // Removemos los datos
+    localStorage.removeItem('username');
+    localStorage.removeItem('password');
+    localStorage.removeItem('isAuthenticated'); 
+    localStorage.removeItem('role');
+    // Redirige a login
+    window.location.href = 'logAdmin.html';
+});
