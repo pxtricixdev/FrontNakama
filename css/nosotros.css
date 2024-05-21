@@ -185,6 +185,11 @@ body {
     cursor: pointer;
 }
 
+.iconos button:hover {
+    color: #000;
+    box-shadow: 0px 2px 24px 8px rgba(255, 141, 59, 0.2);
+}
+
 .header .icons div {
     color: black;
     cursor: pointer;
@@ -371,6 +376,7 @@ h2{
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
     }
 
     .footer .footer-central .info-footer {
@@ -379,13 +385,30 @@ h2{
     }
 }
 
-
-
 .footer .info-footer {
     font-family: var(--fuente2);
     font-weight: 700;
-    gap: 8px;
+    gap: 12px;
+    margin-bottom: 10px;
     word-spacing: 5px;
+    align-items: center;
+}
+.footer .info-footer button {
+    background: none;
+    cursor: pointer;
+    font-family: var(--fuente2);
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    transition: .2s ease-in;
+}
+
+.footer .info-footer button:hover {
+    color: #C9C9C9;
 }
     
 .footer {
@@ -426,11 +449,12 @@ h2{
     text-transform: uppercase;
     transition: ease 0.3s;
     font-family: var(--fuente2);
-    font-size: 25px;
+    font-size: 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 5px 0;
+    margin-bottom: 10px;
 }
 
 .footer .social-credit .enlace:hover {
