@@ -276,6 +276,7 @@ footer {
     font-weight: 700;
     gap: 15px;
     word-spacing: 5px;
+    font-size: 14px;
 }
 
 .footer .social-media a, .footer .info-footer a {
@@ -286,18 +287,11 @@ footer {
     transition: ease 0.3s;
 }
 
-.footer .info-footer a {
-    font-size: 25px;
-}
-.footer .info-footer a:hover {
-    color: #C9C9C9;
-}
-
 .footer .credit {
     font-family: var(--fuente1);
     font-weight: 700;
     padding-top: 20px;
-    padding-bottom: 10px;
+    font-size: 12px;
 }
 
 .politicas{
