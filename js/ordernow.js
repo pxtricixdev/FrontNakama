@@ -29,6 +29,7 @@ function closeModal(modal) {
     overlay.classList.remove('active');
 }
 
+
 /*----- funcion carrito -----*/
 // Variables
 const addProducts = document.querySelectorAll('.add-cart');

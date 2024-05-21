@@ -46,27 +46,20 @@
         </button>
         
         <div class="iconos">
-            <a href= "../html/log.html" class = "iconos-derecha" id="user-login">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="#EE7722" class="bi bi-person-circle" viewBox="0 0 16 16">
-                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                  </svg>
-            </a>
-            <div class = "iconos-derecha" id="carrito">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="#EE7722" class="bi bi-basket-fill" viewBox="0 0 16 16">
-                    <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0z"/>
-                </svg>
-            </div> 
+            <button id="loginBtn" class="iconos-derecha">Log In
+            </button>
         </div>
+
     </header>
 
     <main class="main">
         <div class="name-logo"></div>
         <p class="texto-presentacion">Welcome to <b>Nakama</b>, where Western tradition meets the exotic flavors of the East!</p><br>
         <p class="texto-presentacion">In our cozy establishment, we invite you to enjoy a unique gastronomic experience that blends the best of two worlds: the juiciness of a classic burger with the intense and diverse aromas of Asian cuisine.</p>
-        <div class="btn-order">
-            <a href="./ordernow.html">Order now</a>
-        </div>
+        <!--<div class="btn-order">
+            <a href="#" id="orderNowBtn">Order now</a>
+        </div>-->
+        <button class="btn-order" id="orderNowBtn">Order now</button>
     </main>
  
     <section class="central-section animate__animated animate__fadeInUp">
@@ -151,5 +144,7 @@
     </footer>
 
     <script src="../js/home.js"></script>
+    <script src="../js/common.js"></script>
+
 </body>
 </html>

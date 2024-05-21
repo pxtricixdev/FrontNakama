@@ -33,7 +33,7 @@ function register() {
   y.style.opacity = 1;
 }
 
-//Funcion de registro
+//Funcion de registro de usuario
 document.querySelector('.submit').addEventListener('click', function(event) {
   event.preventDefault();
 
@@ -45,17 +45,20 @@ document.querySelector('.submit').addEventListener('click', function(event) {
   //Si no se ha rellenado algun campo salta una alerta
   if (!username || !lastname || !mail || !password) {
     alert('You must complete each field');
-    return;
+   
+  } else {  //Si por el contrario se han rellenado todos los campos
+    //Guardamos los datos de registro
+    localStorage.setItem('firstname', username);
+    localStorage.setItem('lastname', lastname);
+    localStorage.setItem('mail', mail);
+    localStorage.setItem('password', password);
+    localStorage.setItem('isRegistered', 'true'); 
+
+    //Redirige a la pagina de inicio de sesion
+    alert('Your account has been registered. Please Log In')
+    window.location.href = '../html/log.html';
   }
 
-  //Guardamos los datos de registro
-  localStorage.setItem('firstname', username);
-  localStorage.setItem('lastname', lastname);
-  localStorage.setItem('mail', mail);
-  localStorage.setItem('password', password);
-
-  //Redirige a la pagina de realizar pedido
-  window.location.href = '../html/ordernow.html';
 });
 
 //Funcion para comprobar si el usuario ya esta registrado y puede loguearse

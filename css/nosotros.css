@@ -169,6 +169,22 @@ body {
     align-items: center;
 }
 
+.iconos button {
+    width: 120px;
+    outline: none;
+    border: none;
+    height: 40px;
+    background-color: var(--orange);
+    border-radius: 40px;
+    text-align: center;
+    font-family: var(--fuente2);
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
 .header .icons div {
     color: black;
     cursor: pointer;

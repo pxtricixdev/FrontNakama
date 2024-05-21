@@ -60,3 +60,23 @@ menuItems.forEach(
     menuItem.addEventListener("click", toggleMenu);
   }
 )
+
+//Comprobamos si el usuario esta logueado cuando hace click en el boton Order Now para redirigir a la pagina de pedidos
+const orderNowBtn = document.getElementById('orderNowBtn');
+
+  orderNowBtn.addEventListener('click', function(event) {
+  const isRegistered = localStorage.getItem('isRegistered');
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+  // Si se ha registrado y ha iniciado sesion redirige a la pagina de pedidos
+  if (isRegistered === 'true' && isLoggedIn === 'true') {
+    window.location.href = 'ordernow.html';
+     
+  } else {
+      //Si no lo esta redirige a inicio de sesion
+    window.location.href = 'log.html';
+    
+  }
+});
+
+
