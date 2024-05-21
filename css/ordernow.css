@@ -389,10 +389,12 @@ body {
 .form-order {
     margin-left: 20px;
     font-weight: 700;
-    text-transform: uppercase;
     font-size: 14px;
 }
 
+.form-order .terms a {
+    color: #c5c5c5;
+}
 .form-order input[type='text'] {
     border-radius: 15px;
     border: none;
@@ -439,6 +441,10 @@ body {
     padding-bottom: 30px;
 }
 
+.carrito-next button {
+    letter-spacing: 1.3px;
+}
+
 .carrito-footer {
     display: flex;
     justify-content: space-between;
@@ -451,16 +457,20 @@ body {
     margin: 0 10px;
     font-weight: 700;
     font-size: 15px;
-    padding: 0 15px;
+    padding: 0 18px;
     transition: .2s ease;
     outline: none;
     border: none;
-    font-family: var(--fuente2);
     cursor: pointer;
+    font-family: var(--fuente2);
 }
 
 .carrito-footer:hover {
     color: var(--orange);
+}
+
+.carrito-footer .arriba {
+
 }
 
 .modal-carrito .list-group button {
