@@ -385,6 +385,27 @@ body {
     margin-bottom: 10px;
     font-size: 15px;
 }
+
+.form-order {
+    margin-left: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.form-order input[type='text'] {
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    padding: 10px 30px 10px 8px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    font-style: italic;
+    font-family: var(--fuente2);
+    font-size: 12px;
+    width: 70%;
+    
+}
 .countproduct {
     display: flex;
     justify-content: space-between;
@@ -430,8 +451,12 @@ body {
     margin: 0 10px;
     font-weight: 700;
     font-size: 15px;
-    padding: 0 4px;
+    padding: 0 15px;
     transition: .2s ease;
+    outline: none;
+    border: none;
+    font-family: var(--fuente2);
+    cursor: pointer;
 }
 
 .carrito-footer:hover {
