@@ -198,22 +198,30 @@ a{
 
 .modal-menu input {
     width: 100%;
+    height: 40px;
     padding-bottom: 8px;
     margin-bottom: 15px;
     border: 2px solid black;
     border-radius: 10px;
 }
 
-/*.modal-menu button {
+.modal-menu .add-modal {
     border: none;
     font-size: 15px;
-    background-color: var(--orange);
+    background-color: var(--black);
+    color: #fff;
     cursor: pointer;
     width: 100px;
-    height: 30px;
+    padding: 10px 0;
     font-family: var(--fuente2);
-    border-radius: 10px;
-}*/
+    border-radius: 8px;
+    margin-left: 160px;
+}
+
+.modal-menu .add-modal:hover {
+    color: var(--orange);
+}
+
 .modal-menu.active {
     transform: translate(-50%, -50%) scale(1);
 }
@@ -230,6 +238,7 @@ a{
     font-size: 20px;
     cursor: pointer;
 }
+
 /* Estilos tablas*/
 
 .tabla {    
