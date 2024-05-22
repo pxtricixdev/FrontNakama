@@ -242,7 +242,6 @@ const printEmployees = (employees) => {
 fetchEmployees();
 
 //Popup formulario add productos
-
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
 const modalMenu = document.getElementById('modal-menu');
@@ -270,3 +269,78 @@ function closeModal(modal) {
     modal.classList.remove('active');
     overlay.classList.remove('active');
 }
+
+//Añadir productos a la BBDD
+const urlAddProducts  = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.ADD';
+
+document.getElementById('addBtnModal').addEventListener('click', async () => {
+    const productId = document.getElementById('productId').value;
+    const productName = document.getElementById('productName').value;
+    const productDescription = document.getElementById('productDescription').value;
+    const productPrice = document.getElementById('productPrice').value;
+    const productState = document.getElementById('productState').value;
+    const productCategoryId = document.getElementById('productCategoryId').value;
+
+    const product = {
+        _idProducto: productId,
+        _nombre: productName,
+        _descripcion: productDescription,
+        _precio: productPrice,
+        _estado: productState,
+        _idCategoria: productCategoryId,
+    };
+
+    try {
+        const response = await fetch(urlAddProducts, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(product),
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            console.log('Producto añadido:', data);
+            const printProduct = (product) => {
+                const table = document.getElementById('tablaProductos');
+                const tbody = table.querySelector('tbody');
+                table.style.display = 'table';
+            
+                const {
+                    _idProducto,
+                    _nombre,
+                    _descripcion,
+                    _precio,
+                    _estado,
+                    _idCategoria,
+                } = product;
+            
+                const row = document.createElement('tr');
+            
+                row.innerHTML = `
+                    <td>${_idProducto}</td>
+                    <td>${_nombre}</td>
+                    <td>${_descripcion}</td>
+                    <td>${_precio}</td>
+                    <td>${_estado}</td>
+                    <td>${_idCategoria}</td>
+                `;
+            
+                tbody.appendChild(row);
+            };
+            
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Producto añadido:', data);
+                printProduct(data);
+            }
+                    } else {
+            console.error('Error al añadir producto:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error al realizar la solicitud:', error);
+    }
+});
+
+//Eliminar productos a la BBDD
