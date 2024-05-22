@@ -55,7 +55,7 @@ document.querySelector('.submit').addEventListener('click', function(event) {
     localStorage.setItem('isRegistered', 'true'); 
 
     //Redirige a la pagina de inicio de sesion
-    alert('Your account has been registered. Please Log In')
+    alert('Your account has been successfully registered. Please log in to make an order.');
     window.location.href = '../html/log.html';
   }
 
@@ -84,4 +84,39 @@ document.querySelector('.submitlogin').addEventListener('click', function(event)
     alert('Incorrect username or password');
   }
 });
+
+
+//Captura de datos del registro para enviar a la tabla Clientes en BBDD
+document.getElementById('register').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const name = localStorage.getItem('firstname');
+  const lastname = localStorage.getItem('lastname');
+  const email = localStorage.getItem('mail');
+  const password = localStorage.getItem('password');
+
+  const clientData = {
+    CL_NOMBRE: name,
+    CL_APELLIDO: lastname,
+    CL_EMAIL: email,
+    CL_PASSWORD: password
+  };
+
+    fetch('url', { // Pegar aqui la url cuando la tengamos
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(clientData)
+  })
+  .then(response => response.json())
+  .then(clientData => {
+      console.log('Success:', clientData);
+  })
+  .catch((error) => {
+      console.error('Error:', error);
+  });
+
+})
+
 

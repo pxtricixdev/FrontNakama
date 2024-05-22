@@ -242,18 +242,22 @@ const printProducts = (products) => {
 
 //fetchCategories();
 
+//Fetch de categorias y productos
 async function fetchCategoriesAndProducts() {
-    const [productsResponse, categoriesResponse] = await Promise.all([
+    const [productsResponse, categoriesResponse] = await Promise.all([ //espera a que ambas respuestas esten disponibles
       fetch(urlProducts),
       fetch(urlCategory)
     ]);
-  
+    
+    //extrae el json de cada respuesta 
     const products = await productsResponse.json();
     const categories = await categoriesResponse.json();
   
     printCategories(categories);
     printProducts(products);
-    
   }
 
   fetchCategoriesAndProducts();
+
+
+//
