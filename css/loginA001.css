@@ -156,6 +156,80 @@ a{
   
 }
 
+.botones-bbdd {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.botones-bbdd button {
+    width: 110px;
+    height: 35px;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--orange);
+    font-family: var(--fuente2);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.modal-menu {
+    height: 480px;
+    width: 450px;
+    position: fixed;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border-radius: 10px;
+    z-index: 10;
+    max-width: 80%;
+    font-family:var(--fuente2);
+    padding: 20px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-menu label {
+    padding-bottom: 5px;
+}
+
+.modal-menu input {
+    width: 100%;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+/*.modal-menu button {
+    border: none;
+    font-size: 15px;
+    background-color: var(--orange);
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    font-family: var(--fuente2);
+    border-radius: 10px;
+}*/
+.modal-menu.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+.modal-menu .close-button-modal {
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    transform: translate(50%, -50%); 
+    background-color: #000000;
+    padding: 1px 7px;
+    border-radius: 20px;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
 /* Estilos tablas*/
 
 .tabla {    
@@ -185,4 +259,5 @@ a{
     display: none;
     color: white;
 }
+
 

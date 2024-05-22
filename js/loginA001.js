@@ -2,15 +2,20 @@
 function showTable(table) {
     let allTables = document.querySelectorAll('.tabla');
     let allTitles = document.querySelectorAll('.titulo')
+    let allBtnBdd = document.querySelectorAll('.botones-bbdd')
+
     allTitles.forEach(t => t.style.display = 'none');
-    allTables.forEach(t => t.style.display = 'none'); 
+    allTables.forEach(t => t.style.display = 'none');
+    allBtnBdd.forEach(t => t.style.display = 'none');
 
     if (table === 'productos') {
         document.getElementById('tablaProductos').style.display = 'table';
         document.getElementById('titleProductos').style.display = 'flex'
+        document.getElementById('btnBbddProducts').style.display = 'flex'
     } else if (table === 'empleados') {
         document.getElementById('tablaEmpleados').style.display = 'table';
         document.getElementById('titleEmpleados').style.display = 'flex'
+        document.getElementById('btnBbddEmployees').style.display = 'flex'
     } else if (table === 'clientes') {
         document.getElementById('tablaClients').style.display = 'table';
         document.getElementById('titleClients').style.display = 'flex'
@@ -38,7 +43,7 @@ document.getElementById('btn-logout').addEventListener('click', function() {
 });
 
 
-//Fetch de los productos de la BBDD
+//Fetch para obtener los productos de la BBDD
 const urlProducts = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.FIND_ALL';
 
 const fetchProducts = async () => {
@@ -83,6 +88,9 @@ const printProducts = (products) => {
 };
 
 fetchProducts();
+
+//Función para eliminar productos 
+
 
 //Fetch de pedidos
 const urlOrders = 'http://localhost:8080/Nakama/Controller?ACTION=PEDIDOS.FIND_ALL';
@@ -232,3 +240,33 @@ const printEmployees = (employees) => {
 };
 
 fetchEmployees();
+
+//Popup formulario add productos
+
+const openModalButtons = document.querySelectorAll('[data-modal-target]');
+const closeModalButtons = document.querySelectorAll('[data-close-button]');
+const modalMenu = document.getElementById('modal-menu');
+
+openModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        openModal(modalMenu);
+    });
+});
+
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        closeModal(modalMenu);
+    });
+});
+
+function openModal(modal) {
+    if (modal == null) return;
+    modal.classList.add('active');
+    overlay.classList.add('active');
+}
+
+function closeModal(modal) {
+    if (modal == null) return;
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+}
