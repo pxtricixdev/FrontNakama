@@ -133,7 +133,6 @@ const productCategoryIdInput = document.getElementById('productCategoryId');
 
 // URL del endpoint para añadir productos
 const urlAddProducts = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.ADD';
-
 document.getElementById('addBtnModal').addEventListener('click', async () => {
     // Valores de los campos del formulario
     //const productId = productIdInput.value;
@@ -156,12 +155,12 @@ document.getElementById('addBtnModal').addEventListener('click', async () => {
     // Creamos el objeto del producto
     const product = {
         //ID_PRODUCTO: productId,
-        PRD_NOMBRE: productName,
-        PRD_PRECIO_VENTA: parseFloat(productPrice),
-        PRD_DESCRIPCION: productDescription,
-        PRD_IMAGEN_RUTA: productImage,
-        PRD_ESTADO: productState,
-        ID_CATEGORIA_PRD: productCategoryId,
+        _nombre: productName,
+        _precioVenta: parseFloat(productPrice),
+        _descripcion: productDescription,
+        _imagenRuta: productImage,
+        _estado: productState,
+        _idCategoria: productCategoryId,
     };
 
     try {
@@ -171,24 +170,10 @@ document.getElementById('addBtnModal').addEventListener('click', async () => {
             headers: {
                 'Content-Type': 'application/json',
             },
+            mode: 'no-cors',
             body: JSON.stringify(product),
         });
 
-        if (response.ok) {
-            // Comprobamos si el producto se ha añadido
-            const data = await response.json();
-            console.log('Producto añadido:', data);
-
-            // Actualizamos la pagina para ver si se ha añadido
-            printProduct(data);
-
-            // Limpiamos el formulario
-            clearForm();
-            closeModal(modalMenu);
-        } else {
-            // Si no se ha añadido el producto, mostramos el error
-            console.error('Error al añadir producto:', response.statusText);
-        }
     } catch (error) {
         // Si no se ha podido realizar la solicitud mostrarmos el error
         console.error('Error al realizar la solicitud:', error);
