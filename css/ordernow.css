@@ -347,6 +347,11 @@ body {
     background-color: #00000062;
 }
 
+/*------ modal ticket ------ */
+.modal-ticket {
+
+}
+
 
 #overlay {
     position: fixed;
@@ -430,7 +435,6 @@ body {
     background: none;
     padding: 10px 5px;
     cursor: pointer;
-    margin-left: 10px;
 }
 
 .btn-vaciar svg:hover {

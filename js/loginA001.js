@@ -123,7 +123,7 @@ addButton.addEventListener('click', function() {
 });
 
 // Constantes de los valores del formulario 
-const productIdInput = document.getElementById('productId');
+//const productIdInput = document.getElementById('productId');
 const productNameInput = document.getElementById('productName');
 const productDescriptionInput = document.getElementById('productDescription');
 const productPriceInput = document.getElementById('productPrice');
@@ -136,7 +136,7 @@ const urlAddProducts = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS
 
 document.getElementById('addBtnModal').addEventListener('click', async () => {
     // Valores de los campos del formulario
-    const productId = productIdInput.value;
+    //const productId = productIdInput.value;
     const productName = productNameInput.value;
     const productDescription = productDescriptionInput.value;
     const productPrice = productPriceInput.value;
@@ -145,7 +145,7 @@ document.getElementById('addBtnModal').addEventListener('click', async () => {
     const productCategoryId = productCategoryIdInput.value;
 
     // Imprimimos los valores para ver si los coge bien
-    console.log('ProductID:', productId);
+    //console.log('ProductID:', productId);
     console.log('Name:', productName);
     console.log('Description:', productDescription);
     console.log('Price:', productPrice);
@@ -155,7 +155,7 @@ document.getElementById('addBtnModal').addEventListener('click', async () => {
 
     // Creamos el objeto del producto
     const product = {
-        ID_PRODUCTO: productId,
+        //ID_PRODUCTO: productId,
         PRD_NOMBRE: productName,
         PRD_PRECIO_VENTA: parseFloat(productPrice),
         PRD_DESCRIPCION: productDescription,
@@ -203,7 +203,7 @@ const printProduct = (product) => {
     table.style.display = 'table';
 
     const {
-        ID_PRODUCTO,
+        //ID_PRODUCTO,
         PRD_NOMBRE,
         PRD_DESCRIPCION,
         PRD_PRECIO_VENTA,
@@ -214,7 +214,6 @@ const printProduct = (product) => {
     const row = document.createElement('tr');
 
     row.innerHTML = `
-        <td>${ID_PRODUCTO}</td>
         <td>${PRD_NOMBRE}</td>
         <td>${PRD_DESCRIPCION}</td>
         <td>${PRD_PRECIO_VENTA}</td>
@@ -227,7 +226,7 @@ const printProduct = (product) => {
 
 // Funcion para limpiar el formulario
 const clearForm = () => {
-    document.getElementById('productId').value = '';
+    //document.getElementById('productId').value = '';
     document.getElementById('productName').value = '';
     document.getElementById('productDescription').value = '';
     document.getElementById('productPrice').value = '';
