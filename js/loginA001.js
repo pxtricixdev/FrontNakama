@@ -81,9 +81,40 @@ const printProducts = (products) => {
             <td>${_precioVenta}</td>
             <td>${_estado}</td>
             <td>${_idCategoria}</td>
+            <button type="button" class="btn-delete" data-productid="${_idProducto}">DELETE</button> 
+            <button class="btn-update" type="button" id="updateProduct">UPDATE</button>
         `;
 
         tbody.appendChild(row);
+    });
+
+    addDeleteEventListeners();
+};
+
+const urlProductsDelete = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.DELETE&ID_PRODUCTO=${productId}';
+
+const addDeleteEventListeners = () => {
+    const deleteButtons = document.querySelectorAll('.btn-delete');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', async (event) => {
+            const productId = event.target.dataset.productid;
+            console.log(productId);
+            try {
+                const response = await fetch(`${urlProductsDelete}`, {
+                    method: 'POST',
+                });
+                
+                if (response.ok) {
+                    const result = await response.text();
+                    event.target.parentNode.parentNode.remove(); 
+                    console.log("Producto eliminado");
+                } else {
+                    throw new Error('Error al eliminar el producto');
+                }
+            } catch (error) {
+                console.error('Error al eliminar el producto:', error);
+            }
+        });
     });
 };
 
@@ -93,6 +124,7 @@ fetchProducts();
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
 const modalMenu = document.getElementById('modal-menu');
+
 
 openModalButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -121,6 +153,7 @@ const addButton = document.getElementById('addBtnModal');
 addButton.addEventListener('click', function() {
     closeModal(modalMenu);
 });
+
 
 // Constantes de los valores del formulario 
 //const productIdInput = document.getElementById('productId');
@@ -220,6 +253,10 @@ const clearForm = () => {
     document.getElementById('productCategoryId').value = '';
 };
 
+//Fetch para actualizar productos de la web y la bbdd
+const urlUpdateProducts = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.UPDATE';
+
+
 
 //Fetch de pedidos
 const urlOrders = 'http://localhost:8080/Nakama/Controller?ACTION=PEDIDOS.FIND_ALL';
@@ -273,7 +310,7 @@ const printOrders = (orders) => {
 fetchOrders();
 
 //Fetch de clientes de la BBDD
-const urlClients = 'http://localhost:8080/Nakama/Controller?ACTION=CLIENTES.FIND';
+const urlClients = 'http://localhost:8080/Nakama/Controller?ACTION=CLIENTES.FIND_ALL';
 
 const fetchClients = async () => {
     try {
