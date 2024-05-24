@@ -124,9 +124,7 @@
                     <table id="tablaEmpleados" class="tabla" style="display: none;">
                         <p style="display: none;" id="titleEmpleados" class="titulo">Employees</p>
                         <div class="botones-bbdd" id="btnBbddEmployees">
-                            <button type="button" id="addEmployee">ADD</button>
-                            <button type="button" id="deleteEmployee">DELETE</button>
-                            <button type="button" id="updateEmployee">UPDATE</button>
+                            <button data-modal-target="#modal-employee" type="button" id="addEmployee">ADD</button>
                         </div>
                         <thead>
                             <tr>
@@ -135,7 +133,7 @@
                                 <th>Last Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
-                                <th>Hire Date</th>
+                                <th>Comitee Rol</th>
                                 <th>Salary</th>
                                 <th>State</th>
                                 <th>JobId</th>
@@ -146,7 +144,37 @@
                             <!-- Las filas de empleados se insertan aqui -->
                         </tbody>
                     </table>
-                 
+
+                    <!-- add-->
+                    <form class="modal-employee" id="modal-employee">
+                        <!--<label for="productId">ProductID</label>
+                        <input type="text" id="productId">-->
+                        <label for="firstNameEmployee">First Name</label>
+                        <input type="text" id="firstNameEmployee">
+                        <label for="lastNameEmployee">Last Name</label>
+                        <input type="text" id="lastNameEmployee">
+                        <label for="emailEmployee">Email</label>
+                        <input type="email" id="emailEmployee">
+                        <label for="phoneEmployee">Phone</label>
+                        <input type="tel" id="phoneEmployee">
+                        <label for="rolComiteEmployee">Comitee Member</label>
+                        <input type="text" id="rolComiteEmployee">
+                        <label for="salaryEmployee">Salary</label>
+                        <input type="number" id="salaryEmployee">
+                        <label for="employeeState">State</label>
+                        <select id="employeeState">
+                            <option value="true">Active</option>
+                            <option value="false">Inactive</option>
+                        </select>
+                        <label for="employeeJobId">Job Id</label>
+                        <input type="text" id="employeeJobId">
+                        <label for="employeeUserId">User Id</label>
+                        <input type="text" id="employeeUserId">
+                        <button id="addBtnEmployee" class="add-modal" type="button">ADD</button>
+                        <div class="modal-content">
+                            <button data-close-employee class="close-button-modal">&times;</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

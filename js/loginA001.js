@@ -42,8 +42,7 @@ document.getElementById('btn-logout').addEventListener('click', function() {
     window.location.href = 'logAdmin.html';
 });
 
-
-//Fetch para obtener y mostrar los productos de la BBDD
+//Fetch para mostrar todos los productos en la web
 const urlProducts = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.FIND_ALL';
 
 const fetchProducts = async () => {
@@ -61,6 +60,7 @@ const printProducts = (products) => {
     const table = document.getElementById('tablaProductos');
     const tbody = table.querySelector('tbody');
     table.style.display = 'table';  
+    tbody.innerHTML = ''; 
 
     products.forEach(product => {
         const {
@@ -81,8 +81,10 @@ const printProducts = (products) => {
             <td>${_precioVenta}</td>
             <td>${_estado}</td>
             <td>${_idCategoria}</td>
-            <button type="button" class="btn-delete" data-productid="${_idProducto}">DELETE</button> 
-            <button class="btn-update" type="button" id="updateProduct">UPDATE</button>
+            <td>
+                <button type="button" class="btn-delete" data-productid="${_idProducto}">DELETE</button>
+                <button class="btn-update" type="button" id="updateProduct">UPDATE</button>
+            </td>
         `;
 
         tbody.appendChild(row);
@@ -91,25 +93,26 @@ const printProducts = (products) => {
     addDeleteEventListeners();
 };
 
-const urlProductsDelete = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.DELETE&ID_PRODUCTO=${productId}';
-
+// Funcion para borrar los productos de la web
 const addDeleteEventListeners = () => {
     const deleteButtons = document.querySelectorAll('.btn-delete');
     deleteButtons.forEach(button => {
         button.addEventListener('click', async (event) => {
             const productId = event.target.dataset.productid;
-            console.log(productId);
+            console.log(`Intentando eliminar el producto con el id: ${productId}`);
+
+            const urlProductsDelete = `http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.DELETE&ID_PRODUCTO=${productId}`;
+
             try {
-                const response = await fetch(`${urlProductsDelete}`, {
+                const response = await fetch(urlProductsDelete, {
                     method: 'POST',
                 });
                 
                 if (response.ok) {
-                    const result = await response.text();
-                    event.target.parentNode.parentNode.remove(); 
-                    console.log("Producto eliminado");
+                    console.log(`Producto con ID: ${productId} eliminado`);
+                    event.target.closest('tr').remove(); 
                 } else {
-                    throw new Error('Error al eliminar el producto');
+                    throw new Error(`Error al eliminar el producto con ID: ${productId}`);
                 }
             } catch (error) {
                 console.error('Error al eliminar el producto:', error);
@@ -119,6 +122,7 @@ const addDeleteEventListeners = () => {
 };
 
 fetchProducts();
+
 
 //Popup formulario add productos
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
@@ -187,7 +191,6 @@ document.getElementById('addBtnModal').addEventListener('click', async () => {
 
     // Creamos el objeto del producto
     const product = {
-        //ID_PRODUCTO: productId,
         _nombre: productName,
         _precioVenta: parseFloat(productPrice),
         _descripcion: productDescription,
@@ -221,7 +224,6 @@ const printProduct = (product) => {
     table.style.display = 'table';
 
     const {
-        //ID_PRODUCTO,
         PRD_NOMBRE,
         PRD_DESCRIPCION,
         PRD_PRECIO_VENTA,
@@ -255,8 +257,6 @@ const clearForm = () => {
 
 //Fetch para actualizar productos de la web y la bbdd
 const urlUpdateProducts = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.UPDATE';
-
-
 
 //Fetch de pedidos
 const urlOrders = 'http://localhost:8080/Nakama/Controller?ACTION=PEDIDOS.FIND_ALL';
@@ -295,6 +295,7 @@ const printOrders = (orders) => {
         row.innerHTML = `
             <td>${_idPedido}</td>
             <td>${_hora}</td>
+            <td>${_fecha}</td>
             <td>${_tlf}</td>
             <td>${_direccion}</td>
             <td>${_estado}</td>
@@ -380,6 +381,7 @@ const printEmployees = (employees) => {
             _email,
             _telefono,
             _fechaContrato,
+            _rolComite,
             _salario,
             _estado,
             _idPuesto,
@@ -395,10 +397,15 @@ const printEmployees = (employees) => {
             <td>${_email}</td>
             <td>${_telefono}</td>
             <td>${_fechaContrato}</td>
+            <td>${_rolComite}</td>
             <td>${_salario}</td>
             <td>${_estado}</td>
             <td>${_idPuesto}</td>
             <td>${_idUsuario}</td>
+            <td>
+                <button type="button" class="btn-delete" ">DELETE</button>
+                <button class="btn-update" type="button" id="updateEmployee">UPDATE</button>
+            </td>
         `;
 
         tbody.appendChild(row);
@@ -406,5 +413,160 @@ const printEmployees = (employees) => {
 };
 
 fetchEmployees();
+
+//Pop up añadir empleados
+const openModalEmployee = document.querySelectorAll('[data-modal-target]');
+const closeModalEmployee = document.querySelectorAll('[data-close-employee]');
+const modalEmployee = document.getElementById('modal-employee');
+
+
+openModalEmployee.forEach(button => {
+    button.addEventListener('click', () => {
+        openModal(modalEmployee);
+    });
+});
+
+closeModalEmployee.forEach(button => {
+    button.addEventListener('click', () => {
+        closeModal(modalEmployee);
+    });
+});
+
+function openModal(modal) {
+    if (modal == null) return;
+    modal.classList.add('active');
+}
+
+function closeModal(modal) {
+    if (modal == null) return;
+    modal.classList.remove('active');
+}
+
+const addButtonEmployee = document.getElementById('addBtnEmployee');
+
+addButtonEmployee.addEventListener('click', function() {
+    closeModal(modalEmployee);
+});
+
+
+//Añadir empleados desde la web a la BBDD
+// Constantes de los valores del formulario 
+const employeeFirstName = document.getElementById('firstNameEmployee');
+const employeeLastName = document.getElementById('lastNameEmployee');
+const employeeEmail = document.getElementById('emailEmployee');
+const employeePhone = document.getElementById('phoneEmployee');
+const employeeRolComite = document.getElementById('rolComiteEmployee')
+const employeeSalary = document.getElementById('salaryEmployee');
+const employeeState = document.getElementById('employeeState');
+const employeeJobId = document.getElementById('employeeJobId');
+const employeeUserId = document.getElementById('employeeUserId');
+
+
+// URL del endpoint para añadir empleados
+const urlAddEmployees = 'http://localhost:8080/Nakama/Controller?ACTION=EMPLEADOS.ADD';
+
+document.getElementById('addBtnEmployee').addEventListener('click', async () => {
+    // Valores de los campos del formulario
+    const nombre = employeeFirstName.value;
+    const apellido = employeeLastName.value;
+    const mail = employeeEmail.value;
+    const tel = employeePhone.value;
+    const rolComite = rolComiteEmployee.value;
+    const salario = employeeSalary.value;
+    const estado = employeeState.value;
+    const jobId = employeeJobId.value;
+    const userId = employeeUserId.value;
+
+
+    // Imprimimos los valores para ver si los coge bien
+    console.log('Name:', nombre);
+    console.log('Last Name:', apellido);
+    console.log('Mail:', mail);
+    console.log('Phone:', tel);
+    console.log('Rol Comite:', rolComite);
+    console.log('Salary:', salario);
+    console.log('State:', estado);
+    console.log('Job Id:', jobId);
+    console.log('User Id:', userId);
+
+    // Creamos el objeto empleado
+    const employee = {
+        _nombre: nombre,
+        _apellido: apellido,
+        _email: mail,
+        _telefono: tel,
+        _rolComite: rolComite,
+        _salario: salario,
+        _estado: estado,
+        _idPuesto: jobId,
+        _idUsuario: userId,
+    };
+
+    try {
+        // Solicitud fetch para añadir el producto
+        const response = await fetch(urlAddEmployees, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'no-cors',
+            body: JSON.stringify(employee),
+        });
+
+    } catch (error) {
+        // Si no se ha podido realizar la solicitud mostrarmos el error
+        console.error('Error al realizar la solicitud:', error);
+    }
+    
+});
+
+
+// Añade el producto a la tabla de empleados de la web
+const printEmployee = (employee) => {
+    const table = document.getElementById('tablaEmpleados');
+    const tbody = table.querySelector('tbody');
+    table.style.display = 'table';
+
+    const {
+        _nombre,
+        _apellido,
+        _email,
+        _telefono,
+        _rolComite,
+        _salario,
+        _estado,
+        _idPuesto,
+        _idUsuario
+    } = employee;
+
+    const row = document.createElement('tr');
+
+    row.innerHTML = `
+        <td>${_nombre}</td>
+        <td>${_apellido}</td>
+        <td>${_email}</td>
+        <td>${_telefono}</td>
+        <td>${_rolComite}</td>
+        <td>${_salario}</td>
+        <td>${_estado}</td>
+        <td>${_idPuesto}</td>
+        <td>${_idUsuario}</td>
+    `;
+
+    tbody.appendChild(row);
+};
+
+
+// Funcion para limpiar el formulario
+const clearFormEmployee = () => {
+    document.getElementById('firstNameEmployee').value = '';
+    document.getElementById('lastNameEmployee').value = '';
+    document.getElementById('emailEmployee').value = '';
+    document.getElementById('phoneEmployee').value = '';
+    document.getElementById('salaryEmployee').value = '';
+    document.getElementById('productState').selectedIndex = 0;
+    document.getElementById('employeeJobId').value = '';
+    document.getElementById('employeeUserId').value = '';
+};
 
 
