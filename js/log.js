@@ -18,10 +18,6 @@ function login() {
   b.className = "btn";
   x.style.opacity = 1;
   y.style.opacity = 0;
-
-  var email =  document.getElementById("userEmail");
-
-  sendUserData();
 }
 
 function register() {
@@ -33,18 +29,22 @@ function register() {
   y.style.opacity = 1;
 }
 
-
-//Funcion registro de usuario y envio de datos a Clientes BBBDD
-const urlClientRegister = 'http://localhost:8080/Nakama/Controller?ACTION=CLIENTES.REGISTER'
+//Url del endpoint para registrar clientes
+const urlClientRegister = 'http://localhost:8080/Nakama/Controller?ACTION=CLIENTES.REGISTER';
 
 document.getElementById('register').addEventListener('submit', function(event) {
-  event.preventDefault();
+  event.preventDefault(); 
 
   const username = document.getElementById('firstname').value;
   const lastname = document.getElementById('lastname').value;
   const email = document.getElementById('mail').value;
   const password = document.getElementById('password').value;
 
+  //Si no se ha rellenado algun campo salta una alerta
+  if (!username || !lastname || !email || !password) {
+    alert('You must complete each field');
+  }
+  //Creamos el objeto del cliente
   const client = {
     _nombre: username ,  
     _apellido: lastname ,
@@ -53,26 +53,66 @@ document.getElementById('register').addEventListener('submit', function(event) {
   };
   console.log(client);
 
-  fetch(urlClientRegister, { 
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    mode: "no-cors",
-    body: JSON.stringify(client)
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.message === "Cliente registrado con exito") {
-      alert('Your account has been successfully registered. Please log in to make an order.');
-      window.location.href = '../html/log.html';
-    } else {
-      alert(data.message);
-    }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
+  try {
+    //Solicitud fetch para añadir el cliente
+    fetch(urlClientRegister, { 
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      mode: "no-cors",
+      body: JSON.stringify(client)
+    })
+
+    console.log('Registro completado con exito')
+
+    alert('Your account has been successfully registered. Please log in to make an order.');
+    window.location.href = '../html/log.html';
+
+  } catch (error) {
+    //Si no se ha podido realizar la solicitud mostrarmos el error
+    console.error('Error al realizar la solicitud:', error);
+  }
+});
+
+// Url del endpoint para login de clientes
+const urlClientLogin = 'http://localhost:8080/Nakama/Controller?ACTION=CLIENTES.LOGIN';
+
+document.getElementById('login').addEventListener('submit', function(event) {
+  event.preventDefault(); 
+
+  const email = document.getElementById('userEmail').value;
+  const password = document.getElementById('userPassword').value;
+
+  // Si falta algun campo por rellenar
+  if (!email || !password) {
+    alert('You must complete each field');
+  }
+
+  const user = { 
+    email, password 
+  };
+
+  console.log(user);
+
+  try {
+    // Solicitud fetch para el login del cliente
+    fetch(urlClientLogin, { 
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      mode: "no-cors",
+      body: JSON.stringify(user)
+    })
+
+    alert('Inicio completado con exito')
+    window.location.href = '../html/ordernow.html';
+
+  } catch (error) {
+    //Si no se ha podido realizar la solicitud mostrarmos el error
+    console.error('Error al realizar la solicitud:', error);
+  }
 });
 
 
@@ -128,39 +168,4 @@ document.querySelector('.submitlogin').addEventListener('click', function(event)
     alert('Incorrect username or password');
   }
 });
-
-
-//Captura de datos del registro para enviar a la tabla Clientes en BBDD
-document.getElementById('register').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  const name = localStorage.getItem('firstname');
-  const lastname = localStorage.getItem('lastname');
-  const email = localStorage.getItem('mail');
-  const password = localStorage.getItem('password');
-
-  const clientData = {
-    CL_NOMBRE: name,
-    CL_APELLIDO: lastname,
-    CL_EMAIL: email,
-    CL_PASSWORD: password
-  };
-
-    fetch('http://localhost:8080/Nakama/Controller?ACTION=CLIENTES.REGISTER', { 
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(clientData)
-  })
-  .then(response => response.json())
-  .then(clientData => {
-      console.log('Success:', clientData);
-  })
-  .catch((error) => {
-      console.error('Error:', error);
-  });
-
-})
-
 */

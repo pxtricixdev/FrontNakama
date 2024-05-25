@@ -178,14 +178,6 @@ document.getElementById('addBtnModal').addEventListener('click', async () => {
     const productState = productStateElement.value;
     const productCategoryId = productCategoryIdInput.value;
 
-    // Imprimimos los valores para ver si los coge bien
-    console.log('Name:', productName);
-    console.log('Description:', productDescription);
-    console.log('Price:', productPrice);
-    console.log('Image URL:', productImage);
-    console.log('State:', productState);
-    console.log('CategoryID:', productCategoryId);
-
     // Creamos el objeto del producto
     const product = {
         _nombre: productName,
@@ -196,9 +188,11 @@ document.getElementById('addBtnModal').addEventListener('click', async () => {
         _idCategoria: productCategoryId,
     };
 
+    console.log(product);
+
     try {
         // Solicitud fetch para añadir el producto
-        const response = await fetch(urlAddProducts, {
+        await fetch(urlAddProducts, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -243,7 +237,6 @@ const printProduct = (product) => {
 
 // Funcion para limpiar el formulario
 const clearForm = () => {
-    //document.getElementById('productId').value = '';
     document.getElementById('productName').value = '';
     document.getElementById('productDescription').value = '';
     document.getElementById('productPrice').value = '';
