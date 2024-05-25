@@ -86,6 +86,41 @@
                         </div>
                     </form>
 
+                   <!-- Modal de actualización -->
+                    <form class="modal-update-products" id="update-modal-menu">
+                        <!-- Agrega un campo oculto para almacenar el ID del producto -->
+                        <input type="hidden" id="updateProductId">
+                        
+                        <label for="updateProductName">Name</label>
+                        <input type="text" id="updateProductName">
+                        
+                        <label for="updateProductDescription">Description</label>
+                        <input type="text" id="updateProductDescription">
+                        
+                        <label for="updateProductPrice">Price</label>
+                        <input type="text" id="updateProductPrice">
+                        
+                        <label for="updateProductImage">Image URL</label>
+                        <input type="text" id="updateProductImage">
+                        
+                        <label for="updateProductState">State</label>
+                        <select id="updateProductState">
+                            <option value="true">Active</option>
+                            <option value="false">Inactive</option>
+                        </select>
+                        
+                        <label for="updateProductCategoryId">CategoryID</label>
+                        <input type="text" id="updateProductCategoryId">
+                        
+                        <button id="saveBtnModal" class="add-modal" type="button">SAVE</button>
+                        
+                        <div class="modal-content">
+                            <button data-close-button="update-products" class="close-button-modal" id="closeModalUpdate">&times;</button>
+                        </div>
+                    </form>
+
+
+
                     <table id="tablaOrders" class="tabla" style="display: none;">
                         <p class="titulo" id="titleOrders" style="display: flex;">Orders</p>
                         <thead>

@@ -8,8 +8,8 @@ function showTable(table) {
     allTables.forEach(t => t.style.display = 'none');
     allBtnBdd.forEach(t => t.style.display = 'none');
 
-    document.querySelector('.categorias').style.display = 'flex';
-    document.querySelector('.panel').style.display = 'block';
+    //document.querySelector('.categorias').style.display = 'flex';
+    //document.querySelector('.panel').style.display = 'block';
 
     if (table === 'productos') {
         document.getElementById('tablaProductos').style.display = 'table';
@@ -86,7 +86,7 @@ const printProducts = (products) => {
             <td>${_idCategoria}</td>
             <td>
                 <button type="button" class="btn-delete" data-productid="${_idProducto}">DELETE</button>
-                <button class="btn-update" type="button" id="updateProduct">UPDATE</button>
+                <button class="btn-update" type="button" data-productidupdate="${_idProducto}">UPDATE</button>
             </td>
         `;
 
@@ -94,7 +94,105 @@ const printProducts = (products) => {
     });
 
     addDeleteEventListeners();
+    addUpdateEventListeners();
 };
+
+// Funcion para agregar event listeners a los botones de "Update"
+const addUpdateEventListeners = () => {
+    const updateButtons = document.querySelectorAll('.btn-update');
+    updateButtons.forEach(button => {
+        button.addEventListener('click', async () => {
+            const productId = button.getAttribute('data-productidupdate');
+            await loadProductData(productId); // Carga los datos (cogiendo la id) del producto en el formulario
+            console.log(productId);
+            openModalUpdateProd(); 
+        });
+    });
+};
+
+// Funcion para cargar los datos del producto en el formulario de actualizacion
+const loadProductData = async (productId) => {
+    const urlProductDetails = `http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.FIND_BY_ID&ID_PRODUCTO=${productId}`;
+
+    try {
+        const result = await fetch(urlProductDetails);
+        if (!result.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const contentType = result.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+            throw new TypeError("Response is not JSON");
+        }
+
+        const product = await result.json();
+
+        document.getElementById('updateProductId').value = product._idProducto;
+        document.getElementById('updateProductName').value = product._nombre;
+        document.getElementById('updateProductDescription').value = product._descripcion;
+        document.getElementById('updateProductPrice').value = product._precioVenta;
+        document.getElementById('updateProductImage').value = product._imagenRuta;
+        document.getElementById('updateProductState').value = product._estado;
+        document.getElementById('updateProductCategoryId').value = product._idCategoria;
+    } catch (error) {
+        console.error('Error al cargar datos del producto:', error);
+    }
+};
+
+// Función para abrir el modal de actualización
+function openModalUpdateProd() {
+    const modal = document.getElementById('update-modal-menu');
+    if (modal == null) return;
+    modal.classList.add('active');
+}
+
+// Función para cerrar el modal de actualización
+function closeModalUpdateProd() {
+    const modal = document.getElementById('update-modal-menu');
+    if (modal == null) return;
+    modal.classList.remove('active');
+}
+
+// Fetch para actualizar productos de la web y la bbdd
+const urlUpdateProducts = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.UPDATE';
+
+document.getElementById('saveBtnModal').addEventListener('click', async () => {
+    const updateProductName = document.getElementById('updateProductName').value;
+    const updateProductDescription = document.getElementById('updateProductDescription').value;
+    const updateProductPrice = document.getElementById('updateProductPrice').value;
+    const updateProductImage = document.getElementById('updateProductImage').value;
+    const updateProductState = document.getElementById('updateProductState').value;
+    const updateProductCategoryId = document.getElementById('updateProductCategoryId').value;
+
+    const updatedProduct = {
+        _nombre: updateProductName,
+        _descripcion: updateProductDescription,
+        _precioVenta: updateProductPrice,
+        _imagenRuta: updateProductImage,
+        _estado: updateProductState,
+        _idCategoria: updateProductCategoryId,
+    };
+
+    try {
+        const response = await fetch(urlUpdateProducts, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: "no-cors",
+            body: JSON.stringify(updatedProduct),
+        });
+
+        if (response.ok) {
+            console.log('Producto actualizado con éxito');
+            closeModalUpdateProd(); 
+            fetchProducts(); 
+        } else {
+            throw new Error('Error al actualizar el producto');
+        }
+    } catch (error) {
+        console.error('Error al realizar la solicitud de actualización:', error);
+    }
+});
 
 // Funcion para borrar los productos de la web
 const addDeleteEventListeners = () => {
@@ -171,6 +269,7 @@ const productCategoryIdInput = document.getElementById('productCategoryId');
 
 // URL del endpoint para añadir productos
 const urlAddProducts = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.ADD';
+
 document.getElementById('addBtnModal').addEventListener('click', async () => {
     // Valores de los campos del formulario
     const productName = productNameInput.value;
@@ -249,9 +348,6 @@ const clearForm = () => {
     document.getElementById('productState').selectedIndex = 0;
     document.getElementById('productCategoryId').value = '';
 };
-
-//Fetch para actualizar productos de la web y la bbdd
-const urlUpdateProducts = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.UPDATE';
 
 //Fetch de pedidos
 const urlOrders = 'http://localhost:8080/Nakama/Controller?ACTION=PEDIDOS.FIND_ALL';

@@ -25,12 +25,12 @@ body {
     background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)), #0a0a0a;
 }
 
-/*letras*/
 
+/*
 .categorias,
 .panel {
     display: none;
-}
+}*/
 
 h2{
     margin-bottom: 15px;
@@ -316,6 +316,80 @@ a{
     font-size: 20px;
     cursor: pointer;
 }
+
+/* Modal update products */
+.modal-update-products {
+    height: 520px;
+    width: 450px;
+    position: fixed;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border-radius: 10px;
+    z-index: 10;
+    max-width: 80%;
+    font-family:var(--fuente2);
+    padding: 20px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-update-products label {
+    padding-bottom: 5px;
+}
+
+.modal-update-products input {
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.modal-update-products select {
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.modal-update-products .add-modal {
+    border: none;
+    font-size: 15px;
+    background-color: var(--black);
+    color: #fff;
+    cursor: pointer;
+    width: 100px;
+    padding: 10px 0;
+    font-family: var(--fuente2);
+    border-radius: 8px;
+    margin-left: 160px;
+}
+
+.modal-update-products .add-modal:hover {
+    background-color: #3d3d3d;
+}
+
+.modal-update-products.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+.modal-update-products .close-button-modal {
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    transform: translate(50%, -50%); 
+    background-color: #000000;
+    padding: 1px 7px;
+    border-radius: 20px;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
 
 /* Estilos tablas*/
 
