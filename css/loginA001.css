@@ -27,6 +27,10 @@ body {
 
 /*letras*/
 
+.categorias,
+.panel {
+    display: none;
+}
 
 h2{
     margin-bottom: 15px;

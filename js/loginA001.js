@@ -8,6 +8,9 @@ function showTable(table) {
     allTables.forEach(t => t.style.display = 'none');
     allBtnBdd.forEach(t => t.style.display = 'none');
 
+    document.querySelector('.categorias').style.display = 'flex';
+    document.querySelector('.panel').style.display = 'block';
+
     if (table === 'productos') {
         document.getElementById('tablaProductos').style.display = 'table';
         document.getElementById('titleProductos').style.display = 'flex'
@@ -199,6 +202,9 @@ document.getElementById('addBtnModal').addEventListener('click', async () => {
             mode: 'no-cors',
             body: JSON.stringify(product),
         });
+
+        //Recarga la pagina
+        window.location.href = '../html/loginA001.html';
 
     } catch (error) {
         // Si no se ha podido realizar la solicitud mostrarmos el error
@@ -492,18 +498,6 @@ document.getElementById('addBtnEmployee').addEventListener('click', async () => 
     const jobId = employeeJobId.value;
     const userId = employeeUserId.value;
 
-
-    // Imprimimos los valores para ver si los coge bien
-    console.log('Name:', nombre);
-    console.log('Last Name:', apellido);
-    console.log('Mail:', mail);
-    console.log('Phone:', tel);
-    console.log('Rol Comite:', rolComite);
-    console.log('Salary:', salario);
-    console.log('State:', estado);
-    console.log('Job Id:', jobId);
-    console.log('User Id:', userId);
-
     // Creamos el objeto empleado
     const employee = {
         _nombre: nombre,
@@ -518,7 +512,7 @@ document.getElementById('addBtnEmployee').addEventListener('click', async () => 
     };
 
     try {
-        // Solicitud fetch para añadir el producto
+        // Solicitud fetch para añadir el empleado
         const response = await fetch(urlAddEmployees, {
             method: 'POST',
             headers: {
@@ -527,6 +521,8 @@ document.getElementById('addBtnEmployee').addEventListener('click', async () => 
             mode: 'no-cors',
             body: JSON.stringify(employee),
         });
+
+        window.location.href = '../html/loginA001.html';
 
     } catch (error) {
         // Si no se ha podido realizar la solicitud mostrarmos el error
