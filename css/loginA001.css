@@ -343,7 +343,7 @@ a{
     color: white;
 }
 
-.btn-delete, .btn-update {
+.btn-delete, .btn-update, .btn-dlt-employee {
     border: none;
     background-color: var(--orange);
     margin-right: 5px;

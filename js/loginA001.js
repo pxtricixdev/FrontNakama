@@ -391,12 +391,41 @@ const printEmployees = (employees) => {
             <td>${_idPuesto}</td>
             <td>${_idUsuario}</td>
             <td>
-                <button type="button" class="btn-delete" ">DELETE</button>
+                <button type="button" class="btn-dlt-employee"data-employeeid="${_idEmpleado}">DELETE</button>
                 <button class="btn-update" type="button" id="updateEmployee">UPDATE</button>
             </td>
         `;
 
         tbody.appendChild(row);
+    });
+
+    addDeleteEventListenersEmployees();
+};
+
+const addDeleteEventListenersEmployees = () => {
+    const deleteButtons = document.querySelectorAll('.btn-dlt-employee');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', async (event) => {
+            const idEmployee = event.target.dataset.employeeid;
+            console.log(`Intentando eliminar el producto con el id: ${idEmployee}`);
+
+            const urlEmployeesDelete = `http://localhost:8080/Nakama/Controller?ACTION=EMPLEADOS.DELETE&ID_EMPLEADO=${idEmployee}`;
+
+            try {
+                const response = await fetch(urlEmployeesDelete, {
+                    method: 'POST',
+                });
+                
+                if (response.ok) {
+                    console.log(`Empleado con ID: ${idEmployee} eliminado`);
+                    event.target.closest('tr').remove(); 
+                } else {
+                    throw new Error(`Error al eliminar el empleado con ID: ${idEmployee}`);
+                }
+            } catch (error) {
+                console.error('Error al eliminar el empleado:', error);
+            }
+        });
     });
 };
 
