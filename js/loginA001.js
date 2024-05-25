@@ -160,7 +160,6 @@ addButton.addEventListener('click', function() {
 
 
 // Constantes de los valores del formulario 
-//const productIdInput = document.getElementById('productId');
 const productNameInput = document.getElementById('productName');
 const productDescriptionInput = document.getElementById('productDescription');
 const productPriceInput = document.getElementById('productPrice');
@@ -172,7 +171,6 @@ const productCategoryIdInput = document.getElementById('productCategoryId');
 const urlAddProducts = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.ADD';
 document.getElementById('addBtnModal').addEventListener('click', async () => {
     // Valores de los campos del formulario
-    //const productId = productIdInput.value;
     const productName = productNameInput.value;
     const productDescription = productDescriptionInput.value;
     const productPrice = productPriceInput.value;
@@ -181,7 +179,6 @@ document.getElementById('addBtnModal').addEventListener('click', async () => {
     const productCategoryId = productCategoryIdInput.value;
 
     // Imprimimos los valores para ver si los coge bien
-    //console.log('ProductID:', productId);
     console.log('Name:', productName);
     console.log('Description:', productDescription);
     console.log('Price:', productPrice);

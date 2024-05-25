@@ -33,6 +33,50 @@ function register() {
   y.style.opacity = 1;
 }
 
+
+//Funcion registro de usuario y envio de datos a Clientes BBBDD
+const urlClientRegister = 'http://localhost:8080/Nakama/Controller?ACTION=CLIENTES.REGISTER'
+
+document.getElementById('register').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const username = document.getElementById('firstname').value;
+  const lastname = document.getElementById('lastname').value;
+  const email = document.getElementById('mail').value;
+  const password = document.getElementById('password').value;
+
+  const client = {
+    _nombre: username ,  
+    _apellido: lastname ,
+    _email: email,
+    _password: password,
+  };
+  console.log(client);
+
+  fetch(urlClientRegister, { 
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    mode: "no-cors",
+    body: JSON.stringify(client)
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.message === "Cliente registrado con exito") {
+      alert('Your account has been successfully registered. Please log in to make an order.');
+      window.location.href = '../html/log.html';
+    } else {
+      alert(data.message);
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+});
+
+
+/*
 //Funcion de registro de usuario
 document.querySelector('.submit').addEventListener('click', function(event) {
   event.preventDefault();
@@ -119,4 +163,4 @@ document.getElementById('register').addEventListener('submit', function(event) {
 
 })
 
-
+*/
