@@ -102,7 +102,7 @@ document.getElementById('register').addEventListener('submit', function(event) {
     CL_PASSWORD: password
   };
 
-    fetch('http://localhost:8080/Nakama/Controller?ACTION=CLIENTES.REGISTER', { // Pegar aqui la url cuando la tengamos
+    fetch('http://localhost:8080/Nakama/Controller?ACTION=CLIENTES.REGISTER', { 
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'
