@@ -43,7 +43,7 @@
                     <table id="tablaProductos" class="tabla" style="display: none;">
                         <p class="titulo" id="titleProductos" style="display: flex;">Products</p>
                         <div class="botones-bbdd" id="btnBbddProducts">
-                            <button data-modal-target="#modal-menu" type="button" id="addProduct">ADD</button>
+                            <button data-modal-target="products" type="button" id="addProduct">ADD</button>
                             
                         </div>
                         <thead>
@@ -82,7 +82,7 @@
                         <input type="text" id="productCategoryId">
                         <button id="addBtnModal" class="add-modal" type="button">ADD</button>
                         <div class="modal-content">
-                            <button data-close-button class="close-button-modal">&times;</button>
+                            <button data-close-button="products" class="close-button-modal">&times;</button>
                         </div>
                     </form>
 
@@ -124,7 +124,7 @@
                     <table id="tablaEmpleados" class="tabla" style="display: none;">
                         <p style="display: none;" id="titleEmpleados" class="titulo">Employees</p>
                         <div class="botones-bbdd" id="btnBbddEmployees">
-                            <button data-modal-target="#modal-employee" type="button" id="addEmployee">ADD</button>
+                            <button data-modal-target="employees" type="button" id="addEmployee">ADD</button>
                         </div>
                         <thead>
                             <tr>
@@ -172,7 +172,7 @@
                         <input type="text" id="employeeUserId">
                         <button id="addBtnEmployee" class="add-modal" type="button">ADD</button>
                         <div class="modal-content">
-                            <button data-close-employee class="close-button-modal">&times;</button>
+                            <button data-close-button="employees" class="close-button-modal">&times;</button>
                         </div>
                     </form>
                 </div>

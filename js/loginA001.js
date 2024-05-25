@@ -125,10 +125,9 @@ fetchProducts();
 
 
 //Popup formulario add productos
-const openModalButtons = document.querySelectorAll('[data-modal-target]');
-const closeModalButtons = document.querySelectorAll('[data-close-button]');
+const openModalButtons = document.querySelectorAll('[data-modal-target="products"]');
+const closeModalButtons = document.querySelectorAll('[data-close-button="products"]');
 const modalMenu = document.getElementById('modal-menu');
-
 
 openModalButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -432,29 +431,28 @@ const addDeleteEventListenersEmployees = () => {
 fetchEmployees();
 
 //Pop up añadir empleados
-const openModalEmployee = document.querySelectorAll('[data-modal-target]');
-const closeModalEmployee = document.querySelectorAll('[data-close-employee]');
+const openModalEmployeeButtons = document.querySelectorAll('[data-modal-target="employees"]');
+const closeModalEmployeeButtons = document.querySelectorAll('[data-close-button="employees"]');
 const modalEmployee = document.getElementById('modal-employee');
 
-
-openModalEmployee.forEach(button => {
+openModalEmployeeButtons.forEach(button => {
     button.addEventListener('click', () => {
-        openModal(modalEmployee);
+        openEmployeeModal(modalEmployee);
     });
 });
 
-closeModalEmployee.forEach(button => {
+closeModalEmployeeButtons.forEach(button => {
     button.addEventListener('click', () => {
-        closeModal(modalEmployee);
+        closeEmployeeModal(modalEmployee);
     });
 });
 
-function openModal(modal) {
+function openEmployeeModal(modal) {
     if (modal == null) return;
     modal.classList.add('active');
 }
 
-function closeModal(modal) {
+function closeEmployeeModal(modal) {
     if (modal == null) return;
     modal.classList.remove('active');
 }
@@ -462,7 +460,7 @@ function closeModal(modal) {
 const addButtonEmployee = document.getElementById('addBtnEmployee');
 
 addButtonEmployee.addEventListener('click', function() {
-    closeModal(modalEmployee);
+    closeEmployeeModal(modalEmployee);
 });
 
 
