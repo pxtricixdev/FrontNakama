@@ -86,7 +86,7 @@
                         </div>
                     </form>
 
-                   <!-- Modal de actualización -->
+                   <!-- Modal update products -->
                     <form class="modal-update-products" id="update-modal-menu">
                         
                         <label for="updateProductId">Product Id</label>
@@ -211,6 +211,51 @@
                             <button data-close-button="employees" class="close-button-modal">&times;</button>
                         </div>
                     </form>
+
+                    <!-- Modal update employees -->
+                    <form class="modal-update-employees" id="modalUpdateEmployees">
+                        
+                        <label for="updateEmployeeId">Employee Id</label>
+                        <input type="text" id="updateEmployeeId">
+                        
+                        <label for="updateEmployeeName">First Name</label>
+                        <input type="text" id="updateEmployeeName">
+                        
+                        <label for="updateEmployeeLastName">Last Name</label>
+                        <input type="text" id="updateEmployeeLastName">
+                        
+                        <label for="updateEmployeeEmail">Email</label>
+                        <input type="email" id="updateEmployeeEmail">
+
+                        <label for="updateEmployeePhone">Phone</label>
+                        <input type="tel" id="updateEmployeePhone">
+
+                        <label for="updateEmployeeRole">Comitee Member</label>
+                        <input type="text" id="updateEmployeeRole">
+
+                        <label for="updateEmployeeSalary">Salary</label>
+                        <input type="number" id="updateEmployeeSalary">
+                        
+                        <label for="updateEmployeeState">State</label>
+                        <select id="updateEmployeeState">
+                            <option value="true">Active</option>
+                            <option value="false">Inactive</option>
+                        </select>
+                        
+                        <label for="updateEmployeeJobId">Job Id</label>
+                        <input type="text" id="updateEmployeeJobId">
+
+                        <label for="updateEmployeeUserId">User Id</label>
+                        <input type="text" id="updateEmployeeUserId">
+                        
+                        <button id="saveBtnModalEmployee" class="add-modal" type="button">SAVE</button>
+                        
+                        <div class="modal-content">
+                            <button data-close-button="update-employees" class="close-button-modal" id="closeModalUpdateEmployee">&times;</button>
+                        </div>
+                    </form>
+
+
                 </div>
             </div>
         </div>

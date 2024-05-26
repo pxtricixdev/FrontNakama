@@ -390,6 +390,78 @@ a{
 }
 
 
+/* Modal update employees */
+.modal-update-employees {
+    height: 800px;
+    width: 500px;
+    position: fixed;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border-radius: 10px;
+    z-index: 10;
+    max-width: 80%;
+    font-family:var(--fuente2);
+    padding: 20px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-update-employees label {
+    padding-bottom: 5px;
+}
+
+.modal-update-employees input {
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.modal-update-employees select {
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.modal-update-employees .add-modal {
+    border: none;
+    font-size: 15px;
+    background-color: var(--black);
+    color: #fff;
+    cursor: pointer;
+    width: 100px;
+    padding: 10px 0;
+    font-family: var(--fuente2);
+    border-radius: 8px;
+    margin-left: 160px;
+}
+
+.modal-update-employees .add-modal:hover {
+    background-color: #3d3d3d;
+}
+
+.modal-update-employees.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+.modal-update-employees .close-button-modal {
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    transform: translate(50%, -50%); 
+    background-color: #000000;
+    padding: 1px 7px;
+    border-radius: 20px;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 
 /* Estilos tablas*/
 
@@ -421,7 +493,7 @@ a{
     color: white;
 }
 
-.btn-delete, .btn-update, .btn-dlt-employee {
+.btn-delete, .btn-update, .btn-dlt-employee, .btn-update-employe {
     border: none;
     background-color: var(--orange);
     margin-right: 5px;

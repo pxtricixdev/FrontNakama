@@ -501,7 +501,7 @@ const printEmployees = (employees) => {
             <td>${_idUsuario}</td>
             <td>
                 <button type="button" class="btn-dlt-employee"data-employeeid="${_idEmpleado}">DELETE</button>
-                <button class="btn-update" type="button" id="updateEmployee">UPDATE</button>
+                <button class="btn-update-employe" type="button" data-employeeidupdate="${_idEmpleado}" id="updateEmployee">UPDATE</button>
             </td>
         `;
 
@@ -509,7 +509,124 @@ const printEmployees = (employees) => {
     });
 
     addDeleteEventListenersEmployees();
+    addUpdateEventListenersEmployee();
 };
+
+// Funcion para agregar event listeners a los botones de "Update Employees"
+const addUpdateEventListenersEmployee = () => {
+    const updateButtons = document.querySelectorAll('.btn-update-employe');
+    updateButtons.forEach(button => {
+        button.addEventListener('click', async () => {
+            const employeeId = button.getAttribute('data-employeeidupdate');
+            await loadEmployeeData(employeeId); // Carga los datos (cogiendo la id) del empleado en el formulario
+            console.log(employeeId);
+            openModalUpdateEmployee(); 
+        });
+    });
+};
+
+// Funcion para cargar los datos del producto en el formulario de actualizacion 
+const loadEmployeeData = async (employeeId) => {
+    const urlEmployeeDetails = `http://localhost:8080/Nakama/Controller?ACTION=EMPLEADOS.FIND_BY_ID&ID_EMPLEADO=${employeeId}`;
+
+    try {
+        //Fetch del producto en concreto
+        const result = await fetch(urlEmployeeDetails);
+        console.log(result);
+        
+        //Si el resultado no es el esperado
+        if (!result.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        const employee = await result.json();
+
+        // Verificar que el empleado tiene todas las propiedades esperadas
+        if (employee && employee._idEmpleado && employee._nombre && employee._apellido && employee._email && employee._telefono && employee._rolComite && employee._salario && employee._estado && employee._idPuesto && employee._idUsuario) {
+            document.getElementById('updateEmployeeId').value = employee._idEmpleado;
+            document.getElementById('updateEmployeeName').value = employee._nombre;
+            document.getElementById('updateEmployeeLastName').value = employee._apellido;
+            document.getElementById('updateEmployeeEmail').value = employee._email;
+            document.getElementById('updateEmployeePhone').value = employee._telefono;
+            document.getElementById('updateEmployeeRole').value = employee._rolComite;
+            document.getElementById('updateEmployeeSalary').value = employee._salario;
+            document.getElementById('updateEmployeeState').value = employee._estado;
+            document.getElementById('updateEmployeeJobId').value = employee._idPuesto;
+            document.getElementById('updateEmployeeUserId').value = employee._idUsuario;
+
+        } else {
+            throw new Error("Invalid product data");
+        }
+    } catch (error) {
+        console.error('Error al cargar datos del producto:', error);
+    }
+};
+
+// Funcion para abrir el modal update producto
+function openModalUpdateEmployee() {
+    const modal = document.getElementById('modalUpdateEmployees');
+    if (modal == null) return;
+    modal.classList.add('active');
+}
+
+// Funcion para cerrar el modal de update producto
+function closeModalUpdateEmployee() {
+    const modal = document.getElementById('modalUpdateEmployees');
+    if (modal == null) return;
+    modal.classList.remove('active');
+}
+
+// Fetch para actualizar empleados de la web y la bbdd 
+const urlUpdateEmployees = 'http://localhost:8080/Nakama/Controller?ACTION=EMPLEADOS.UPDATE';
+
+//Event Listener del boton de guardar cambios cogiendo todos los campos del formulario
+document.getElementById('saveBtnModalEmployee').addEventListener('click', async () => {
+    const updateEmployeeId = document.getElementById('updateEmployeeId').value;
+    const updateEmployeeName = document.getElementById('updateEmployeeName').value;
+    const updateEmployeeLastName = document.getElementById('updateEmployeeLastName').value;
+    const updateEmployeeEmail = document.getElementById('updateEmployeeEmail').value;
+    const updateEmployeePhone = document.getElementById('updateEmployeePhone').value;
+    const updateEmployeeRole = document.getElementById('updateEmployeeRole').value;
+    const updateEmployeeSalary = document.getElementById('updateEmployeeSalary').value;
+    const updateEmployeeState = document.getElementById('updateEmployeeState').value;
+    const updateEmployeeJobId = document.getElementById('updateEmployeeJobId').value;
+    const updateEmployeeUserId = document.getElementById('updateEmployeeUserId').value;
+
+    //Creamos un nuevo objeto URLSearchParams y agregamos los valores del formulario modificado
+    const formData = new URLSearchParams();
+    formData.append('ID_EMPLEADO', updateEmployeeId);
+    formData.append('EMP_NOMBRE', updateEmployeeName);
+    formData.append('EMP_APELLIDO', updateEmployeeLastName);
+    formData.append('EMP_EMAIL', updateEmployeeEmail);
+    formData.append('EMP_TELEFONO', updateEmployeePhone);
+    formData.append('EMP_ROL_COMITE', updateEmployeeRole);
+    formData.append('EMP_SALARY', updateEmployeeSalary);
+    formData.append('EMP_ESTADO', updateEmployeeState);
+    formData.append('ID_PUESTO_EMP', updateEmployeeJobId);
+    formData.append('ID_USUARIO_EMP', updateEmployeeUserId);
+
+    //Reliza la peticion para actualizar los productos
+    try {
+        const response = await fetch(urlUpdateEmployees, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded', //cambiamos el content-type porque si no nos da error de cors
+            },
+            body: formData,
+        });
+
+        if (response.ok) {
+            console.log('Empleado actualizado con éxito');
+            closeModalUpdateEmployee(); 
+            fetchEmployees(); 
+        } else {
+            throw new Error('Error al actualizar el empleado');
+        }
+    } catch (error) {
+        console.error('Error al realizar la solicitud de actualización:', error);
+    }
+});
+
 
 const addDeleteEventListenersEmployees = () => {
     const deleteButtons = document.querySelectorAll('.btn-dlt-employee');
