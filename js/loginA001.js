@@ -525,42 +525,41 @@ const addUpdateEventListenersEmployee = () => {
     });
 };
 
-// Funcion para cargar los datos del producto en el formulario de actualizacion 
 const loadEmployeeData = async (employeeId) => {
     const urlEmployeeDetails = `http://localhost:8080/Nakama/Controller?ACTION=EMPLEADOS.FIND_BY_ID&ID_EMPLEADO=${employeeId}`;
 
     try {
-        //Fetch del producto en concreto
+        // Fetch del producto en concreto
         const result = await fetch(urlEmployeeDetails);
-        console.log(result);
-        
-        //Si el resultado no es el esperado
+
+        // Si el resultado no es el esperado
         if (!result.ok) {
             throw new Error('Network response was not ok');
         }
 
         const employee = await result.json();
 
-        // Verificar que el empleado tiene todas las propiedades esperadas
-        if (employee && employee._idEmpleado && employee._nombre && employee._apellido && employee._email && employee._telefono && employee._rolComite && employee._salario && employee._estado && employee._idPuesto && employee._idUsuario) {
-            document.getElementById('updateEmployeeId').value = employee._idEmpleado;
-            document.getElementById('updateEmployeeName').value = employee._nombre;
-            document.getElementById('updateEmployeeLastName').value = employee._apellido;
-            document.getElementById('updateEmployeeEmail').value = employee._email;
-            document.getElementById('updateEmployeePhone').value = employee._telefono;
-            document.getElementById('updateEmployeeRole').value = employee._rolComite;
-            document.getElementById('updateEmployeeSalary').value = employee._salario;
-            document.getElementById('updateEmployeeState').value = employee._estado;
-            document.getElementById('updateEmployeeJobId').value = employee._idPuesto;
-            document.getElementById('updateEmployeeUserId').value = employee._idUsuario;
-
-        } else {
-            throw new Error("Invalid product data");
+        //Si el empleado no tiene rol en el comite se lo asignamos vacio (control de back)
+        if (!employee._rolComite) {
+            employee._rolComite = ''; 
         }
+      
+        // Asignar valores a los campos del formulario
+        document.getElementById('updateEmployeeId').value = employee._idEmpleado;
+        document.getElementById('updateEmployeeName').value = employee._nombre;
+        document.getElementById('updateEmployeeLastName').value = employee._apellido;
+        document.getElementById('updateEmployeeEmail').value = employee._email;
+        document.getElementById('updateEmployeePhone').value = employee._telefono;
+        document.getElementById('updateEmployeeRole').value = employee._rolComite;
+        document.getElementById('updateEmployeeSalary').value = employee._salario;
+        document.getElementById('updateEmployeeState').value = employee._estado;
+        document.getElementById('updateEmployeeJobId').value = employee._idPuesto;
+        document.getElementById('updateEmployeeUserId').value = employee._idUsuario;
     } catch (error) {
-        console.error('Error al cargar datos del producto:', error);
+        console.error('Error al cargar datos del empleado:', error);
     }
 };
+
 
 // Funcion para abrir el modal update producto
 function openModalUpdateEmployee() {
@@ -626,6 +625,7 @@ document.getElementById('saveBtnModalEmployee').addEventListener('click', async 
         console.error('Error al realizar la solicitud de actualización:', error);
     }
 });
+
 
 
 const addDeleteEventListenersEmployees = () => {
