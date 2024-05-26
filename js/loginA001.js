@@ -48,6 +48,7 @@ document.getElementById('btn-logout').addEventListener('click', function() {
 //Fetch para mostrar todos los productos en la web
 const urlProducts = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.FIND_ALL';
 
+//Peticion para mostrar todos los productos
 const fetchProducts = async () => {
     try {
         const result = await fetch(urlProducts);
@@ -58,7 +59,7 @@ const fetchProducts = async () => {
         console.error('Error al obtener datos de la API:', error);
     }
 };
-
+//Imprime los productos en la web
 const printProducts = (products) => {
     const table = document.getElementById('tablaProductos');
     const tbody = table.querySelector('tbody');
@@ -93,8 +94,8 @@ const printProducts = (products) => {
         tbody.appendChild(row);
     });
 
-    addDeleteEventListeners();
-    addUpdateEventListeners();
+    addDeleteEventListeners(); //Llama a la funcion Delete
+    addUpdateEventListeners(); //Llama a la funcion Update
 };
 
 // Funcion para agregar event listeners a los botones de "Update"
@@ -110,52 +111,58 @@ const addUpdateEventListeners = () => {
     });
 };
 
-// Funcion para cargar los datos del producto en el formulario de actualizacion
+// Funcion para cargar los datos del producto en el formulario de actualizacion 
 const loadProductData = async (productId) => {
     const urlProductDetails = `http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.FIND_BY_ID&ID_PRODUCTO=${productId}`;
 
     try {
+        //Fetch del producto en concreto
         const result = await fetch(urlProductDetails);
+        
+        //Si el resultado no es el esperado
         if (!result.ok) {
             throw new Error('Network response was not ok');
-        }
-        const contentType = result.headers.get('content-type');
-        if (!contentType || !contentType.includes('application/json')) {
-            throw new TypeError("Response is not JSON");
         }
 
         const product = await result.json();
 
-        document.getElementById('updateProductId').value = product._idProducto;
-        document.getElementById('updateProductName').value = product._nombre;
-        document.getElementById('updateProductDescription').value = product._descripcion;
-        document.getElementById('updateProductPrice').value = product._precioVenta;
-        document.getElementById('updateProductImage').value = product._imagenRuta;
-        document.getElementById('updateProductState').value = product._estado;
-        document.getElementById('updateProductCategoryId').value = product._idCategoria;
+        // Verificar que el producto tiene todas las propiedades esperadas
+        if (product && product._idProducto && product._nombre && product._descripcion && product._precioVenta && product._imagenRuta && product._estado && product._idCategoria) {
+            document.getElementById('updateProductId').value = product._idProducto;
+            document.getElementById('updateProductName').value = product._nombre;
+            document.getElementById('updateProductDescription').value = product._descripcion;
+            document.getElementById('updateProductPrice').value = product._precioVenta;
+            document.getElementById('updateProductImage').value = product._imagenRuta;
+            document.getElementById('updateProductState').value = product._estado;
+            document.getElementById('updateProductCategoryId').value = product._idCategoria;
+        } else {
+            throw new Error("Invalid product data");
+        }
     } catch (error) {
         console.error('Error al cargar datos del producto:', error);
     }
 };
 
-// Función para abrir el modal de actualización
+// Funcion para abrir el modal update producto
 function openModalUpdateProd() {
     const modal = document.getElementById('update-modal-menu');
     if (modal == null) return;
     modal.classList.add('active');
 }
 
-// Función para cerrar el modal de actualización
+// Funcion para cerrar el modal de update producto
 function closeModalUpdateProd() {
     const modal = document.getElementById('update-modal-menu');
     if (modal == null) return;
     modal.classList.remove('active');
 }
 
-// Fetch para actualizar productos de la web y la bbdd
+// Fetch para actualizar productos de la web y la bbdd 
 const urlUpdateProducts = 'http://localhost:8080/Nakama/Controller?ACTION=PRODUCTOS.UPDATE';
 
+//Event Listener del boton de guardar cambios cogiendo todos los campos del formulario
 document.getElementById('saveBtnModal').addEventListener('click', async () => {
+    const updateProductId = document.getElementById('updateProductId').value;
     const updateProductName = document.getElementById('updateProductName').value;
     const updateProductDescription = document.getElementById('updateProductDescription').value;
     const updateProductPrice = document.getElementById('updateProductPrice').value;
@@ -163,23 +170,24 @@ document.getElementById('saveBtnModal').addEventListener('click', async () => {
     const updateProductState = document.getElementById('updateProductState').value;
     const updateProductCategoryId = document.getElementById('updateProductCategoryId').value;
 
-    const updatedProduct = {
-        _nombre: updateProductName,
-        _descripcion: updateProductDescription,
-        _precioVenta: updateProductPrice,
-        _imagenRuta: updateProductImage,
-        _estado: updateProductState,
-        _idCategoria: updateProductCategoryId,
-    };
+    //Creamos un nuevo objeto URLSearchParams y agregamos los valores del formulario modificado
+    const formData = new URLSearchParams();
+    formData.append('ID_PRODUCTO', updateProductId);
+    formData.append('PRD_NOMBRE', updateProductName);
+    formData.append('PRD_DESCRIPCION', updateProductDescription);
+    formData.append('PRD_PRECIO_VENTA', updateProductPrice);
+    formData.append('PRD_IMAGEN_RUTA', updateProductImage);
+    formData.append('PRD_ESTADO', updateProductState);
+    formData.append('ID_CATEGORIA_PRD', updateProductCategoryId);
 
+    //Reliza la peticion para actualizar los productos
     try {
         const response = await fetch(urlUpdateProducts, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded', //cambiamos el content-type porque si no nos da error de cors
             },
-            mode: "no-cors",
-            body: JSON.stringify(updatedProduct),
+            body: formData,
         });
 
         if (response.ok) {
