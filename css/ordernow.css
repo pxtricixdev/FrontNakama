@@ -400,7 +400,7 @@ body {
 .form-order .terms a {
     color: #c5c5c5;
 }
-.form-order input[type='text'] {
+.form-order input[type='text'], .form-order input[type='tel'] {
     border-radius: 15px;
     border: none;
     outline: none;
@@ -478,6 +478,30 @@ body {
     background: none;
     cursor: pointer;
 }
+
+
+.title-class {
+    color: var(--black);
+    font-family: var(--fuente2);
+    font-size: 20px;
+}
+.popup-class {
+    border-radius: 15px;
+    background-color: #fff;
+    font-family: var(--fuente2);
+}
+
+.confirm-button-class {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    font-family: var(--fuente2);
+    text-transform: uppercase;
+}
+
+.confirm-button-class:hover {
+    color: var(--orange) !important;
+}
+
 /*---------------- main --------------------*/
 /*-------- burgers -----------*/
 .products-grid {

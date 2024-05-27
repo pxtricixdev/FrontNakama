@@ -29,6 +29,7 @@ function register() {
   y.style.opacity = 1;
 }
 
+/*
 //Url del endpoint para registrar clientes
 const urlClientRegister = 'http://localhost:8080/Nakama/Controller?ACTION=CLIENTES.REGISTER';
 
@@ -100,9 +101,9 @@ document.getElementById('login').addEventListener('submit', function(event) {
     fetch(urlClientLogin, { 
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
       },
-      mode: "no-cors",
       body: JSON.stringify(user)
     })
 
@@ -114,9 +115,9 @@ document.getElementById('login').addEventListener('submit', function(event) {
     console.error('Error al realizar la solicitud:', error);
   }
 });
+*/
 
 
-/*
 //Funcion de registro de usuario
 document.querySelector('.submit').addEventListener('click', function(event) {
   event.preventDefault();
@@ -168,4 +169,4 @@ document.querySelector('.submitlogin').addEventListener('click', function(event)
     alert('Incorrect username or password');
   }
 });
-*/
+

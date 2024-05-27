@@ -259,3 +259,50 @@ async function fetchCategoriesAndProducts() {
 
   fetchCategoriesAndProducts();
 
+
+//Modal para finalizar el pedido
+
+//Comprueba que los campos no esten vacios a la hora de finalizar el pedido
+document.getElementById('btn-carrito').addEventListener('click', function() {
+
+    //Coge los valores de los inputs de tel y direccion
+    const phone = document.getElementById('orderPhone').value;
+    const direction = document.getElementById('orderDirection').value
+    
+    //Si no estan vacios salta una alerta con pedido completado
+    if (phone !== '' && direction !== '') {
+        Swal.fire({
+            title: 'Your order is being processed',
+            icon: 'success',
+            confirmButtonText: 'OK',
+            customClass: {
+                popup: 'popup-class',
+                title: 'title-class',
+                content: 'content-class',
+                confirmButton: 'confirm-button-class'
+            }
+        })
+        //Si el usuario le da al boton de OK de la alerta vacia el carrito y redirige a ordernow
+        .then((result) => {
+            if (result.isConfirmed) {
+                clearCart();
+                window.location.href = 'ordernow.html'; 
+            }
+        });
+    
+        //Si estan vacios salta una alerta para que completes los campos
+    } else {
+        Swal.fire({
+            title: 'Error',
+            text: 'Please fill in all required fields.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+            customClass: {
+                popup: 'popup-class',
+                title: 'title-class',
+                content: 'content-class',
+                confirmButton: 'confirm-button-class'
+            }
+        });
+    }
+});

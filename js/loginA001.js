@@ -525,6 +525,7 @@ const addUpdateEventListenersEmployee = () => {
     });
 };
 
+// Funcion para cargar los datos del producto en el formulario de actualizacion 
 const loadEmployeeData = async (employeeId) => {
     const urlEmployeeDetails = `http://localhost:8080/Nakama/Controller?ACTION=EMPLEADOS.FIND_BY_ID&ID_EMPLEADO=${employeeId}`;
 

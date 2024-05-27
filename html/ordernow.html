@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header class="header">
@@ -109,8 +109,8 @@
         
         <form class="form-order" method="POST" action="">
             <label for="firstname">PHONE NUMBER *</label><br>
-            <input type="text" placeholder="Select your phone number" id="orderPhone" required><br>
-            <label for="firstname">DIRECTION *</label><br>
+            <input type="tel" placeholder="Select your phone number" id="orderPhone" required><br>
+            <label for="direction">DIRECTION *</label><br>
             <input type="text" placeholder="Select your direction" id="orderDirection" required>
          
         
@@ -129,7 +129,7 @@
                     </svg>
                 </button>
 
-                <button class="carrito-footer arriba" type="submit"><span>Finish order</span>
+                <button class="carrito-footer arriba" type="button" id="btn-carrito"><span>Finish order</span>
                     <p class="text-total">Total: <span id="total"></span>&dollar;</p>
                 </div></button>
                 
