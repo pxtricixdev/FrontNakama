@@ -393,7 +393,6 @@ const printOrders = (orders) => {
 
         row.innerHTML = `
             <td>${_idPedido}</td>
-            <td>${_hora}</td>
             <td>${_fecha}</td>
             <td>${_tlf}</td>
             <td>${_direccion}</td>
