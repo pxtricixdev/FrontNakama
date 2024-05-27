@@ -29,7 +29,7 @@ function register() {
   y.style.opacity = 1;
 }
 
-/*
+
 //Url del endpoint para registrar clientes
 const urlClientRegister = 'http://localhost:8080/Nakama/Controller?ACTION=CLIENTES.REGISTER';
 
@@ -47,8 +47,8 @@ document.getElementById('register').addEventListener('submit', function(event) {
   }
   //Creamos el objeto del cliente
   const client = {
-    _nombre: username ,  
-    _apellido: lastname ,
+    _nombre: username,  
+    _apellido: lastname,
     _email: email,
     _password: password,
   };
@@ -76,48 +76,42 @@ document.getElementById('register').addEventListener('submit', function(event) {
   }
 });
 
-// Url del endpoint para login de clientes
-const urlClientLogin = 'http://localhost:8080/Nakama/Controller?ACTION=CLIENTES.LOGIN';
-
-document.getElementById('login').addEventListener('submit', function(event) {
+//Funcion 
+document.getElementById('login').addEventListener('submit', async function(event) {
   event.preventDefault(); 
 
   const email = document.getElementById('userEmail').value;
   const password = document.getElementById('userPassword').value;
 
-  // Si falta algun campo por rellenar
-  if (!email || !password) {
-    alert('You must complete each field');
-  }
+  localStorage.setItem('email', email);
+  localStorage.setItem('password', password);
+  localStorage.setItem('isLogged', 'true'); 
 
-  const user = { 
-    email, password 
-  };
-
-  console.log(user);
+  const urlClientLogin = `http://localhost:8080/Nakama/Controller?ACTION=CLIENTES.LOGIN&CL_EMAIL=${email}&CL_PASSWORD=${password}`;
 
   try {
-    // Solicitud fetch para el login del cliente
-    fetch(urlClientLogin, { 
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      },
-      body: JSON.stringify(user)
-    })
+    const response = await fetch(urlClientLogin);
 
-    alert('Inicio completado con exito')
-    window.location.href = '../html/ordernow.html';
+    if (response.ok) {
+      const data = await response.json();
 
+      if (data.message) {
+        alert('Incorrect username or password');
+      } else {
+        console.log('Log is successful');
+        window.location.href = '../html/ordernow.html';
+      }
+    } else {
+      alert('Incorrect username or password');
+    }
   } catch (error) {
-    //Si no se ha podido realizar la solicitud mostrarmos el error
     console.error('Error al realizar la solicitud:', error);
   }
 });
-*/
 
 
+
+/*
 //Funcion de registro de usuario
 document.querySelector('.submit').addEventListener('click', function(event) {
   event.preventDefault();
@@ -169,4 +163,4 @@ document.querySelector('.submitlogin').addEventListener('click', function(event)
     alert('Incorrect username or password');
   }
 });
-
+*/
