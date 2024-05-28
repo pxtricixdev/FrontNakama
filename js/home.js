@@ -64,12 +64,11 @@ menuItems.forEach(
 //Comprobamos si el usuario esta logueado cuando hace click en el boton Order Now para redirigir a la pagina de pedidos
 const orderNowBtn = document.getElementById('orderNowBtn');
 
-  orderNowBtn.addEventListener('click', function(event) {
-  const isRegistered = localStorage.getItem('isRegistered');
+  orderNowBtn.addEventListener('click', function() {
   const isLoggedIn = localStorage.getItem('isLoggedIn');
 
   // Si se ha registrado y ha iniciado sesion redirige a la pagina de pedidos
-  if (isRegistered === 'true' && isLoggedIn === 'true') {
+  if (isLoggedIn === 'true') {
     window.location.href = 'ordernow.html';
      
   } else {
