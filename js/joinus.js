@@ -1,4 +1,4 @@
-document.getElementById('contact-form').addEventListener('submit', function(event) {
+document.getElementById('job-application-form').addEventListener('submit', function(event) {
     event.preventDefault(); 
 
     Swal.fire({
@@ -6,7 +6,6 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         text: 'We will get back to you shortly',
         icon: 'success',
         confirmButtonText: 'OK'
-
     }).then((result) => {
         if (result.isConfirmed) {
             event.target.reset(); 

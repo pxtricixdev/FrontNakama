@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 <body>
@@ -84,19 +85,19 @@
                 <div class="submit-form">
                     <div class="celdas">
                         <h4 class="cabecera">Contact Us</h4>
-                        <form actions="">
+                        <form id="contact-form" method="post">
                             <div class="input-box">
                                 <input type="text" class="input" required >
                                 <label for="">Name</label>
                             </div>
     
                             <div class="input-box">
-                                <input type="text" class="input" required >
+                                <input type="m" class="input" required >
                                 <label for="">Email</label>
                             </div>
     
                             <div class="input-box">
-                                <input type="Tlf" class="input" required >
+                                <input type="tel" class="input" required >
                                 <label for="">Phone</label>
                             </div>
     
@@ -104,8 +105,9 @@
                                 <textarea name="" class="input" required id="message" cols="30" rows="10"></textarea>
                                 <label for="">Message</label>
                             </div>
-    
-                            <input type="submit" class="btn" value="Submit">
+                            <div>
+                                <input type="submit" class="btn" value="Submit">
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -167,5 +169,6 @@
 
     <script src="../js/home.js"></script>
     <script src="../js/common.js"></script>
+    <script src="../js/contact.js"></script>
 </body>
 </html>
