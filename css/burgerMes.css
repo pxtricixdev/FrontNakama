@@ -217,6 +217,7 @@ body {
     padding-bottom: 30px;
     font-weight: 700;
     font-size: 50px;
+    text-align: center;
 }
 
 .burger-month h2 {
@@ -351,6 +352,10 @@ body {
     .text-burger-month-parrafo {
         width: 65%;
     }   
+    .text-burger-month video {
+        max-width: 800px;
+        max-height: 300px;
+    }
 }   
 
 @media only screen and (max-width: 768px) {
@@ -404,7 +409,7 @@ body {
     }   
 }
 
-@media only screen and (max-width: 425px){
+@media only screen and (max-width: 600px){
 
     .burger-month h1 {
         color: var(--orange);
@@ -415,24 +420,15 @@ body {
         text-align: center;
     }
 
-    .text-burger-month video {
-        /*mask-image: radial-gradient(#0a0a0a 30%, transparent);*/
-        max-width: 650px;
-        max-height: 200px;
-        border-radius: 30px;
-        border: 3px solid #EE7722;
-    }
-
-    
     .text-burger-month-parrafo {
         width: 95%;
+    }
+    .text-burger-month video {
+        max-width: 650px;
+        max-height: 200px;
     }   
 
 }
-
-
-
-/*------------------ footer -------------------*/
 
 /*------------------ footer -------------------*/
 

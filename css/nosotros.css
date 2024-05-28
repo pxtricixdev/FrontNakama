@@ -206,6 +206,77 @@ body {
 }
 
 /*------------------ main -------------------*/
+
+@media only screen and (max-width: 2560px){ 
+    .texto{
+        text-align: justify;
+        font-family: "Unbounded", sans-serif;
+        max-width: 50%;
+    }
+    .our{
+        display: flex;
+        flex-direction: row;
+        margin: 40px;
+        gap: 50px;
+    }
+    .tokyo {
+        display: flex;
+        align-items: center;
+        background: url(../imgNosotros/Urban.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+    }
+    .parrilla {
+        display: flex;
+        align-items: center;
+        background: url(../imgNosotros/parrilla.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+    }
+    .plan{
+        display: flex;
+        align-items: center;
+        background: url(../imgNosotros/plan.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+    }
+    .container2{
+        margin-left: auto;
+        margin-top: 100px;
+        max-width: 1400px;
+        background-color: #ee7722;
+        opacity: 0.9;
+        z-index: 1; 
+        font-size: 17px;
+        margin-top: 100px;
+        color: #000;
+        border-radius: 10px;
+        border: 2px solid #ffffff9d;
+        box-shadow: 0px 2px 24px 8px rgba(255, 255, 255, 0.2);
+    }
+}
+@media only screen and (max-width: 1450px){ 
+    .container2 {
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .texto {
+        max-width: 100%;
+    }
+    .tokyo, .parrilla, .plan {
+        display: none;
+    }
+   
+} 
+
 h2{
     text-align: center;
     font-family: "Darumadrop One", sans-serif;
@@ -213,18 +284,6 @@ h2{
     margin-top: 10px;
 }   
 
-.texto{
-    text-align: justify;
-    margin-left: 40px; margin-right: 40px; margin-bottom: 60px;
-    font-family: "Unbounded", sans-serif;
-}
-
-.our{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-}
-
-/*primer div*/
 .container1 h2, .container2 h2, .container3 h2 {
     color: var(--black);
     font-size: 40px;
@@ -232,11 +291,14 @@ h2{
 
 .container1, .container2, .container3 {
     transition: 0.2s ease-in-out;
+    margin-right: 20px;
 }
 
+/*----primer card---- */
 .container1{
     margin-top: 100px;
     max-width: 1400px;
+    margin-left: 20px;
     background-color: var(--orange);
     opacity: 0.9;
     z-index: 1; 
@@ -247,54 +309,11 @@ h2{
     box-shadow: 0px 2px 24px 8px rgba(255, 255, 255, 0.1);
 }
 
-/*Tokyo*/
-.tokyo {
-    display: flex;
-    align-items: center;
-    background: url(../imgNosotros/Urban.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 75%;
-    height: 75%;
-    margin-left: 75px;
-    margin-top: 25px;
-}
-
-/*segundo div*/
-
-.container2{
-    margin-left: auto;
-    margin-top: 100px;
-    max-width: 1400px;
-    background-color: #ee7722;
-    opacity: 0.9;
-    z-index: 1; 
-    font-size: 17px;
-    margin-top: 100px;
-    color: #000;
-    border-radius: 10px;
-    border: 2px solid #ffffff9d;
-    box-shadow: 0px 2px 24px 8px rgba(255, 255, 255, 0.2);
-}
-
-
-.parrilla {
-    display: flex;
-    align-items: center;
-    background: url(../imgNosotros/parrilla.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 75%;
-    height: 75%;
-    margin-left: 75px;
-    margin-top: 25px;
-}
-
-/*tercer div*/
-
+/*----tercer card---- */
 .container3{
     margin-top: 100px;
     margin-bottom: 100px;
+    margin-left: 20px;
     max-width: 1400px;
     background-color: #ee7722;
     opacity: 0.9;
@@ -308,33 +327,6 @@ h2{
     box-shadow: 0px 2px 24px 8px rgba(255, 255, 255, 0.2);
    
 }
-
-.plan{
-    display: flex;
-    align-items: center;
-    background: url(../imgNosotros/plan.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 75%;
-    height: 75%;
-    margin-left: 75px;
-    margin-top: 25px;
-}
-
-
-@media only screen and (max-width: 425px){
-
-    .tokyo, .plan, .parrilla{
-        display: none;
-    }
-
-    .our{
-        display: flex;
-    }
-}
-
-
-
 
 /*------------------ footer -------------------*/
 
