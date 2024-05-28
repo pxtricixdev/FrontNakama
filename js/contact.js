@@ -2,10 +2,16 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     event.preventDefault(); 
 
     Swal.fire({
-        title: 'Successfully Sent',
-        text: 'We will get back to you shortly',
+        title: 'Sucessfully Sent',
+        text: 'Thak you for your feedback',
         icon: 'success',
-        confirmButtonText: 'OK'
+        confirmButtonText: 'OK',
+        customClass: {
+            popup: 'popup-class',
+            title: 'title-class',
+            content: 'content-class',
+            confirmButton: 'confirm-button-class'
+        }
 
     }).then((result) => {
         if (result.isConfirmed) {

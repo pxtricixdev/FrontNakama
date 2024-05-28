@@ -457,6 +457,11 @@ body {
 .formulario .agree a {
     color: #000;
 }
+
+.popup-class {
+    font-family: var(--fuente2);
+    font-size: 12px;
+}
 /*------------------ footer -------------------*/
 
 @media only screen and (max-width: 768px) {

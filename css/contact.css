@@ -432,6 +432,10 @@ textarea.input{
     color: var(--orange);
 }
 
+.popup-class {
+    font-family: var(--fuente2);
+    font-size: 12px;
+}
 /*----- location -----*/
 .location {
     color: var(--orange);
