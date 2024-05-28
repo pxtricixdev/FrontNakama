@@ -443,7 +443,6 @@ const printClients = (clients) => {
             <td>${_nombre}</td>
             <td>${_apellido}</td>
             <td>${_email}</td>
-            <td>${_password}</td>
         `;
 
         tbody.appendChild(row);
