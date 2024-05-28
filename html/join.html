@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 </head>
@@ -168,100 +168,89 @@
                         
                 </div>
                 <div class="formulario">
-                    <form action="#" method="post">
+                    <form id="job-application-form" method="post">
                         <fieldset>
                             <h3>Job Application Form</h3>
                             <label>
-                              <p>Application for *</p>
-                              <select name="application-for" required>
-                                <option>Web Developer</option>
-                              </select>
+                                <p>Application for *</p>
+                                <select name="application-for" required>
+                                    <option>Web Developer</option>
+                                </select>
                             </label>
-                          </fieldset>
-                          <fieldset>
+                        </fieldset>
+                        <fieldset>
                             <legend>Personal data</legend>
-                                <div class="input-group">
-                                    <label>
-                                        First Name *
-                                        <input type="text" name="first-name" required>
-                                    </label>
-                                    <label>
-                                        Last Name *
-                                        <input type="text" name="last-name" required>
-                                    </label>
-                                </div>
-                                <div class="input-group">
-                                    <label>
-                                        Phone *
-                                        <input type="tel" name="phone" required>
-                                    </label>
-                                    <label>
-                                        Email *
-                                        <input type="email" name="email" required>
-                                    </label>
-                                </div>
-                                <div class="languajes">
-                                    <p>What languages do you speak?</p>
-                                    <label>
-                                        <input type="checkbox" name="language[]" value="English">
-                                        English
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" name="language[]" value="Spanish">
-                                        Spanish
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" name="language[]" value="Spanish">
-                                        Japanese
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" name="language[]" value="Spanish">
-                                        Korean
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" name="language[]" value="Spanish">
-                                        Others
-                                    </label>
-                                </div>
-                          </fieldset>
-                          <!--
-                            
-                          -->
-                          <fieldset>
+                            <div class="input-group">
+                                <label>
+                                    First Name *
+                                    <input type="text" name="first-name" required>
+                                </label>
+                                <label>
+                                    Last Name *
+                                    <input type="text" name="last-name" required>
+                                </label>
+                            </div>
+                            <div class="input-group">
+                                <label>
+                                    Phone *
+                                    <input type="tel" name="phone" required>
+                                </label>
+                                <label>
+                                    Email *
+                                    <input type="email" name="email" required>
+                                </label>
+                            </div>
+                            <div class="languajes">
+                                <p>What languages do you speak?</p>
+                                <label>
+                                    <input type="checkbox" name="language[]" value="English">
+                                    English
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="language[]" value="Spanish">
+                                    Spanish
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="language[]" value="Japanese">
+                                    Japanese
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="language[]" value="Korean">
+                                    Korean
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="language[]" value="Others">
+                                    Others
+                                </label>
+                            </div>
+                        </fieldset>
+                        <fieldset>
                             <legend>Application documents</legend>
                             <div class="application">
-                                <!--
-                                <label>
-                                    <p>Application letter</p>
-                                    <textarea name="application-letter" id="" cols="30" rows="10"></textarea>
-                                </label>
-                              
-                              <br>
-                                -->
                                 <label>
                                     Application letter
                                     <input type="file" name="application-letter" accept=".doc .docx .pdf">
                                 </label>
                                 <label>
-                                CV
-                                <input type="file" name="CV" accept=".pdf">
-                              </label>
+                                    CV
+                                    <input type="file" name="CV" accept=".pdf">
+                                </label>
                             </div>
-                          </fieldset>
-                          <fieldset>
+                        </fieldset>
+                        <fieldset>
                             <div class="agree">
-                              <label>
-                                <input type="checkbox" name="data processing" value="yes" required>
-                                <span>I agree to the processing of my data for the handling of my request by <a href="./home.html" target="_blank">Nakama</a>. *</span>
-                              </label>
+                                <label>
+                                    <input type="checkbox" name="data-processing" value="yes" required>
+                                    <span>I agree to the processing of my data for the handling of my request by <a href="./home.html" target="_blank">Nakama</a>. *</span>
+                                </label>
                             </div>
-                          </fieldset>
-                          <div class="btn-submit">
-                            <input type="submit" value="Submit">
-                          </div>
+                        </fieldset>
+                        <div class="btn-submit" id="btn-formulario">
+                            <input type="reset" value="Submit">
+                        </div>
                     </form>
                 </div>
-            </div>
+                
  
         </div>
     </div>
@@ -305,6 +294,7 @@
 
     <script src="../js/home.js"></script>
     <script src="../js/common.js"></script>
+    <script src="../js/contact.js"></script>
     
 </body>
 </html>
