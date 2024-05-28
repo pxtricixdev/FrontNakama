@@ -493,7 +493,6 @@ const printEmployees = (employees) => {
             <td>${_email}</td>
             <td>${_telefono}</td>
             <td>${_rolComite}</td>
-            <td>${_salario}</td>
             <td>${_estado}</td>
             <td>${_idPuesto}</td>
             <td>${_idUsuario}</td>
