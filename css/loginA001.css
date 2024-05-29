@@ -495,13 +495,20 @@ a{
 
 .btn-delete, .btn-update, .btn-dlt-employee, .btn-update-employe {
     border: none;
-    background-color: var(--orange);
     margin-right: 5px;
     margin-bottom: 6px;
     padding: 5px;
     font-weight: 700;
     border-radius: 10px;
     cursor: pointer;
+    color: #fff;
 }
 
+.btn-delete, .btn-dlt-employee {
+    background-color: #cd2626;
+}
+
+.btn-update, .btn-update-employe {
+    background-color: #335090;
+}
 
